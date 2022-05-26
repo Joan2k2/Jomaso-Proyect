@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+    <link href="Styles.css" rel="stylesheet" type="text/css">
+    <link href="../../Estilos/StyleTailwind.css" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/png" sizes="16x16"  href="../../Recursos/Icono.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+        theme: {
+        extend: {
+            fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            },
+        }
+        }
+    }
+    </script>
+	<title>WikiLegends</title>
+  <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <section class="mb-20">
+          <h2 style="opacity: 0;">.</h2>
+             <nav
+              class="navbar navbar-expand-lg shadow-md py-2 bg-white relative flex items-center w-full justify-between"
+            >
+              <div class="px-6 w-full flex flex-wrap items-center justify-between">
+                <div class="flex items-center">
+                  <button
+                    class="navbar-toggler border-0 py-3 lg:hidden leading-none text-xl bg-transparent text-gray-600 hover:text-gray-700 focus:text-gray-700 transition-shadow duration-150 ease-in-out mr-2"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                  >
+                  <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    data-prefix="fas"
+                    class="w-5"
+                    role="img"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 448 512"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
+                    ></path>
+                  </svg>
+                  </button>
+                    <a class="navbar-brand text-blue-600" href="Inicio.html">
+                      <img style="width: 60px;"
+                        src="../../Recursos/Icono.png"
+                        class="block w-full"
+                        alt="..."
+                      />
+                    </a>
+                </div>
+
+                <div class="flex items-center lg:ml-auto">
+                  <a href="LogIn.html">
+                    <p style="font-size: 1.2vw;"
+                        class="inline-block px-6 py-2.5 mr-2 bg-transparent text-blue-600 font-medium text-xs leading-tight uppercase rounded hover:text-blue-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none focus:ring-0 active:bg-gray-200 transition duration-150 ease-in-out"
+                        data-mdb-ripple="true"
+                        data-mdb-ripple-color="light"
+                        >
+                        Login
+                    </p>
+                  </a>
+                  <a href="FormularioWeb.html">
+                    <p style="font-size: 1.2vw;"
+                        class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+                        data-mdb-ripple="true"
+                        data-mdb-ripple-color="light"
+                        >
+                      Sign up for free
+                    </p>
+                  </a>
+                  </div>
+                </div>
+              </nav>
+        </section>
+    </header>
+
+    <main>
+        <section class="mb-20">
+
+            <div class="flex justify-center mb-20 text-5xl bg-blue-600 text-white tocho-cartas">
+                <h2>
+                    ESCRITORES
+                </h2>
+            </div>
+
+            <div id="div-cartas">
+                <div class="flex justify-center border-4 border-white">
+                    <div class="rounded-lg shadow-lg bg-white max-w-sm">
+                    <a href="../Escritores/Stephen-King.html">
+                        <img class="rounded-t-lg" src="../../Recursos/Images/Escritores/Stephen-King/cardStephen.jpg" alt=""/>
+                    </a>
+                    <div class="p-6">
+                        <h5 class="text-gray-900 text-xl font-medium mb-2">Stephen King</h5>
+                        <p class="text-gray-700 text-base mb-4">
+                          Escritor
+                        </p>
+                        <a href="../Escritores/Stephen-King.html">
+                            <div class=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">ver más</div>
+                            </a>                    </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-center border-4 border-white">
+                    <div class="rounded-lg shadow-lg bg-white max-w-sm">
+                    <a href="../Escritores/Tolkien.html">
+                        <img class="rounded-t-lg" src="../../Recursos/Images/Escritores/Tolkien/cardtolkien.jpg.crdownload" alt=""/>
+                    </a>
+                    <div class="p-6">
+                        <h5 class="text-gray-900 text-xl font-medium mb-2">J. R. R. Tolkien</h5>
+                        <p class="text-gray-700 text-base mb-4">
+                          Escritor
+                        </p>
+                        <a href="../Escritores/Tolkien.html">
+                            <div class=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">ver más</div>
+                            </a>                    </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-center border-4 border-white">
+                    <div class="rounded-lg shadow-lg bg-white max-w-sm">
+                    <a href="../Escritores/Rowling.html">
+                        <img class="rounded-t-lg" src="../../Recursos/Images/Escritores/Rowling/cardRowling.jpg" alt=""/>
+                    </a>
+                    <div class="p-6">
+                        <h5 class="text-gray-900 text-xl font-medium mb-2">J. K. Rowling</h5>
+                        <p class="text-gray-700 text-base mb-4">
+                          Escritora
+                        </p>
+                        <a href="../Escritores/Rowling.html">
+                            <div class=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">ver más</div>
+                            </a>                    </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-center border-4 border-white">
+                    <div class="rounded-lg shadow-lg bg-white max-w-sm">
+                    <a href="../Escritores/Albert-Espinosa.html">
+                        <img class="rounded-t-lg" src="../../Recursos/Images/Escritores/Albert-Espinosa/cardEspinosa.webp" alt=""/>
+                    </a>
+                    <div class="p-6">
+                        <h5 class="text-gray-900 text-xl font-medium mb-2">Albert Espinosa</h5>
+                        <p class="text-gray-700 text-base mb-4">
+                          Ingeniero
+                        </p>
+                        <a href="../Escritores/Albert-Espinosa.html">
+                            <div class=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">ver más</div>
+                            </a>                    </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-center border-4 border-white">
+                    <div class="rounded-lg shadow-lg bg-white max-w-sm">
+                    <a href="../Escritores/Martin.html">
+                        <img class="rounded-t-lg" src="../../Recursos/Images/Escritores/George-Martin/cardMartin.jpg" alt=""/>
+                    </a>
+                    <div class="p-6">
+                        <h5 class="text-gray-900 text-xl font-medium mb-2">George R.R Martin</h5>
+                        <p class="text-gray-700 text-base mb-4">
+                          Escritor
+                        </p>
+                        <a href="../Escritores/Martin.html">
+                            <div class=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">ver más</div>
+                            </a>                    </div>
+                    </div>
+                </div>
+            </div>  
+        </section>
+    </main>
+
+    <footer id="contacto">
+        <div class="contenedor footer-content">
+            <div class="contact">
+                <h2 class="brand">WikiLegends</h2>
+                <p>¡The best artists in the world!</p>
+            </div>
+    
+            <a href="Inicio.html"><img class="icono-footer" src="../../Recursos/Icono.png" alt="Logo"></a>
+            
+            <div class="redes-sociales">
+                <a class="red-social-icono" href="https://www.instagram.com/p/CWS9RZcsTGD/?utm_medium=share_sheet">
+                <i class='bx bxl-instagram movimiento' ></i>
+            </a>
+            
+            <a class="red-social-icono" href="https://twitter.com/xuquer_ce">
+                <i class='bx bxl-twitter movimiento'></i>
+            </a>
+    
+                <a class="red-social-icono" href="https://github.com/Alex-Sts/WikiLegends">
+                <i class='bx bxl-github movimiento'></i>
+            </a>
+    
+            <a class="red-social-icono" href="../Secciones/Codigo.html">
+                <i class='bx bx-code-alt movimiento'></i>
+            </a>
+            </div>
+        </div>
+    
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2021 Copyright:
+    <a class="text-white" href="https://tailwind-elements.com/">WikiLegends</a>
+    </div>
+    
+    </footer>
+
+  <div class="popup" >
+    <section>
+      <h2 class="vacio">.</h2>
+      <article>
+        <h2 class="vacio">.</h2>
+        <img src="../../Recursos/e51a8225-9c07-4650-9b02-53fdc3f6aa75.jpg"  alt="Imagen del popup">
+      </article>
+      <aside>
+        <button id="close" class="float-right text-white">&times;</button>
+        <article class="pt-24" >
+          <h2 class="font-medium leading-tight text-5xl mt-0 mb-2 text-blue-600 titulo">Has oido hablar de WikiLegends Premium?</h2>
+          <p class="text-white">
+              Obtén el verdadero potencial de WikiLegends con nuestra extensión PREMIUM. Descubre premium ahora con un simple click.
+          </p>
+          <a href="Premium.html" class="bg-blue-600 border-blue-600 border-solid text-white float-right boton">VER PREMIUM</a>
+        </article>
+      </aside>
+    </section>
+  </div>
+
+<script src="../../JavaScripts/popup.js"></script>
+
+</body>
+    
+</html>

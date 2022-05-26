@@ -23,7 +23,7 @@ header{
 }
 
 .logo img {
-    height: 150px;
+    height: 200px;
     margin-right: 10px;
 }
 
@@ -53,16 +53,27 @@ nav a:hover{
 }
 
 
-.flex-justify-center{
-    display: flex;
-    padding: 20px;
+.container{
+    background-color: burlywood;
+    padding: 2em;
+    overflow: hidden;
 }
 
-
-.flex-justify-center-2{
-    
-    padding: 10px;
+.item{
+    margin: 1em;
+    padding: 1em;
+    color: black;
+    float: left;
 }
+
+h3{
+    font-size: 2em;
+}
+
+ul{
+    list-style: none;
+}
+
 
 
 

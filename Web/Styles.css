@@ -1,0 +1,300 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root{ 
+	scroll-behavior: smooth;
+   }
+   
+body{
+	   font-family: 'Bebas Neue', cursive;
+	   font-size: 20px;
+}
+
+/* Main */
+
+#primero{
+    flex: 4;
+}
+
+#segundo{
+    flex: 1;
+}
+
+#section1{
+    display: flex;
+}
+
+.contenedor{
+	width: 90%;
+	max-width: 1200px;
+	overflow: hidden;
+	margin: auto;
+	padding: 60px 0;
+}
+
+/* Footer */
+
+footer{
+	background: burlywood;
+}
+
+.footer-content{
+	display: flex;
+	align-items: center;
+	padding-top: 60px;
+	padding-bottom: 40px;
+}
+
+.contact{
+	width: 40%;
+	color: white;
+}
+
+.brand{
+	font-weight: 500;
+	font-size: 40px;
+}
+
+.brand p{
+	font-weight: 500;
+}
+
+.icono-footer{
+	width: 7vw; 
+	margin-left: 7vw; 
+	margin-bottom: 2.5vw;
+}
+
+.redes-sociales{
+	width: 50%;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.red-social-icono{
+	display: inline-block;
+	margin-left: 20px;
+	width: 60px;
+	height: 60px;
+	border: 1px solid white;
+	border-radius: 50%;
+	text-align: center;
+	color: white;
+}
+
+.red-social-icono:hover{
+	background: white;
+	color: burlywood;
+}
+
+.red-social-icono i{
+	font-size: 35px;
+	line-height: 55px;
+}
+
+#div-cartas{
+      display: flex;
+}
+
+#div-cartas > div {
+	width: 30vw;
+}
+
+#div-cartas > div > div img{
+	height: 50%;
+	width: 20vw;
+	object-fit: cover;
+}
+
+.movimiento:hover{
+	-webkit-animation:tada 1.5s ease infinite;
+	animation:tada 1.5s ease infinite
+}
+
+.imagenes-actualizadas{
+	height: 86.7vh;
+}
+.imagenes-actualizadas img{
+	height: auto; 
+	object-fit: cover; 
+	margin-top: 0px;
+}
+
+.cartas-actualizadas{
+	height: 86.7vh;
+}
+.cartas-actualizadas img{
+	height: auto; 
+	object-fit: cover; 
+	margin-top: 0px;
+}
+.nav{
+    width: 300px;
+}
+
+.nav__link{
+    color: #303440;
+    display: block;
+    padding: 15px 0;
+    text-decoration: none;
+}
+
+.nav__link--inside{
+    border-radius: 6px ;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.nav__link--inside:hover{
+	background: burlywood;
+}
+
+.list{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 0 16px 16px 0;
+    background: burlywood;
+}
+
+.list__item{
+    list-style: none;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+
+.list__item--click{
+    cursor: pointer;
+}
+
+.list__button{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.arrow .list__arrow{
+    transform: rotate(90deg);
+}
+
+.list__arrow{
+    margin-left: auto;
+    transition: transform .3s;
+}
+
+.list__show{
+    width: 80%;
+    margin-left: auto;
+    border-left: 2px solid #303440;
+    list-style: none;
+    transition: height .4s;
+    height: 0;
+}
+
+.menu{
+	position: fixed;
+    top: 30px;
+    right: 30px;
+	background: burlywood;
+	width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .5);
+}
+
+.menu-navegador{
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 30vw;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	transition: transform .3s ease-in-out;
+	transform: translate(110%);
+	box-shadow: 0 0 6px rgba(0, 0, 0, .5);
+}
+
+.spread{
+	transform: translate(0);
+}
+
+.menu-navegador a{
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+}
+
+.carta-main-wiki{
+	width: 5vw;
+	height: 5vw;
+}
+
+.carta-main-wiki img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.popup{
+	width: 50vw;
+	height: 50vh;
+	position: fixed;
+	transform: translate(-50%,-50%);
+	left: 50%;
+	top: 50%;
+	border-radius: 0.5vw;
+	display: none; 
+	text-align: center;
+	background-color: rgb(0, 2, 36);
+	z-index: 50;
+}
+.popup section{
+	display: flex;
+}
+.popup .vacio{
+	opacity: 0;
+}
+.popup article{
+	flex: 1;
+}
+.popup aside{
+	flex: 1; 
+	margin-left: 0.5vw; 
+	padding: 1%; 
+	padding: 2vh 2vw;
+}
+.popup img{
+	width: 100%;
+	height: 65%;
+	object-fit: cover;
+}
+.popup p{
+	margin-bottom: 4vw;
+}
+.popup .boton{
+	border-radius: 1.3vw; 
+	border-width: 0.5vw;
+}
+.popup .titulo{
+	margin-bottom: 2vw;
+}
+.div-equipo{
+	text-align: center;
+	display: none;
+	color: black;
+}
+
+.block{
+	padding: 5%;
+}
