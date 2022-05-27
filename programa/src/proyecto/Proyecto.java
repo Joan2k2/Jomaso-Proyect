@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXML.java to edit this template
  */
-package jomaso.proyect;
+package proyecto;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -14,7 +14,7 @@ import javafx.stage.Stage;
  *
  * @author 1erDAM
  */
-public class JomasoProyect extends Application {
+public class Proyecto extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
