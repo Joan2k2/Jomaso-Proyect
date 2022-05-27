@@ -14,28 +14,28 @@
 <AnchorPane id="AnchorPane" prefHeight="586.0" prefWidth="517.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jomaso.proyect.FXMLDocumentController">
    <children>
       <ImageView fx:id="imagenfondo" fitHeight="586.0" fitWidth="517.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" />
-      <AnchorPane fx:id="anchorpanel2" layoutX="104.0" layoutY="32.0" prefHeight="510.0" prefWidth="321.0" style="-fx-background-color: grey;">
+      <AnchorPane fx:id="anchorpanel2" layoutX="98.0" layoutY="38.0" prefHeight="510.0" prefWidth="323.0" style="-fx-background-color: grey;">
          <children>
-            <ImageView fitHeight="147.0" fitWidth="195.0" layoutX="63.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="147.0" fitWidth="354.0" layoutX="50.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Recursos/jomasonuevo2.png" />
+                  <Image url="@../recursos/jomasonuevo2.png" />
                </image>
             </ImageView>
-            <Text fill="WHITE" layoutX="71.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Entra y diviertete">
+            <Text fill="WHITE" layoutX="76.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Log in to continue ">
                <font>
-                  <Font name="Calisto MT Bold" size="24.0" />
+                  <Font name="Comic Sans MS" size="24.0" />
                </font>
             </Text>
-            <TextField fx:id="Nicknameuser" layoutX="71.0" layoutY="213.0" promptText="username" />
-            <TextField fx:id="PasswUser" layoutX="71.0" layoutY="255.0" promptText="Password" />
-            <Separator layoutY="376.0" prefHeight="3.0" prefWidth="322.0" />
-            <Text fill="WHITE" layoutX="77.0" layoutY="425.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don´t have an account?" />
-            <Hyperlink fx:id="hypervinculoregistrarse" layoutX="220.0" layoutY="409.0" style="-fx-background-color: none;" text="Sign-UP" textFill="WHITE">
+            <TextField fx:id="Nicknameuser" layoutX="87.0" layoutY="212.0" onAction="#loginUsr" promptText="Username" />
+            <TextField fx:id="PasswUser" layoutX="86.0" layoutY="255.0" onAction="#loginPassw" promptText="Password" />
+            <Separator layoutX="1.0" layoutY="354.0" prefHeight="3.0" prefWidth="322.0" />
+            <Text fill="WHITE" layoutX="71.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don´t have an account?" />
+            <Hyperlink fx:id="hypervinculoregistrarse" layoutX="202.0" layoutY="372.0" onAction="#llevaaregistrarse" style="-fx-background-color: none;" text="Sign-UP" textFill="WHITE" underline="true">
                <effect>
                   <Bloom />
                </effect>
             </Hyperlink>
-            <Button fx:id="botonLogin" layoutX="63.0" layoutY="306.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="170.0" style="-fx-background-color: white; -fx-border-radius: 50px; -fx-border-style: inset;" text="Log-In" />
+            <Button fx:id="botonLogin" layoutX="76.0" layoutY="302.0" mnemonicParsing="false" onAction="#logearte" prefHeight="30.0" prefWidth="170.0" style="-fx-background-color: white; -fx-border-radius: 50px; -fx-border-style: inset;" text="Log-In" />
          </children>
       </AnchorPane>
    </children>

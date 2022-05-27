@@ -28,9 +28,9 @@ public class UsuarioModel extends DBUtil {
 			
 			stmt.setInt(1, u.getId());
 			stmt.setString(2,u.getNickName() );
-			stmt.setInt(3, );
-			stmt.setInt(4, ());
-			
+//			stmt.setInt(3, );
+//			stmt.setInt(4, ());
+//			
 			stmt.execute();
 			resultado = true;
 			
