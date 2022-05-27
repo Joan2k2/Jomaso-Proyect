@@ -1,14 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyecto.FXMLDocumentController">
-    <children>
-        <Button layoutX="126" layoutY="90" text="Click Me!" onAction="#handleButtonAction" fx:id="button" />
-        <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
-    </children>
+<AnchorPane id="AnchorPane" prefHeight="586.0" prefWidth="517.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jomaso.proyect.FXMLDocumentController">
+   <children>
+      <ImageView fx:id="imagenfondo" fitHeight="586.0" fitWidth="517.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" />
+      <AnchorPane fx:id="anchorpanel2" layoutX="104.0" layoutY="32.0" prefHeight="510.0" prefWidth="321.0" style="-fx-background-color: grey;">
+         <children>
+            <ImageView fitHeight="147.0" fitWidth="195.0" layoutX="63.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Recursos/jomasonuevo2.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="71.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Entra y diviertete">
+               <font>
+                  <Font name="Calisto MT Bold" size="24.0" />
+               </font>
+            </Text>
+            <TextField fx:id="Nicknameuser" layoutX="71.0" layoutY="213.0" promptText="username" />
+            <TextField fx:id="PasswUser" layoutX="71.0" layoutY="255.0" promptText="Password" />
+            <Separator layoutY="376.0" prefHeight="3.0" prefWidth="322.0" />
+            <Text fill="WHITE" layoutX="77.0" layoutY="425.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don´t have an account?" />
+            <Hyperlink fx:id="hypervinculoregistrarse" layoutX="220.0" layoutY="409.0" style="-fx-background-color: none;" text="Sign-UP" textFill="WHITE">
+               <effect>
+                  <Bloom />
+               </effect>
+            </Hyperlink>
+            <Button fx:id="botonLogin" layoutX="63.0" layoutY="306.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="170.0" style="-fx-background-color: white; -fx-border-radius: 50px; -fx-border-style: inset;" text="Log-In" />
+         </children>
+      </AnchorPane>
+   </children>
 </AnchorPane>
