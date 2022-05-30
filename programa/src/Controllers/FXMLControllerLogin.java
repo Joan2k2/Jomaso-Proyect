@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
-package proyecto;
+package Controllers;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -20,7 +20,7 @@ import javafx.scene.layout.AnchorPane;
  *
  * @author 1erDAM
  */
-public class FXMLDocumentController implements Initializable {
+public class FXMLControllerLogin implements Initializable {
 
     @FXML
     private ImageView imagenfondo;
