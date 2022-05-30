@@ -11,31 +11,36 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="586.0" prefWidth="517.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jomaso.proyect.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="759.0" prefWidth="517.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLRegistrarseController">
    <children>
-      <ImageView fx:id="imagenfondo" fitHeight="586.0" fitWidth="517.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" />
-      <AnchorPane fx:id="anchorpanel2" layoutX="98.0" layoutY="38.0" prefHeight="510.0" prefWidth="323.0" style="-fx-background-color: grey;">
+      <ImageView fx:id="imagenfondo" fitHeight="759.0" fitWidth="517.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" />
+      <AnchorPane fx:id="anchorpanel2" layoutX="98.0" layoutY="38.0" prefHeight="625.0" prefWidth="323.0" style="-fx-background-color: grey;">
          <children>
             <ImageView fitHeight="147.0" fitWidth="354.0" layoutX="50.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../recursos/jomasonuevo2.png" />
                </image>
             </ImageView>
-            <Text fill="WHITE" layoutX="76.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Log in to continue ">
+            <Text fill="WHITE" layoutX="101.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registrate">
                <font>
                   <Font name="Comic Sans MS" size="24.0" />
                </font>
             </Text>
-            <TextField fx:id="Nicknameuser" layoutX="87.0" layoutY="212.0" onAction="#loginUsr" promptText="Username" />
-            <TextField fx:id="PasswUser" layoutX="86.0" layoutY="255.0" onAction="#loginPassw" promptText="Password" />
-            <Separator layoutX="1.0" layoutY="354.0" prefHeight="3.0" prefWidth="322.0" />
-            <Text fill="WHITE" layoutX="71.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don´t have an account?" />
-            <Hyperlink fx:id="hypervinculoregistrarse" layoutX="202.0" layoutY="372.0" onAction="#llevaaregistrarse" style="-fx-background-color: none;" text="Sign-UP" textFill="WHITE" underline="true">
+            <TextField fx:id="Nicknameuser" layoutX="88.0" layoutY="288.0" onAction="#loginUsr" promptText="Username*" />
+            <TextField fx:id="PasswUser" layoutX="88.0" layoutY="326.0" onAction="#loginPassw" promptText="Password*" />
+            <Separator layoutX="2.0" layoutY="509.0" prefHeight="3.0" prefWidth="322.0" />
+            <Text fill="WHITE" layoutX="89.0" layoutY="542.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ya tienes cuenta?" />
+            <Hyperlink fx:id="hypervinculoIniciarSesion" layoutX="203.0" layoutY="526.0" onAction="#llevaaregistrarse" style="-fx-background-color: none;" text="Log-In" textFill="WHITE" underline="true">
                <effect>
                   <Bloom />
                </effect>
             </Hyperlink>
-            <Button fx:id="botonLogin" layoutX="76.0" layoutY="302.0" mnemonicParsing="false" onAction="#logearte" prefHeight="30.0" prefWidth="170.0" style="-fx-background-color: white; -fx-border-radius: 50px; -fx-border-style: inset;" text="Log-In" />
+            <Button fx:id="botonRegistrarte" layoutX="75.0" layoutY="428.0" mnemonicParsing="false" onAction="#registrarte" prefHeight="30.0" prefWidth="170.0" style="-fx-background-color: white; -fx-border-radius: 50px; -fx-border-style: inset;" text="Registrate" />
+            <TextField fx:id="NombreUser" layoutX="88.0" layoutY="131.0" onAction="#loginUsr" promptText="Nombre*" />
+            <TextField fx:id="ApellidoUser" layoutX="88.0" layoutY="166.0" onAction="#loginUsr" promptText="Apellido" />
+            <TextField fx:id="CorreoUser" layoutX="89.0" layoutY="201.0" onAction="#loginUsr" promptText="Correo*" />
+            <TextField fx:id="EdadUser" layoutX="89.0" layoutY="242.0" onAction="#loginUsr" promptText="Edad*" />
+            <TextField fx:id="PasswUserConfirma" layoutX="88.0" layoutY="367.0" onAction="#loginPassw" promptText="Password*" />
          </children>
       </AnchorPane>
    </children>
