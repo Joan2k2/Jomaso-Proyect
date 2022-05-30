@@ -25,12 +25,15 @@ public class Usuario {
     private int[] deportes;
     private boolean admin;
     private Blob img;
+    private String correo;
+    private int edad;
+    private String descripcion;
     
     //Constructor default
     public Usuario(){}
     
     //Constructor con todos los atributos
-    public Usuario(String nickName, String nombre, String apellidos, String contrasenya, int id, Equipo[] equipos, int[] deportes, boolean admin, Blob img) {
+    public Usuario(String nickName, String nombre, String apellidos, String contrasenya, int id, Equipo[] equipos, int[] deportes, boolean admin, Blob img, String correo, int edad, String descripcion) {    
         this.nickName = nickName;
         this.nombre = nombre;
         this.apellidos = apellidos;
@@ -40,21 +43,51 @@ public class Usuario {
         this.deportes = deportes;
         this.admin = admin;
         this.img = img;
+        this.correo = correo;
+        this.edad = edad;
+        this.descripcion = descripcion;
     }
+
     //user creacion generica
-    public Usuario(String nickName, String nombre, String contrasenya, int id, Blob img) {
+
+    public Usuario(String nickName, String nombre, String contrasenya, String correo, int edad) {
         this.nickName = nickName;
         this.nombre = nombre;
         this.contrasenya = contrasenya;
-        this.id = id;
-        this.img = img;
+        this.correo = correo;
+        this.edad = edad;
     }
+    
     
     //Constructor con solo id
     public Usuario(int id) {
         this.id = id;
     }
 
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+    
     public String getNickName() {
         return nickName;
     }
