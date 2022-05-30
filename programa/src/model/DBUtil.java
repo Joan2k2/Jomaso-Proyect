@@ -16,9 +16,9 @@ import java.sql.SQLException;
  */
 public class DBUtil {
 	private Connection conn;
-	private String cadenaConexion = "jdbc:mysql://localhost:3306/XXX";
-	private String nombreUsuario = "root";
-	private String password = "";
+	private String cadenaConexion = "jdbc:mysql:https://jomaso.ddns.net:3306/joma_bdd";
+	private String nombreUsuario = "joma_bdd";
+	private String password = "1234567";
 	
         
         /**ABRE conexion con la base de datos
