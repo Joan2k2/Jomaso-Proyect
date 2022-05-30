@@ -4,6 +4,8 @@
  */
 package model;
 
+import java.sql.Blob;
+
 /**
  * Clase usada para almacenar la informacion a usar de los equipos
  * 
@@ -17,15 +19,37 @@ public class Equipo {
     private int admin;
     private int[] deportes;
     private String nombre;
-
+    private Blob img;
+    
+    //Constructor default
     public Equipo(){}
-    public Equipo(int id, int[] jugadores, int admin, int[] deportes, String nombre) {
+    
+    //Constructor con todos los atributos
+    public Equipo(int id, int[] jugadores, int admin, int[] deportes, String nombre, Blob img) {
         this.id = id;
         this.jugadores = jugadores;
         this.admin = admin;
         this.deportes = deportes;
         this.nombre = nombre;
+        this.img = img;
     }
+    
+    //equipo generico
+    public Equipo(int id, int admin, String nombre, Blob img) {
+        this.id = id;
+        this.admin = admin;
+        this.nombre = nombre;
+        this.img = img;
+    }
+
+    public Blob getImg() {
+        return img;
+    }
+
+    public void setImg(Blob img) {
+        this.img = img;
+    }
+    
     public Equipo(int id) {
         this.id = id;
     }
