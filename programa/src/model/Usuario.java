@@ -4,7 +4,8 @@
  */
 package model;
 
-import java.util.Scanner;
+import java.sql.Blob;
+
 
 /**
  * Clase usada para almacenar la informacion a usar del usuario
@@ -23,16 +24,33 @@ public class Usuario {
     private Equipo[] equipos;
     private int[] deportes;
     private boolean admin;
+    private Blob img;
+    
+    //Constructor default
     public Usuario(){}
-    public Usuario(String nickName, String nombre, String apellidos, int id, Equipo[] equipos, int[] deportes, boolean admin) {
+    
+    //Constructor con todos los atributos
+    public Usuario(String nickName, String nombre, String apellidos, String contrasenya, int id, Equipo[] equipos, int[] deportes, boolean admin, Blob img) {
         this.nickName = nickName;
         this.nombre = nombre;
         this.apellidos = apellidos;
+        this.contrasenya = contrasenya;
         this.id = id;
         this.equipos = equipos;
         this.deportes = deportes;
         this.admin = admin;
+        this.img = img;
     }
+    //user creacion generica
+    public Usuario(String nickName, String nombre, String contrasenya, int id, Blob img) {
+        this.nickName = nickName;
+        this.nombre = nombre;
+        this.contrasenya = contrasenya;
+        this.id = id;
+        this.img = img;
+    }
+    
+    //Constructor con solo id
     public Usuario(int id) {
         this.id = id;
     }
@@ -61,6 +79,14 @@ public class Usuario {
         this.apellidos = apellidos;
     }
 
+    public String getContrasenya() {
+        return contrasenya;
+    }
+
+    public void setContrasenya(String contrasenya) {
+        this.contrasenya = contrasenya;
+    }
+
     public int getId() {
         return id;
     }
@@ -85,13 +111,21 @@ public class Usuario {
         this.deportes = deportes;
     }
 
-    public boolean isAdmin() {
+    public boolean getAdmin() {
         return admin;
     }
 
     public void setAdmin(boolean admin) {
         this.admin = admin;
     }
+
+    public Blob getImg() {
+        return img;
+    }
+
+    public void setImg(Blob img) {
+        this.img = img;
+    }
+
     
- 
 }
