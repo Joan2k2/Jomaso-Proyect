@@ -17,22 +17,22 @@ import java.util.ArrayList;
  */
 public class UsuarioModel extends DBUtil {
     
-    public boolean crearUsuario(Usuario u) {
-		Boolean resultado = false;
+    public void crearUsuario(Usuario u) {
 		
 		try {
 			//Iniciamos conexión
-			String insertSql = "";
+			String insertSql = "CALL addUsuario(?,?,?,?,?)";
 				
 			PreparedStatement stmt = this.getConexion().prepareStatement(insertSql);
-			
-			stmt.setInt(1, u.getId());
-			stmt.setString(2,u.getNickName() );
-			stmt.setInt(3, );
-			stmt.setInt(4, ());
+			stmt.setString(1,u.getNickName() );
+			stmt.setString(2,u.getNombre());
+			stmt.setString(3,u.getApellidos());
+                        stmt.setString(4,u.getContrasenya());
+                        stmt.setBoolean(5,u.getAdmin());
+                        
 			
 			stmt.execute();
-			resultado = true;
+			
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -40,49 +40,30 @@ public class UsuarioModel extends DBUtil {
 		finally {
 			//Cerramos conexión
 			this.cerrarConexion();
-			return resultado;
 		}
+        
 	}
     
-    public ArrayList<Usuario> getUsuario() {
-		
-		ArrayList<Usuario> listaAlumnos = new ArrayList<Usuario>();
-		
-		try {
-			//Iniciamos conexión
-			String sql = "";
-			PreparedStatement stmt = (PreparedStatement) this.getConexion();
-			ResultSet rs = stmt.executeQuery();  
-		
-			while(rs.next()) {
-				
-                            
-                                String nickN=rs.getString("nickName");
-				int id = rs.getInt("id");
-				String nombre = rs.getString("nombre");
-				int edad = rs.getInt("edad");
-                                String correo=rs.getString("correo");
-                                String apellidos=rs.getString("apellidos");
-                                boolean admin=rs.getBoolean("admin");
-                                Blob foto=rs.getBlob("foto");
-                                
-                                
-								
-				Usuario p = new Usuario();
-				listaAlumnos.add(p);
-			}
-			
-			return listaAlumnos;
+    public void borraUsuario(Usuario u){
+        try{				
+		String insertSql="CALL borraUsuario(?,?)";
+                
+                PreparedStatement stmt=this.getConexion().prepareStatement(insertSql);
+                stmt.setInt(1, u.getId());
+                stmt.setString(2, u.getContrasenya());
+                
+                stmt.execute();
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
-			return null;
 		} 
 		finally {
 			//Cerramos conexión
 			this.cerrarConexion();
 		}
-	}
+    }
+    
+   
 
 
     //maradona 
