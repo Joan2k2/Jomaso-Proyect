@@ -7,13 +7,22 @@ package model;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-/**
- *
- * @author 1erDAM
+/**Clase encargada de gestionar las acciones de la base de datos
+ * en relacion a la clase Deporte
+ *  
+ * @author Jose Ramon
+ * @version 0.1
+ * @extends DBUtil
  */
 public class DeporteModel extends DBUtil {
     
-    
+    /** Crea nuevos deportes en la base de datos
+    * segun una clase Deporte 
+    *  
+    * @author Jose Ramon
+    * @param Deporte 
+    * @version 0.1
+    */
     public void crearDeporte(Deporte d) {
 		
 	try {
@@ -36,7 +45,14 @@ public class DeporteModel extends DBUtil {
         
     }
     
-    public void borraUsuario(Deporte d){
+    /**Borra un deporte de la base de datos
+    * segun un los datos de una clase deporte 
+    *  
+    * @author Jose Ramon
+    * @param Deporte
+    * @version 0.1
+    */
+    public void borraDeporte(Deporte d){
        try{				
             String insertSql="CALL borraDeporte(?)";
                 
