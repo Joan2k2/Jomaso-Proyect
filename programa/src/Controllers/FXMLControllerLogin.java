@@ -85,7 +85,7 @@ public class FXMLControllerLogin implements Initializable {
     private void logearte(ActionEvent event) {
         try {
 
-                     FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vistas/FXMLRegistrarse.fxml"));
+                     FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vistas/FXMLHome.fxml"));
 
                      Parent root = loader.load();
 
