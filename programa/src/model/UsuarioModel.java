@@ -73,11 +73,10 @@ public class UsuarioModel extends DBUtil {
     */
     public void borraUsuario(Usuario u){
         try{				
-		String insertSql="CALL borraUsuario(?,?)";
+		String insertSql="CALL borraUsuario(?)";
                 
                 PreparedStatement stmt=this.getConexion().prepareStatement(insertSql);
                 stmt.setInt(1, u.getId());
-                stmt.setString(2, u.getContrasenya());
                 
                 stmt.execute();
 			
