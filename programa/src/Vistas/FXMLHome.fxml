@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="594.0" prefWidth="848.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MenuBar prefHeight="25.0" prefWidth="662.0">
+        <menus>
+            <Menu mnemonicParsing="false">
+               <graphic>
+                  <ImageView fitHeight="81.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../recursos/jomasonuevo2.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Home" />
+          <Menu mnemonicParsing="false" text="Equipos" />
+          <Menu mnemonicParsing="false" text="Torneos" />
+            <Menu mnemonicParsing="false" text="Jugadores" />
+        </menus>
+      </MenuBar>
+      <AnchorPane prefHeight="504.0" prefWidth="848.0">
+         <children>
+            <Text layoutX="108.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Noticias" wrappingWidth="149.13671875">
+               <font>
+                  <Font name="Consolas" size="32.0" />
+               </font>
+            </Text>
+            <Text layoutX="482.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Proximos Torneos" wrappingWidth="285.13671875">
+               <font>
+                  <Font name="Consolas" size="32.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="120.0" fitWidth="140.0" layoutX="26.0" layoutY="122.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../Desktop/Web/images/noticias/basketcallejero.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="83.0" fitWidth="140.0" layoutX="199.0" layoutY="122.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../Desktop/Web/images/noticias/futbolcallejero.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="120.0" fitWidth="140.0" layoutX="26.0" layoutY="307.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../Desktop/Web/images/noticias/hockey.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="120.0" fitWidth="140.0" layoutX="199.0" layoutY="307.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../Desktop/Web/images/noticias/balondeoro.jpg" />
+               </image>
+            </ImageView>
+            <Text layoutX="70.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Noticia 1" />
+            <Text layoutX="243.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Noticia 1" />
+            <Text layoutX="70.0" layoutY="459.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Noticia 1" />
+            <Text layoutX="243.0" layoutY="460.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Noticia 1" />
+            <DatePicker editable="false" layoutX="400.0" layoutY="136.0" prefHeight="26.0" prefWidth="149.0" showWeekNumbers="true" />
+            <DatePicker editable="false" layoutX="400.0" layoutY="227.0" prefHeight="26.0" prefWidth="149.0" />
+            <DatePicker editable="false" layoutX="400.0" layoutY="327.0" prefHeight="26.0" prefWidth="149.0" />
+            <DatePicker editable="false" layoutX="400.0" layoutY="418.0" prefHeight="26.0" prefWidth="149.0" />
+            <Text layoutX="612.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Text layoutX="612.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Text layoutX="612.0" layoutY="344.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Text layoutX="612.0" layoutY="435.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
