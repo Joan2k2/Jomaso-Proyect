@@ -32,14 +32,15 @@ public class UsuarioModel extends DBUtil {
 		
 	try {
             //Iniciamos conexión
-            String insertSql = "CALL addUsuario(?,?,?,?,?)";
+            String insertSql = "CALL addUsuario(?,?,?,?,?,?)";
 
             PreparedStatement stmt = this.getConexion().prepareStatement(insertSql);
             stmt.setString(1,u.getNickName() );
             stmt.setString(2,u.getNombre());
-            stmt.setString(3,u.getCorreo());
-            stmt.setString(4,u.getContrasenya());
-            stmt.setInt(4,u.getEdad());
+            stmt.setString(3,u.getApellidos());
+            stmt.setString(4,u.getCorreo());
+            stmt.setString(5,u.getContrasenya());
+            stmt.setInt(6,u.getEdad());
             // Traduce a integer si el usuario es administrador o no
             // si es 1 el usuario es administrador y si es 0 no lo es
             int admin;
