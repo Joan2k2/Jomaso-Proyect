@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="586.0" prefWidth="517.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLControllerLogin">
+   <children>
+      <ImageView fx:id="imagenfondo" fitHeight="586.0" fitWidth="517.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" />
+      <AnchorPane fx:id="anchorpanel2" layoutX="98.0" layoutY="38.0" prefHeight="510.0" prefWidth="323.0" style="-fx-background-color: grey;">
+         <children>
+            <ImageView fitHeight="147.0" fitWidth="323.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../recursos/jomasonuevo2.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="10.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inicia sesión para continuar">
+               <font>
+                  <Font name="Comic Sans MS" size="24.0" />
+               </font>
+            </Text>
+            <TextField fx:id="Nicknameuser" layoutX="87.0" layoutY="212.0" promptText="Username" />
+            <TextField fx:id="PasswUser" layoutX="86.0" layoutY="255.0" promptText="Password" />
+            <Separator layoutY="354.0" prefHeight="3.0" prefWidth="323.0" />
+            <Text fill="WHITE" layoutX="71.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No tienes cuenta?" />
+            <Hyperlink fx:id="hypervinculoregistrarse" layoutX="202.0" layoutY="372.0" onAction="#llevaaregistrarse" style="-fx-background-color: none;" text="Sign-UP" textFill="WHITE" underline="true">
+               <effect>
+                  <Bloom />
+               </effect>
+            </Hyperlink>
+            <Button fx:id="botonLogin" layoutX="76.0" layoutY="302.0" mnemonicParsing="false" onAction="#logearte" prefHeight="30.0" prefWidth="170.0" style="-fx-background-color: white; -fx-border-radius: 50px; -fx-border-style: inset;" text="Log-In" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
