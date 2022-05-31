@@ -22,8 +22,8 @@ public class EquipoModel extends DBUtil {
     *  
     * @author Jose Ramon
     * @version 0.1
-    * @param Equipo
-    * @param Usuario
+    * @param "Equipo"
+    * @param "Usuario"
     */
     public void crearEquipo(Usuario u,Equipo eq) {
 		
@@ -52,8 +52,8 @@ public class EquipoModel extends DBUtil {
     *  
     * @author Jose Ramon
     * @version 0.1
-    * @param Equipo
-    * @param Usuario
+    * @param "Equipo"
+    * @param "Usuario"
     */
     public void borraEquipo(Usuario u,Equipo eq){
         try{				
@@ -79,8 +79,8 @@ public class EquipoModel extends DBUtil {
     *  
     * @author Jose Ramon
     * @version 0.1
-    * @param Equipo
-    * @param Usuario
+    * @param "Equipo"
+    * @param "Usuario"
     */
     public void addJugador(Usuario u,Equipo eq){
         try{				
@@ -106,8 +106,8 @@ public class EquipoModel extends DBUtil {
     *  
     * @author Jose Ramon
     * @version 0.1
-    * @param Equipo
-    * @param Usuario
+    * @param "Equipo"
+    * @param "Usuario"
     */
     public void borrarJugador(Usuario u,Equipo eq){
         try{				
