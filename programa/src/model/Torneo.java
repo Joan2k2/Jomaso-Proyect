@@ -17,25 +17,22 @@ public class Torneo {
     private String descripcion;
     private String nombre;
     private String fechaInscripcion;
-    private String fechaChecking;
     private String fehcaInicio;
     
     //Constructor con todos los atributos
-    public Torneo(int id, int[] equipos, String descripcion, String nombre, String fechaInscripcion, String fechaChecking, String fehcaInicio) {
+    public Torneo(int id, int[] equipos, String descripcion, String nombre, String fechaInscripcion, String fehcaInicio) {
         this.id = id;
         this.equipos = equipos;
         this.descripcion = descripcion;
         this.nombre = nombre;
         this.fechaInscripcion = fechaInscripcion;
-        this.fechaChecking = fechaChecking;
         this.fehcaInicio = fehcaInicio;
     }
     //Constructor creacion generica
-    public Torneo(int id, String nombre, String fechaInscripcion, String fechaChecking, String fehcaInicio) {
+    public Torneo(int id, String nombre, String fechaInscripcion, String fehcaInicio) {
         this.id = id;
         this.nombre = nombre;
         this.fechaInscripcion = fechaInscripcion;
-        this.fechaChecking = fechaChecking;
         this.fehcaInicio = fehcaInicio;
     }
     
@@ -85,14 +82,6 @@ public class Torneo {
 
     public void setFechaInscripcion(String fechaInscripcion) {
         this.fechaInscripcion = fechaInscripcion;
-    }
-
-    public String getFechaChecking() {
-        return fechaChecking;
-    }
-
-    public void setFechaChecking(String fechaChecking) {
-        this.fechaChecking = fechaChecking;
     }
 
     public String getFehcaInicio() {
