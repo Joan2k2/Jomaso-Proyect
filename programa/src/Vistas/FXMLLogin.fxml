@@ -16,7 +16,7 @@
       <ImageView fx:id="imagenfondo" fitHeight="586.0" fitWidth="517.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" />
       <AnchorPane fx:id="anchorpanel2" layoutX="98.0" layoutY="38.0" prefHeight="510.0" prefWidth="323.0" style="-fx-background-color: grey;">
          <children>
-            <ImageView fitHeight="147.0" fitWidth="354.0" layoutX="50.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="147.0" fitWidth="323.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../recursos/jomasonuevo2.png" />
                </image>
@@ -28,7 +28,7 @@
             </Text>
             <TextField fx:id="Nicknameuser" layoutX="87.0" layoutY="212.0" promptText="Username" />
             <TextField fx:id="PasswUser" layoutX="86.0" layoutY="255.0" promptText="Password" />
-            <Separator layoutX="1.0" layoutY="354.0" prefHeight="3.0" prefWidth="322.0" />
+            <Separator layoutY="354.0" prefHeight="3.0" prefWidth="323.0" />
             <Text fill="WHITE" layoutX="71.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No tienes cuenta?" />
             <Hyperlink fx:id="hypervinculoregistrarse" layoutX="202.0" layoutY="372.0" onAction="#llevaaregistrarse" style="-fx-background-color: none;" text="Sign-UP" textFill="WHITE" underline="true">
                <effect>
