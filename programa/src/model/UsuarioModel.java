@@ -25,7 +25,7 @@ public class UsuarioModel extends DBUtil {
     *  (nickename, nombre, correo, contrasenya y edad)
     * 
     * @author Jose Ramon
-    * @param Usuario
+    * @param "Usuario"
     * @version 0.1
     */
     public void crearUsuario(Usuario u) {
