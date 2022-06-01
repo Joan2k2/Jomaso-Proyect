@@ -56,7 +56,9 @@ public class TorneoModel extends DBUtil{
     * @param "Torneo"
     * @param "Usuario"
      */
-    public void borrarTorneo(Torneo t, Usuario u){
+    public boolean borrarTorneo(Torneo t, Usuario u){
+        boolean retorno=false;
+        
         try {
             //Iniciamos conexión
             String insertSql = "CALL borraTorneo(?,?)";
@@ -74,6 +76,7 @@ public class TorneoModel extends DBUtil{
             //Cerramos conexión
             this.cerrarConexion();
 	}
+        return retorno;
     }
     
     /**Inscribe 
@@ -84,7 +87,7 @@ public class TorneoModel extends DBUtil{
     public void inscribEquipo(Torneo t, Equipo eq){
         try {
             //Iniciamos conexión
-            String insertSql = "CALL inscribEquipo(?,?)";
+            String insertSql = "SELECT `inscribEquipo`(?, ?)";
 
             PreparedStatement stmt = this.getConexion().prepareStatement(insertSql);
             stmt.setInt(1,eq.getId());
