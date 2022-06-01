@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.image.Image?>
@@ -13,7 +13,7 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="594.0" prefWidth="848.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLHomeController">
    <children>
-      <MenuBar prefHeight="25.0" prefWidth="662.0">
+      <MenuBar prefHeight="20.0" prefWidth="848.0">
         <menus>
             <Menu mnemonicParsing="false">
                <graphic>
@@ -24,23 +24,23 @@
                   </ImageView>
                </graphic>
             </Menu>
-          <Menu mnemonicParsing="false" text="Home" />
-          <Menu mnemonicParsing="false" text="Equipos" />
-          <Menu mnemonicParsing="false" text="Torneos" />
-            <Menu mnemonicParsing="false" text="Jugadores" />
+          <Menu id="home" mnemonicParsing="false" text="Home" />
+          <Menu id="equipos" mnemonicParsing="false" text="Equipos" />
+          <Menu id="torneos" mnemonicParsing="false" text="Torneos" />
+            <Menu id="jugadores" mnemonicParsing="false" text="Jugadores" />
         </menus>
          <VBox.margin>
             <Insets />
          </VBox.margin>
       </MenuBar>
-      <AnchorPane prefHeight="504.0" prefWidth="848.0">
+      <AnchorPane prefHeight="578.0" prefWidth="848.0">
          <children>
             <Text layoutX="108.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Noticias" wrappingWidth="149.13671875">
                <font>
                   <Font name="Consolas" size="32.0" />
                </font>
             </Text>
-            <Text layoutX="482.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Proximos Torneos" wrappingWidth="285.13671875">
+            <Text layoutX="442.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Proximos Torneos" wrappingWidth="285.13671875">
                <font>
                   <Font name="Consolas" size="32.0" />
                </font>
@@ -69,14 +69,19 @@
             <Text layoutX="243.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Noticia 1" />
             <Text layoutX="70.0" layoutY="459.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Noticia 1" />
             <Text layoutX="243.0" layoutY="460.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Noticia 1" />
-            <DatePicker fx:id="PrimerTorneo" editable="false" layoutX="400.0" layoutY="136.0" prefHeight="26.0" prefWidth="149.0" showWeekNumbers="true" />
-            <DatePicker fx:id="SegundoTorneo" editable="false" layoutX="400.0" layoutY="227.0" prefHeight="26.0" prefWidth="149.0" />
-            <DatePicker fx:id="TercerTorneo" editable="false" layoutX="400.0" layoutY="327.0" prefHeight="26.0" prefWidth="149.0" />
-            <DatePicker fx:id="CuartoTorneo" editable="false" layoutX="400.0" layoutY="418.0" prefHeight="26.0" prefWidth="149.0" />
             <Text layoutX="612.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
             <Text layoutX="612.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
             <Text layoutX="612.0" layoutY="344.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
             <Text layoutX="612.0" layoutY="435.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <Label layoutX="461.0" layoutY="140.0" text="Label" />
+            <Label layoutX="461.0" layoutY="231.0" text="Label" />
+            <Label layoutX="461.0" layoutY="331.0" text="Label" />
+            <Label layoutX="461.0" layoutY="422.0" text="Label" />
+            <ImageView fitHeight="72.0" fitWidth="47.0" layoutX="788.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../recursos/images/descarga.jpg" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </children>

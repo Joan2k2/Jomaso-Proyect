@@ -18,14 +18,6 @@ import javafx.scene.control.DatePicker;
  */
 public class FXMLHomeController implements Initializable {
 
-    @FXML
-    private DatePicker PrimerTorneo;
-    @FXML
-    private DatePicker SegundoTorneo;
-    @FXML
-    private DatePicker TercerTorneo;
-    @FXML
-    private DatePicker CuartoTorneo;
 
     /**
      * Initializes the controller class.
