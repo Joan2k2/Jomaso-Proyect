@@ -7,12 +7,23 @@ package model;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-/**
+/**Clase encargada de gestionar las acciones de la base de datos
+ * en relacion a la clase Torneo
  *
- * @author 1erDAM
+ * @author jose Ramon
+ * @version 0.1
+ * @extends DBUtil
  */
 public class TorneoModel extends DBUtil{
     
+    /**Crea nuevo Torneo en la base de datos
+    * segun una clase torneo
+    * (nombre*, descripcion, fechaInicio*, fechaInscripcion*)
+    * 
+    * @author Jose Ramon
+    * @version 0.1
+    * @param "Torneo"
+     */
     public void crearTorneo(Torneo t) {
 		
 	try {
@@ -36,6 +47,15 @@ public class TorneoModel extends DBUtil{
 	}
     }
     
+    /**Borra un torneo de la base de datos
+    * segun un los datos de una clase Usuario y Torneo
+    * (Id Usuario e Id Torneo)
+    * 
+     * @author Jose Ramon
+    * @version 0.1
+    * @param "Torneo"
+    * @param "Usuario"
+     */
     public void borrarTorneo(Torneo t, Usuario u){
         try {
             //Iniciamos conexión
@@ -56,6 +76,11 @@ public class TorneoModel extends DBUtil{
 	}
     }
     
+    /**Inscribe 
+     * 
+     * @param t
+     * @param eq 
+     */
     public void inscribEquipo(Torneo t, Equipo eq){
         try {
             //Iniciamos conexión
