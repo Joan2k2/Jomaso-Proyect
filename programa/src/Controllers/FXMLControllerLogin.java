@@ -77,29 +77,29 @@ public class FXMLControllerLogin implements Initializable {
     @FXML
     private void logearte(ActionEvent event) {
         
+       try {
+                    
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vistas/FXMLMenu.fxml"));
+
+                    Parent root = loader.load();
+
+                    Scene scene = new Scene(root);
+                    Stage stage = new Stage();
+
+                    stage.setScene(scene);
+                    stage.show();
+
+                    Stage myStage = (Stage) this.botonLogin.getScene().getWindow();
+                    myStage.close();
+
+                } catch (IOException ex) {
+                    Logger.getLogger(FXMLRegistrarseController.class.getName()).log(Level.SEVERE, null, ex);
+                }
         
         
         
         
-        
-        try {
-
-                     FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vistas/FXMLHome.fxml"));
-
-                     Parent root = loader.load();
-
-                     Scene scene = new Scene(root);
-                     Stage stage = new Stage();
-
-                     stage.setScene(scene);
-                     stage.show();
-
-                     Stage myStage = (Stage) this.botonLogin.getScene().getWindow();
-                     myStage.close();
-
-                 } catch (IOException ex) {
-                     Logger.getLogger(FXMLRegistrarseController.class.getName()).log(Level.SEVERE, null, ex);
-                 }
+       
         
         
     }
