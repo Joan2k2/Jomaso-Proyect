@@ -22,6 +22,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import model.Usuario;
 
 /**
  * FXML Controller class
@@ -76,6 +77,11 @@ public class FXMLControllerLogin implements Initializable {
 
     @FXML
     private void logearte(ActionEvent event) {
+        
+        
+        
+        
+        
         
        try {
                     

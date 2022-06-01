@@ -4,21 +4,28 @@
  */
 package model;
 
-/**
- *
- * @author 1erDAM
- */
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.sql.Statement;
 
+/**Clase encargada de la gestion de abrir y cerrar la conexion con la base de datos
+ *  
+ * @author Jose Ramon
+ * @version 0.1
+ * @extends Object
+ */
 public class DBUtil {
 	private Connection conn;
-	private String cadenaConexion = "jdbc:mysql://localhost:3306/XXX";
-	private String nombreUsuario = "root";
-	private String password = "";
+	private String cadenaConexion = "jdbc:mysql:https://jomaso.ddns.net:3306/joma_bdd";
+	private String nombreUsuario = "joma_jomabbusr";
+	private String password = "1234567";
 	
+        
+        /**ABRE conexion con la base de datos
+         * 
+         * @author Jose Ramon
+         * @version 0.1
+        */
 	public Connection getConexion() {
 		
 		try {
@@ -30,7 +37,12 @@ public class DBUtil {
 			return null;
 		}
 	}
-	
+        
+	/**CIERRA conexion con la base de datos
+         * 
+         * @author Jose Ramon
+         * @version 0.1
+         */
 	public void cerrarConexion() {
 		try {
 			this.conn.close();
