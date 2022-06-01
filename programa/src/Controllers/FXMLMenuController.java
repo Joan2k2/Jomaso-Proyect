@@ -10,22 +10,26 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Menu;
+import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
  *
  * @author 1erDAM
  */
-public class FXMLHomeController implements Initializable {
+public class FXMLMenuController implements Initializable {
 
     @FXML
-    private DatePicker PrimerTorneo;
+    private Menu menuHome;
     @FXML
-    private DatePicker SegundoTorneo;
+    private Menu menuEquipos;
     @FXML
-    private DatePicker TercerTorneo;
+    private Menu menuTorneos;
     @FXML
-    private DatePicker CuartoTorneo;
+    private Menu menuJugadores;
+    @FXML
+    private AnchorPane rootPane;
 
     /**
      * Initializes the controller class.
