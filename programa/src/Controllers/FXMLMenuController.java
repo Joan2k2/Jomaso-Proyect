@@ -15,6 +15,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Menu;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 /**
@@ -41,7 +42,7 @@ public class FXMLMenuController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {
-            AnchorPane pane = FXMLLoader.load(getClass().getResource("FXMLHome.fxml"));
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/Vistas/FXMLHome.fxml"));
             this.rootPane.getChildren().setAll(pane);
         } catch (IOException ex) {
             Logger.getLogger(FXMLMenuController.class.getName()).log(Level.SEVERE, null, ex);
@@ -51,7 +52,7 @@ public class FXMLMenuController implements Initializable {
     @FXML
     private void llevaHome(ActionEvent event) {
         try {
-            AnchorPane pane = FXMLLoader.load(getClass().getResource("FXMLHome.fxml"));
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/Vistas/FXMLHome.fxml"));
             this.rootPane.getChildren().setAll(pane);
         } catch (IOException ex) {
             Logger.getLogger(FXMLMenuController.class.getName()).log(Level.SEVERE, null, ex);
@@ -61,7 +62,7 @@ public class FXMLMenuController implements Initializable {
     @FXML
     private void llevaEquipos(ActionEvent event) {
  try {
-            AnchorPane pane = FXMLLoader.load(getClass().getResource("FXMLHome.fxml"));
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/Vistas/FXMLHome.fxml"));
             this.rootPane.getChildren().setAll(pane);
         } catch (IOException ex) {
             Logger.getLogger(FXMLMenuController.class.getName()).log(Level.SEVERE, null, ex);
@@ -71,7 +72,7 @@ public class FXMLMenuController implements Initializable {
     @FXML
     private void llevaTorneos(ActionEvent event) {
          try {
-            AnchorPane pane = FXMLLoader.load(getClass().getResource("FXMLTorneos.fxml"));
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/Vistas/FXMLTorneos.fxml"));
             this.rootPane.getChildren().setAll(pane);
         } catch (IOException ex) {
             Logger.getLogger(FXMLMenuController.class.getName()).log(Level.SEVERE, null, ex);
@@ -82,11 +83,21 @@ public class FXMLMenuController implements Initializable {
     @FXML
     private void llevaJugadores(ActionEvent event) {
          try {
-            AnchorPane pane = FXMLLoader.load(getClass().getResource("FXMLHome.fxml"));
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/Vistas/FXMLHome.fxml"));
             this.rootPane.getChildren().setAll(pane);
         } catch (IOException ex) {
             Logger.getLogger(FXMLMenuController.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    @FXML
+    private void llevaHome(MouseEvent event) {
+        try {
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/Vistas/FXMLHome.fxml"));
+            this.rootPane.getChildren().setAll(pane);
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLMenuController.class.getName()).log(Level.SEVERE, null, ex);
+        }   
     }
 
 }

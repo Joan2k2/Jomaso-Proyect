@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -21,15 +22,29 @@
                   </ImageView>
                </graphic>
             </Menu>
-          <Menu fx:id="menuHome" mnemonicParsing="false" onAction="#llevaHome" text="Home" />
-          <Menu fx:id="menuEquipos" mnemonicParsing="false" onAction="#llevaEquipos" text="Equipos" />
-          <Menu fx:id="menuTorneos" mnemonicParsing="false" onAction="#llevaTorneos" text="Torneos" />
+          <Menu fx:id="menuHome" mnemonicParsing="false" text="Home">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#llevaHome" text="Inicio" />
+               </items></Menu>
+          <Menu fx:id="menuEquipos" mnemonicParsing="false" onAction="#llevaEquipos" text="Equipos">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#llevaEquipos" text="Equipos" />
+               </items></Menu>
+          <Menu fx:id="menuTorneos" mnemonicParsing="false" text="Torneos">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#llevaTorneos" text="Torneos" />
+               </items></Menu>
             <Menu fx:id="menuJugadores" mnemonicParsing="false" onAction="#llevaJugadores" text="Jugadores" />
+            <Menu mnemonicParsing="false" text="Perfil">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Mi Perfil" />
+              </items>
+            </Menu>
         </menus>
          <VBox.margin>
             <Insets />
          </VBox.margin>
       </MenuBar>
-      <AnchorPane fx:id="rootPane" prefHeight="565.0" prefWidth="848.0" />
+      <AnchorPane fx:id="rootPane" depthTest="DISABLE" prefHeight="565.0" prefWidth="848.0" />
    </children>
 </VBox>
