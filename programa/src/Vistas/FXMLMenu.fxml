@@ -21,10 +21,10 @@
                   </ImageView>
                </graphic>
             </Menu>
-          <Menu fx:id="menuHome" mnemonicParsing="false" text="Home" />
-          <Menu fx:id="menuEquipos" mnemonicParsing="false" text="Equipos" />
-          <Menu fx:id="menuTorneos" mnemonicParsing="false" text="Torneos" />
-            <Menu fx:id="menuJugadores" mnemonicParsing="false" text="Jugadores" />
+          <Menu fx:id="menuHome" mnemonicParsing="false" onAction="#llevaHome" text="Home" />
+          <Menu fx:id="menuEquipos" mnemonicParsing="false" onAction="#llevaEquipos" text="Equipos" />
+          <Menu fx:id="menuTorneos" mnemonicParsing="false" onAction="#llevaTorneos" text="Torneos" />
+            <Menu fx:id="menuJugadores" mnemonicParsing="false" onAction="#llevaJugadores" text="Jugadores" />
         </menus>
          <VBox.margin>
             <Insets />
