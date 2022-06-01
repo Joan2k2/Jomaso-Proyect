@@ -61,7 +61,7 @@ public class FXMLRegistrarseController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
     @FXML
     private void loginUsr(ActionEvent event) {
@@ -73,53 +73,68 @@ public class FXMLRegistrarseController implements Initializable {
 
     @FXML
     private void llevaaLogin(ActionEvent event) {
-        
-        
-         try {
-                    
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vistas/FXMLLogin.fxml"));
 
-                    Parent root = loader.load();
+        try {
 
-                    Scene scene = new Scene(root);
-                    Stage stage = new Stage();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vistas/FXMLLogin.fxml"));
 
-                    stage.setScene(scene);
-                    stage.show();
+            Parent root = loader.load();
 
-                    Stage myStage = (Stage) this.hypervinculoIniciarSesion.getScene().getWindow();
-                    myStage.close();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
 
-                } catch (IOException ex) {
-                    Logger.getLogger(FXMLControllerLogin.class.getName()).log(Level.SEVERE, null, ex);
-                }
+            stage.setScene(scene);
+            stage.show();
+
+            Stage myStage = (Stage) this.hypervinculoIniciarSesion.getScene().getWindow();
+            myStage.close();
+
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLControllerLogin.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @FXML
     private void registrarte(ActionEvent event) {
-        String contraencry="";
-        Usuario u =new Usuario();
-        UsuarioModel um=new UsuarioModel();
-        contraencry=u.converMD5(PasswUser.getText());
-        u.setNombre(NombreUser.getText());
-        u.setApellidos(ApellidoUser.getText());
-        u.setCorreo(CorreoUser.getText());
-        u.setEdad(Integer.parseInt(EdadUser.getText()));
-        u.setNickName(Nicknameuser.getText());
-        u.setContrasenya(contraencry);
-      
-        
-        if(PasswUser.getText().equals(PasswUserConfirma.getText())){
-        um.crearUsuario(u);
-        }else{
-        Alert a=new Alert(Alert.AlertType.ERROR);
-        a.setContentText("Las contraseñas no coinciden");
-        a.setHeaderText("Error de contraseña");
-        a.showAndWait();
+
+        if (NombreUser.getText().isEmpty() || PasswUser.getText().isEmpty() || CorreoUser.getText().isEmpty() || EdadUser.getText().isEmpty() || Nicknameuser.getText().isEmpty()) {
+
+            Alert al = new Alert(Alert.AlertType.ERROR);
+            al.setHeaderText("Error");
+            al.setContentText("Solo puedes dejar vacio los apellidos");
+            al.showAndWait();
+        } else {
+
+            String contraencry = "";
+            Usuario u = new Usuario();
+            UsuarioModel um = new UsuarioModel();
+            contraencry = u.converMD5(PasswUser.getText());
+
+            if (PasswUser.getText().equals(PasswUserConfirma.getText())) {
+                
+                u.setNombre(NombreUser.getText());
+                u.setApellidos(ApellidoUser.getText());
+                u.setCorreo(CorreoUser.getText());
+                u.setEdad(Integer.parseInt(EdadUser.getText()));
+                u.setNickName(Nicknameuser.getText());
+                u.setContrasenya(contraencry);
+
+                um.crearUsuario(u);
+
+                Alert ale = new Alert(Alert.AlertType.CONFIRMATION);
+                ale.setContentText("Usuario creado con exito");
+                ale.setHeaderText("credenciales");
+                ale.showAndWait();
+
+            } else {
+                Alert a = new Alert(Alert.AlertType.ERROR);
+                a.setContentText("Las contraseñas no coinciden");
+                a.setHeaderText("Error de contraseña");
+                a.showAndWait();
+            }
+
         }
-        
+
     }
 
-    
-    
 }
