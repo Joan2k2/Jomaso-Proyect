@@ -69,7 +69,7 @@ public class UsuarioModel extends DBUtil {
     * 
     * @author Jose Ramon
     * @version 0.1
-    * @param Usuario
+    * @param "Usuario"
     */
     public void borraUsuario(Usuario u){
         try{				
