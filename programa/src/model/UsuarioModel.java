@@ -89,24 +89,29 @@ public class UsuarioModel extends DBUtil {
 		}
     }
     
-    public void usrLog(Usuario u){
+    public boolean usrLog(Usuario u){       
+        boolean retorno=false;
         try{				
-	String insertSql="CALL usrLog(?,?)";
+	String insertSql="CALL userLog(?,?)";
                 
             PreparedStatement stmt=this.getConexion().prepareStatement(insertSql);
             stmt.setString(1, u.getNickName());
             stmt.setString(1, u.getContrasenya());
                 
-            stmt.execute();
+            ResultSet rs=stmt.executeQuery();
+            
+            retorno=rs.getBoolean(1);
+            
 			
-        } catch (SQLException e) {
+        } 
+        catch (SQLException e) {
             e.printStackTrace();
 	} 
 	finally {
             //Cerramos conexión
             this.cerrarConexion();
 	}
-        
+        return retorno;
     }
     
 }
