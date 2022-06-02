@@ -28,8 +28,8 @@ public class UsuarioModel extends DBUtil {
     * @param "Usuario"
     * @version 0.1
     */
-    public void crearUsuario(Usuario u) {
-		
+    public boolean crearUsuario(Usuario u) {
+        boolean retorno=false;
 	try {
             //Iniciamos conexión
             String insertSql = "CALL addUsuario(?,?,?,?,?,?)";
@@ -37,15 +37,21 @@ public class UsuarioModel extends DBUtil {
             PreparedStatement stmt = this.getConexion().prepareStatement(insertSql);
             stmt.setString(1,u.getNickName() );
             stmt.setString(2,u.getNombre());
-            stmt.setString(3,u.getApellidos());
+            stmt.setString(3,u.getApellidos()); 
             stmt.setString(4,u.getCorreo());
             stmt.setString(5,u.getContrasenya());
             stmt.setInt(6,u.getEdad());
 
-            stmt.execute();
+            ResultSet rs=stmt.executeQuery();
+            
+            while(rs.next()){
+                 retorno=rs.getBoolean(1);
+            }
+            return retorno;
                         
 	}catch (SQLException e) {
             e.printStackTrace();
+            return retorno;
 	} 
 	finally {
             //Cerramos conexión
