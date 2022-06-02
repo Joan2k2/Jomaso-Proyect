@@ -105,10 +105,10 @@ public class FXMLRegistrarseController implements Initializable {
             al.showAndWait();
         } else {
 
-            String contraencry = "";
+            
             Usuario u = new Usuario();
             UsuarioModel um = new UsuarioModel();
-            contraencry = u.converMD5(PasswUser.getText());
+            
 
             if (PasswUser.getText().equals(PasswUserConfirma.getText())) {
                 
@@ -117,7 +117,7 @@ public class FXMLRegistrarseController implements Initializable {
                 u.setCorreo(CorreoUser.getText());
                 u.setEdad(Integer.parseInt(EdadUser.getText()));
                 u.setNickName(NicknameUser.getText());
-                u.setContrasenya(contraencry);
+                u.setContrasenya(PasswUser.getText());
 
                 um.crearUsuario(u);
 
