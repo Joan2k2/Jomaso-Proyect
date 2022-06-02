@@ -53,12 +53,21 @@ public class UsuarioModel extends DBUtil {
 
             stmt.execute();
 			
+			stmt.setInt(1, u.getId());
+			stmt.setString(2,u.getNickName() );
+//			stmt.setInt(3, );
+//			stmt.setInt(4, ());
+//			
+			stmt.execute();
+			boolean resultado = true;
+                        
 	}catch (SQLException e) {
             e.printStackTrace();
 	} 
 	finally {
             //Cerramos conexión
             this.cerrarConexion();
+            //return resultado;
 	}
     
     }
@@ -89,31 +98,41 @@ public class UsuarioModel extends DBUtil {
 		}
     }
     
-    public boolean usrLog(Usuario u){       
-        boolean retorno=false;
+    public void usrLog(Usuario u){
         try{				
+<<<<<<< HEAD
 	String insertSql="SELECT userLog(?,?)";
+=======
+	String insertSql="CALL usrLog(?,?)";
+>>>>>>> 40f117f6885bf7a0444be70a952981d8726de680
                 
             PreparedStatement stmt=this.getConexion().prepareStatement(insertSql);
             stmt.setString(1, u.getNickName());
             stmt.setString(2, u.getContrasenya());
                 
+<<<<<<< HEAD
             ResultSet rs=stmt.executeQuery();
             
             while(rs.next()){
                 retorno=rs.getBoolean(1);
             }
             
+=======
+            stmt.execute();
+>>>>>>> 40f117f6885bf7a0444be70a952981d8726de680
 			
-        } 
-        catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
 	} 
 	finally {
             //Cerramos conexión
             this.cerrarConexion();
 	}
-        return retorno;
     }
     
-}
+    
+    
+
+        
+    }
+
