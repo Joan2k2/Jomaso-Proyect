@@ -32,7 +32,7 @@ public class UsuarioModel extends DBUtil {
         boolean retorno=false;
 	try {
             //Iniciamos conexión
-            String insertSql = "CALL addUsuario(?,?,?,?,?,?)";
+            String insertSql = "SELECT addUsuario(?,?,?,?,?,?)";
 
             PreparedStatement stmt = this.getConexion().prepareStatement(insertSql);
             stmt.setString(1,u.getNickName() );

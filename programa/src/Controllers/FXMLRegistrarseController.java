@@ -96,7 +96,7 @@ public class FXMLRegistrarseController implements Initializable {
 
     @FXML
     private void registrarte(ActionEvent event) {
-
+        boolean comprobar;
         if (NombreUser.getText().isEmpty() || PasswUser.getText().isEmpty() || CorreoUser.getText().isEmpty() || EdadUser.getText().isEmpty() || NicknameUser.getText().isEmpty()) {
 
             Alert al = new Alert(Alert.AlertType.ERROR);
@@ -119,12 +119,20 @@ public class FXMLRegistrarseController implements Initializable {
                 u.setNickName(NicknameUser.getText());
                 u.setContrasenya(PasswUser.getText());
 
-                um.crearUsuario(u);
-
+                comprobar=um.crearUsuario(u);
+                if(comprobar==false){
+                    Alert aler = new Alert(Alert.AlertType.ERROR);
+                    aler.setContentText("Error, ya existe ese usuario");
+                    aler.setHeaderText("Error");
+                    aler.showAndWait();
+                }else{
                 Alert ale = new Alert(Alert.AlertType.CONFIRMATION);
                 ale.setContentText("Usuario creado con exito");
                 ale.setHeaderText("credenciales");
                 ale.showAndWait();
+                }
+
+                
 
             } else {
                 Alert a = new Alert(Alert.AlertType.ERROR);
