@@ -41,25 +41,8 @@ public class UsuarioModel extends DBUtil {
             stmt.setString(4,u.getCorreo());
             stmt.setString(5,u.getContrasenya());
             stmt.setInt(6,u.getEdad());
-            // Traduce a integer si el usuario es administrador o no
-            // si es 1 el usuario es administrador y si es 0 no lo es
-            int admin;
-            if(u.getAdmin()==true)
-                admin=1;
-            else
-                admin=0;
-            
-            stmt.setInt(5,admin);
 
             stmt.execute();
-			
-			stmt.setInt(1, u.getId());
-			stmt.setString(2,u.getNickName() );
-//			stmt.setInt(3, );
-//			stmt.setInt(4, ());
-//			
-			stmt.execute();
-			boolean resultado = true;
                         
 	}catch (SQLException e) {
             e.printStackTrace();
@@ -98,31 +81,28 @@ public class UsuarioModel extends DBUtil {
 		}
     }
     
-    public void usrLog(Usuario u){
+    public boolean usrLog(Usuario u){
+        boolean retorno=false;
         try{				
-<<<<<<< HEAD
+            
 	String insertSql="SELECT userLog(?,?)";
-=======
-	String insertSql="CALL usrLog(?,?)";
->>>>>>> 40f117f6885bf7a0444be70a952981d8726de680
                 
             PreparedStatement stmt=this.getConexion().prepareStatement(insertSql);
             stmt.setString(1, u.getNickName());
             stmt.setString(2, u.getContrasenya());
                 
-<<<<<<< HEAD
             ResultSet rs=stmt.executeQuery();
             
             while(rs.next()){
-                retorno=rs.getBoolean(1);
+                 retorno=rs.getBoolean(1);
             }
             
-=======
-            stmt.execute();
->>>>>>> 40f117f6885bf7a0444be70a952981d8726de680
+            return retorno;
+
 			
         } catch (SQLException e) {
             e.printStackTrace();
+            return retorno;
 	} 
 	finally {
             //Cerramos conexión
