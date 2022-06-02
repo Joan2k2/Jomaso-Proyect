@@ -78,11 +78,11 @@ public class FXMLControllerLogin implements Initializable {
     @FXML
     private void logearte(ActionEvent event) {
         UsuarioModel um = new UsuarioModel();
-        String contraencry = "";
+        
         Usuario u = new Usuario();
-        contraencry = u.converMD5(PasswUser.getText());
+        
         u.setNickName(Nicknameuser.getText());
-        u.setContrasenya(contraencry);
+        u.setContrasenya(PasswUser.getText());
 
         if (um.usrLog(u) == true) {
 
@@ -109,6 +109,7 @@ public class FXMLControllerLogin implements Initializable {
             Alert ale = new Alert(Alert.AlertType.ERROR);
             ale.setHeaderText("Error");
             ale.setContentText("El usuario o la contraseña es incorrecto");
+            ale.showAndWait();
         }
 
     }
