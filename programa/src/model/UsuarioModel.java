@@ -20,6 +20,7 @@ import java.util.ArrayList;
  */
 public class UsuarioModel extends DBUtil {
     
+    
     /**Crea nuevo Usuario en la base de datos
     * segun los datos de la clase Usuario
     *  (nickename, nombre, correo, contrasenya y edad)
@@ -119,6 +120,45 @@ public class UsuarioModel extends DBUtil {
             this.cerrarConexion();
 	}
         
+    }
+    
+    public Usuario obtUsuario(String nick){
+        Usuario u=new Usuario();
+        
+        try {
+            //Iniciamos conexión
+            String insertSql = "SELECT addUsuario(?)";
+
+            PreparedStatement stmt = this.getConexion().prepareStatement(insertSql);
+            stmt.setString(1,nick);
+
+            ResultSet rs=stmt.executeQuery();
+            
+            while(rs.next()){
+                //datos casicos de usr
+                u.setId(rs.getInt("id"));
+                u.setNickName(rs.getString("nickname"));
+                u.setCorreo(rs.getString("correo"));
+                u.setNombre(rs.getString("nombre"));
+                u.setApellidos(rs.getString("apellidos"));
+                u.setEdad(rs.getInt("edad"));
+                u.setContrasenya(rs.getString("contrasenya"));
+                u.setAdmin(rs.getBoolean("admin"));//OJO QUE IGUAL NO FURULA
+                u.setImg(rs.getBlob("foto"));
+                u.setDescripcion(rs.getString("descripcion"));
+                
+                
+            }
+            return u;
+                        
+	}catch (SQLException e) {
+            e.printStackTrace();
+            return u;
+	} 
+	finally {
+            //Cerramos conexión
+            this.cerrarConexion();
+	}
     }
     
     
