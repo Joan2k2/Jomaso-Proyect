@@ -23,6 +23,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import model.Usuario;
+import model.UsuarioModel;
 
 /**
  * FXML Controller class
@@ -50,64 +51,66 @@ public class FXMLControllerLogin implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-
+    }
 
     @FXML
     private void llevaaregistrarse(ActionEvent event) {
-         try {
-                    
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vistas/FXMLRegistrarse.fxml"));
+        try {
 
-                    Parent root = loader.load();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vistas/FXMLRegistrarse.fxml"));
 
-                    Scene scene = new Scene(root);
-                    Stage stage = new Stage();
+            Parent root = loader.load();
 
-                    stage.setScene(scene);
-                    stage.show();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
 
-                    Stage myStage = (Stage) this.botonLogin.getScene().getWindow();
-                    myStage.close();
+            stage.setScene(scene);
+            stage.show();
 
-                } catch (IOException ex) {
-                    Logger.getLogger(FXMLRegistrarseController.class.getName()).log(Level.SEVERE, null, ex);
-                }
+            Stage myStage = (Stage) this.botonLogin.getScene().getWindow();
+            myStage.close();
+
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLRegistrarseController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @FXML
     private void logearte(ActionEvent event) {
-        
-        
-        
-        
-        
-        
-       try {
-                    
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vistas/FXMLMenu.fxml"));
+        UsuarioModel um = new UsuarioModel();
+        String contraencry = "";
+        Usuario u = new Usuario();
+        contraencry = u.converMD5(PasswUser.getText());
+        u.setNickName(Nicknameuser.getText());
+        u.setContrasenya(contraencry);
 
-                    Parent root = loader.load();
+        if (um.usrLog(u) == true) {
 
-                    Scene scene = new Scene(root);
-                    Stage stage = new Stage();
+            try {
 
-                    stage.setScene(scene);
-                    stage.show();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vistas/FXMLMenu.fxml"));
 
-                    Stage myStage = (Stage) this.botonLogin.getScene().getWindow();
-                    myStage.close();
+                Parent root = loader.load();
 
-                } catch (IOException ex) {
-                    Logger.getLogger(FXMLRegistrarseController.class.getName()).log(Level.SEVERE, null, ex);
-                }
-        
-        
-        
-        
-       
-        
-        
+                Scene scene = new Scene(root);
+                Stage stage = new Stage();
+
+                stage.setScene(scene);
+                stage.show();
+
+                Stage myStage = (Stage) this.botonLogin.getScene().getWindow();
+                myStage.close();
+
+            } catch (IOException ex) {
+                Logger.getLogger(FXMLRegistrarseController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        } else {
+            Alert ale = new Alert(Alert.AlertType.ERROR);
+            ale.setHeaderText("Error");
+            ale.setContentText("El usuario o la contraseña es incorrecto");
+        }
+
     }
-    
+
 }
