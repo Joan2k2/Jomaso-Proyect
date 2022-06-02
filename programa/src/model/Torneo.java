@@ -17,24 +17,23 @@ public class Torneo {
     private String descripcion;
     private String nombre;
     private String fechaInscripcion;
-    private String fechaInicio;
-    private String deporte;
+    private String fehcaInicio;
     
     //Constructor con todos los atributos
-    public Torneo(int id, int[] equipos, String descripcion, String nombre, String fechaInscripcion, String fechaInicio) {
+    public Torneo(int id, int[] equipos, String descripcion, String nombre, String fechaInscripcion, String fehcaInicio) {
         this.id = id;
         this.equipos = equipos;
         this.descripcion = descripcion;
         this.nombre = nombre;
         this.fechaInscripcion = fechaInscripcion;
-        this.fechaInicio = fechaInicio;
+        this.fehcaInicio = fehcaInicio;
     }
     //Constructor creacion generica
-    public Torneo(String deporte, String nombre, String fechaInscripcion, String fechaInicio) {
-        this.deporte = deporte;
+    public Torneo(int id, String nombre, String fechaInscripcion, String fehcaInicio) {
+        this.id = id;
         this.nombre = nombre;
         this.fechaInscripcion = fechaInscripcion;
-        this.fechaInicio = fechaInicio;
+        this.fehcaInicio = fehcaInicio;
     }
     
     //Constructor default
@@ -85,23 +84,13 @@ public class Torneo {
         this.fechaInscripcion = fechaInscripcion;
     }
 
-    public String getFechaInicio() {
-        return fechaInicio;
+    public String getFehcaInicio() {
+        return fehcaInicio;
     }
 
-    public void setFechaInicio(String fehcaInicio) {
-        this.fechaInicio = fechaInicio;
+    public void setFehcaInicio(String fehcaInicio) {
+        this.fehcaInicio = fehcaInicio;
     }
-
-    public String getDeporte() {
-        return deporte;
-    }
-
-    public void setDeporte(String deporte) {
-        this.deporte = deporte;
-    }
-    
-    
     
     
 }

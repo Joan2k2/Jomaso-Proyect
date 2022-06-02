@@ -33,8 +33,8 @@ public class TorneoModel extends DBUtil{
             PreparedStatement stmt = this.getConexion().prepareStatement(insertSql);
             stmt.setString(1,t.getNombre());
             stmt.setString(2,t.getDescripcion());
-            stmt.setString(3,t.getFechaInicio());
-            stmt.setString(4,t.getFechaInscripcion());
+            stmt.setString(3,t.getFehcaInicio());
+            stmt.setString(1,t.getFechaInscripcion());
 
             stmt.execute();
 			
@@ -56,7 +56,9 @@ public class TorneoModel extends DBUtil{
     * @param "Torneo"
     * @param "Usuario"
      */
-    public void borrarTorneo(Torneo t, Usuario u){
+    public boolean borrarTorneo(Torneo t, Usuario u){
+        boolean retorno=false;
+        
         try {
             //Iniciamos conexión
             String insertSql = "CALL borraTorneo(?,?)";
@@ -74,6 +76,7 @@ public class TorneoModel extends DBUtil{
             //Cerramos conexión
             this.cerrarConexion();
 	}
+        return retorno;
     }
     
     /**Inscribe 
@@ -84,7 +87,7 @@ public class TorneoModel extends DBUtil{
     public void inscribEquipo(Torneo t, Equipo eq){
         try {
             //Iniciamos conexión
-            String insertSql = "CALL inscribEquipo(?,?)";
+            String insertSql = "SELECT `inscribEquipo`(?, ?)";
 
             PreparedStatement stmt = this.getConexion().prepareStatement(insertSql);
             stmt.setInt(1,eq.getId());
@@ -120,8 +123,6 @@ public class TorneoModel extends DBUtil{
             this.cerrarConexion();
 	}
     }
-    
-    
     
     
 }
