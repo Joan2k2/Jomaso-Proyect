@@ -62,7 +62,7 @@ public class FXMLMenuController implements Initializable {
     @FXML
     private void llevaEquipos(ActionEvent event) {
  try {
-            AnchorPane pane = FXMLLoader.load(getClass().getResource("/Vistas/FXMLHome.fxml"));
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/Vistas/FXMLEquipos.fxml"));
             this.rootPane.getChildren().setAll(pane);
         } catch (IOException ex) {
             Logger.getLogger(FXMLMenuController.class.getName()).log(Level.SEVERE, null, ex);
@@ -83,21 +83,29 @@ public class FXMLMenuController implements Initializable {
     @FXML
     private void llevaJugadores(ActionEvent event) {
          try {
-            AnchorPane pane = FXMLLoader.load(getClass().getResource("/Vistas/FXMLHome.fxml"));
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/Vistas/FXMLJugadores.fxml"));
             this.rootPane.getChildren().setAll(pane);
         } catch (IOException ex) {
             Logger.getLogger(FXMLMenuController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
+   
+
     @FXML
-    private void llevaHome(MouseEvent event) {
-        try {
-            AnchorPane pane = FXMLLoader.load(getClass().getResource("/Vistas/FXMLHome.fxml"));
+    private void llevaPerfil(ActionEvent event) {
+         try {
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/Vistas/FXMLPerfil.fxml"));
             this.rootPane.getChildren().setAll(pane);
         } catch (IOException ex) {
             Logger.getLogger(FXMLMenuController.class.getName()).log(Level.SEVERE, null, ex);
-        }   
+        }  
     }
+
+    
+    
+
+    
+    
 
 }
