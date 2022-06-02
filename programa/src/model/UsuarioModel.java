@@ -92,15 +92,17 @@ public class UsuarioModel extends DBUtil {
     public boolean usrLog(Usuario u){       
         boolean retorno=false;
         try{				
-	String insertSql="CALL userLog(?,?)";
+	String insertSql="SELECT userLog(?,?)";
                 
             PreparedStatement stmt=this.getConexion().prepareStatement(insertSql);
             stmt.setString(1, u.getNickName());
-            stmt.setString(1, u.getContrasenya());
+            stmt.setString(2, u.getContrasenya());
                 
             ResultSet rs=stmt.executeQuery();
             
-            retorno=rs.getBoolean(1);
+            while(rs.next()){
+                retorno=rs.getBoolean(1);
+            }
             
 			
         } 
