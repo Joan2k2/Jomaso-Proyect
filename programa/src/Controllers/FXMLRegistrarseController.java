@@ -37,7 +37,7 @@ public class FXMLRegistrarseController implements Initializable {
     @FXML
     private AnchorPane anchorpanel2;
     @FXML
-    private TextField Nicknameuser;
+    private TextField NicknameUser;
     @FXML
     private TextField PasswUser;
     @FXML
@@ -97,7 +97,7 @@ public class FXMLRegistrarseController implements Initializable {
     @FXML
     private void registrarte(ActionEvent event) {
 
-        if (NombreUser.getText().isEmpty() || PasswUser.getText().isEmpty() || CorreoUser.getText().isEmpty() || EdadUser.getText().isEmpty() || Nicknameuser.getText().isEmpty()) {
+        if (NombreUser.getText().isEmpty() || PasswUser.getText().isEmpty() || CorreoUser.getText().isEmpty() || EdadUser.getText().isEmpty() || NicknameUser.getText().isEmpty()) {
 
             Alert al = new Alert(Alert.AlertType.ERROR);
             al.setHeaderText("Error");
@@ -116,7 +116,7 @@ public class FXMLRegistrarseController implements Initializable {
                 u.setApellidos(ApellidoUser.getText());
                 u.setCorreo(CorreoUser.getText());
                 u.setEdad(Integer.parseInt(EdadUser.getText()));
-                u.setNickName(Nicknameuser.getText());
+                u.setNickName(NicknameUser.getText());
                 u.setContrasenya(contraencry);
 
                 um.crearUsuario(u);

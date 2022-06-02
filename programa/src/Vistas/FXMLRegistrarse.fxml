@@ -26,7 +26,7 @@
                   <Font name="Comic Sans MS" size="24.0" />
                </font>
             </Text>
-            <TextField fx:id="Nicknameuser" layoutX="88.0" layoutY="288.0" onAction="#loginUsr" promptText="Username*" />
+            <TextField fx:id="NicknameUser" layoutX="88.0" layoutY="288.0" onAction="#loginUsr" promptText="Username*" />
             <TextField fx:id="PasswUser" layoutX="88.0" layoutY="326.0" onAction="#loginPassw" promptText="Password*" />
             <Separator layoutX="2.0" layoutY="509.0" prefHeight="3.0" prefWidth="322.0" />
             <Text fill="WHITE" layoutX="89.0" layoutY="542.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ya tienes cuenta?" />
