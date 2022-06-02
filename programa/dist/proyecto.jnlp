@@ -9,7 +9,11 @@
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
     <jar href="lib\mysql-connector-java-8.0.28.jar" size="2476480" download="eager" />
+<<<<<<< HEAD
     <jar href="proyecto.jar" size="6245365" download="eager" />
+=======
+    <jar href="proyecto.jar" size="5805397" download="eager" />
+>>>>>>> 26ce7dfca33391dfeb48e4f715629bf895ab30a7
   </resources>
   <jfx:javafx-desc  width="800" height="600" main-class="Controllers.Proyecto"  name="proyecto" />
   <update check="always"/>
