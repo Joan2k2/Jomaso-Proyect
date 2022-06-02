@@ -107,14 +107,6 @@ public class UsuarioModel extends DBUtil {
               retorno=rs.getBoolean(1);
             }
             
-
-            stmt.execute();
-            ResultSet rs=stmt.executeQuery();
-            
-            while(rs.next()){
-                 retorno=rs.getBoolean(1);
-            }
-            
             return retorno;
 
 			
@@ -126,7 +118,7 @@ public class UsuarioModel extends DBUtil {
             //Cerramos conexión
             this.cerrarConexion();
 	}
-        return retorno;
+        
     }
     
     
