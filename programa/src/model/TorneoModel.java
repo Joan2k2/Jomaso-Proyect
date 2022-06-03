@@ -170,8 +170,8 @@ public class TorneoModel extends DBUtil {
             while (rs.next()) {
                 Torneo t = new Torneo();
                 t.setFechaInscripcion(rs.getString("fecha_inscripcion"));
-                t.setNombre("nombre");
-                t.setDeporte("deporte");
+                t.setNombre(rs.getString("nombre"));
+                t.setDeporte(rs.getString("deporte"));
                 t.setFehcaInicio(rs.getString("fecha_inicio"));
                 listaTorneos.add(t);
             }
