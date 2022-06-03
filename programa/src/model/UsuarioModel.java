@@ -122,7 +122,7 @@ public class UsuarioModel extends DBUtil {
         
     }
     
-    public Usuario obtUsuario(String nick){
+    public UsuarioLog obtUsuario(String nick){
         Usuario u=new Usuario();
         
         try {
@@ -159,7 +159,7 @@ public class UsuarioModel extends DBUtil {
                 }
                 u.setDeportes(arrayDep);
                 
-                //array de deportes que participa el usuario
+                //array de equipos que participa el usuario
                 ArrayList<Equipo> arrayEqi=new ArrayList();
                 while(rs.next()){
                     Equipo e=new Equipo();
@@ -186,11 +186,11 @@ public class UsuarioModel extends DBUtil {
                 }
                 u.setEquipos(arrayEqi); 
             }
-            return u;
+            return UsuarioLog.getSingletonInstance(u);
                         
 	}catch (SQLException e) {
             e.printStackTrace();
-            return u;
+            return null;
 	} 
 	finally {
             //Cerramos conexión
