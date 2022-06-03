@@ -20,6 +20,7 @@ public class Torneo {
     private String nombre;
     private String fechaInscripcion;
     private String fehcaInicio;
+    private String deporte;
     
     //Constructor con todos los atributos
     public Torneo(ArrayList<Equipo> equipos, String descripcion, String nombre, String fechaInscripcion, String fehcaInicio) {
@@ -42,6 +43,14 @@ public class Torneo {
     //Constructor con solo id
     public Torneo(int id) {
         this.id = id;
+    }
+
+    public String getDeporte() {
+        return deporte;
+    }
+
+    public void setDeporte(String deporte) {
+        this.deporte = deporte;
     }
 
     public int getId() {
