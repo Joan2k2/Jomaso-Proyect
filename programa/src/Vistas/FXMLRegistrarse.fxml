@@ -35,7 +35,7 @@
                   <Bloom />
                </effect>
             </Hyperlink>
-            <Button fx:id="botonRegistrarte" layoutX="75.0" layoutY="428.0" mnemonicParsing="false" onAction="#registrarte" prefHeight="30.0" prefWidth="170.0" style="-fx-background-color: white; -fx-border-radius: 50px; -fx-border-style: inset;" text="Registrate" />
+            <Button fx:id="botonRegistrarte" layoutX="75.0" layoutY="428.0" mnemonicParsing="false" onAction="#registrarte" prefHeight="30.0" prefWidth="170.0" style="-fx-background-color: white; -fx-border-radius: 50;" text="Registrate" />
             <TextField fx:id="NombreUser" layoutX="88.0" layoutY="131.0" onAction="#loginUsr" promptText="Nombre*" />
             <TextField fx:id="ApellidoUser" layoutX="88.0" layoutY="166.0" onAction="#loginUsr" promptText="Apellido" />
             <TextField fx:id="CorreoUser" layoutX="89.0" layoutY="201.0" onAction="#loginUsr" promptText="Correo*" />
