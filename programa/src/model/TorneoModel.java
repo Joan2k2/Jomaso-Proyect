@@ -8,6 +8,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Observable;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /**
  * Clase encargada de gestionar las acciones de la base de datos en relacion a
@@ -124,11 +127,11 @@ public class TorneoModel extends DBUtil {
         }
     }
 
-    public ArrayList<Torneo> listarTorneosHome() {
+    public ObservableList<Torneo> listarTorneosHome() {
 
         try {
             //Iniciamos conexión
-            ArrayList<Torneo> almatorneo = new ArrayList();
+            ObservableList<Torneo> almatorneo =FXCollections.observableArrayList();
             String insertSql = "call obtenerTorneosHome()";
 
             PreparedStatement stmt = this.getConexion().prepareStatement(insertSql);
@@ -136,9 +139,10 @@ public class TorneoModel extends DBUtil {
 
             while (rs.next()) {
                 Torneo t = new Torneo();
+                
                 t.setNombre(rs.getString("nombre"));
-                t.setFehcaInicio("fecha_inicio");
-                t.setFechaInscripcion("fecha_inscripcion");
+                t.setFehcaInicio(rs.getString("fecha_inicio"));
+                t.setFechaInscripcion(rs.getString("fecha_inscripcion"));
                 t.setDeporte(rs.getString("deporte"));
                 almatorneo.add(t);
 
@@ -153,11 +157,11 @@ public class TorneoModel extends DBUtil {
 
     }
     
-    public ArrayList<Torneo> getTorneos() {
+    public ObservableList<Torneo> getTorneos() {
 
         try {
             //Iniciamos conexión
-            ArrayList<Torneo> listaTorneos = new ArrayList();
+            ObservableList<Torneo> listaTorneos = FXCollections.observableArrayList();
             String insertSql = "CALL obtenerTorneos()";
 
             PreparedStatement stmt = this.getConexion().prepareStatement(insertSql);
@@ -165,10 +169,10 @@ public class TorneoModel extends DBUtil {
 
             while (rs.next()) {
                 Torneo t = new Torneo();
-                t.setFechaInscripcion("fecha inscripcion");
+                t.setFechaInscripcion(rs.getString("fecha_inscripcion"));
                 t.setNombre("nombre");
                 t.setDeporte("deporte");
-                t.setFehcaInicio("fecha inicio");
+                t.setFehcaInicio(rs.getString("fecha_inicio"));
                 listaTorneos.add(t);
             }
 

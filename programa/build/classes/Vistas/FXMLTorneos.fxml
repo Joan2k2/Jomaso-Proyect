@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLTorneosController">
    <children>
-      <Text layoutX="259.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Torneos" />
+      <Text layoutX="238.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Torneos">
+         <font>
+            <Font name="Consolas" size="32.0" />
+         </font></Text>
+      <TableView fx:id="tablatorneos" layoutX="67.0" layoutY="123.0" prefHeight="251.0" prefWidth="467.0">
+        <columns>
+          <TableColumn id="fechainscripciontorneos" prefWidth="106.0" text="Fecha Inscripcion" />
+          <TableColumn id="nombretorneos" prefWidth="123.0" text="Nombre" />
+            <TableColumn id="deportetorneos" prefWidth="111.0" text="Deporte" />
+            <TableColumn id="fechainiciotorneos" prefWidth="126.0" text="Fecha Inicio" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>

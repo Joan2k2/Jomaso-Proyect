@@ -35,7 +35,7 @@
                   <Bloom />
                </effect>
             </Hyperlink>
-            <Button fx:id="botonLogin" layoutX="76.0" layoutY="302.0" mnemonicParsing="false" onAction="#logearte" prefHeight="30.0" prefWidth="170.0" style="-fx-background-color: white; -fx-border-radius: 50px; -fx-border-style: inset;" text="Log-In" />
+            <Button fx:id="botonLogin" layoutX="76.0" layoutY="302.0" mnemonicParsing="false" onAction="#logearte" prefHeight="30.0" prefWidth="170.0" style="-fx-background-color: white; -fx-border-radius: 50;" text="Log-In" />
          </children>
       </AnchorPane>
    </children>
