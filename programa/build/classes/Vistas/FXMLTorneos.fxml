@@ -14,10 +14,10 @@
          </font></Text>
       <TableView fx:id="tablatorneos" layoutX="67.0" layoutY="123.0" prefHeight="251.0" prefWidth="467.0">
         <columns>
-          <TableColumn id="fechainscripciontorneos" prefWidth="106.0" text="Fecha Inscripcion" />
-          <TableColumn id="nombretorneos" prefWidth="123.0" text="Nombre" />
-            <TableColumn id="deportetorneos" prefWidth="111.0" text="Deporte" />
-            <TableColumn id="fechainiciotorneos" prefWidth="126.0" text="Fecha Inicio" />
+          <TableColumn id="fechainscripciontorneos" fx:id="fechaInscripccion" prefWidth="106.0" text="Fecha Inscripcion" />
+          <TableColumn id="nombretorneos" fx:id="nombreTorneo" prefWidth="123.0" text="Nombre" />
+            <TableColumn id="deportetorneos" fx:id="nombreDeporte" prefWidth="111.0" text="Deporte" />
+            <TableColumn id="fechainiciotorneos" fx:id="fechaInicio" prefWidth="126.0" text="Fecha Inicio" />
         </columns>
       </TableView>
    </children>

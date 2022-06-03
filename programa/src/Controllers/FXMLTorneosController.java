@@ -26,10 +26,15 @@ public class FXMLTorneosController implements Initializable {
 
    @FXML
     private TableView<Torneo> tablatorneos;
-    private TableColumn fechainscripciontorneos;
-    private TableColumn nombretorneos;
-    private TableColumn deportetorneos;
-    private TableColumn fechainiciotorneos;
+   
+    @FXML
+    private TableColumn fechaInscripccion;
+    @FXML
+    private TableColumn nombreTorneo;
+    @FXML
+    private TableColumn nombreDeporte;
+    @FXML
+    private TableColumn fechaInicio;
 
     /**
      * Initializes the controller class.
@@ -42,11 +47,11 @@ public class FXMLTorneosController implements Initializable {
 
         ObservableList<Torneo> listaTorneos = tm.getTorneos();
         
-        fechainscripciontorneos.setCellValueFactory(new PropertyValueFactory("fechaInscripcion"));
-        nombretorneos.setCellValueFactory(new PropertyValueFactory("nombre"));
-        deportetorneos.setCellValueFactory(new PropertyValueFactory("deporte"));
-        fechainiciotorneos.setCellValueFactory(new PropertyValueFactory("fehcaInicio"));
-        tablatorneos.setItems(listaTorneos);
+        this.fechaInscripccion.setCellValueFactory(new PropertyValueFactory("fechaInscripcion"));
+        this.nombreTorneo.setCellValueFactory(new PropertyValueFactory("nombre"));
+        this.nombreDeporte.setCellValueFactory(new PropertyValueFactory("deporte"));
+        this.fechaInicio.setCellValueFactory(new PropertyValueFactory("fehcaInicio"));
+        this.tablatorneos.setItems(listaTorneos);
 
     }
     }    
