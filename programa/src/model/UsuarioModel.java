@@ -127,7 +127,7 @@ public class UsuarioModel extends DBUtil {
         
         try {
             //Iniciamos conexión
-            String insertSql = "SELECT addUsuario(?)";
+            String insertSql = "SELECT obtUsuario(?)";
 
             PreparedStatement stmt = this.getConexion().prepareStatement(insertSql);
             stmt.setString(1,nick);
