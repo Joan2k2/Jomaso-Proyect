@@ -5,7 +5,10 @@
 package model;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /**Clase encargada de gestionar las acciones de la base de datos
  * en relacion a la clase Equipo
@@ -126,5 +129,68 @@ public class EquipoModel extends DBUtil {
             this.cerrarConexion();
 	}
     }
+    
+    public ObservableList<Usuario> getJugadores(int id){
+        try{				
+            String insertSql="SELECT u.id,u.nickname,u.correo,u.nombre from usuarios u,participa p WHERE p.id_usuario=u.id AND p.id_equipo=?";
+            
+            ObservableList<Usuario> listJugadores = FXCollections.observableArrayList();
+            PreparedStatement stmt=this.getConexion().prepareStatement(insertSql);
+            stmt.setInt(1, id);
+            
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                Usuario u = new Usuario();
+                u.setNickName(rs.getString("nickname"));
+                u.setCorreo(rs.getString("correo"));
+                u.setNombre(rs.getString("nombre"));
+                listJugadores.add(u);
+            }
+                
+            return listJugadores;
+	} catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        } 
+	finally {
+            //Cerramos conexión
+            this.cerrarConexion();
+	}
+    }
+    
+    public ObservableList<Torneo> getTorneos(int id){
+        try{				
+            String insertSql="SELECT t.nombre,t.fecha_inicio,t.fecha_inscripcion,d.nombre AS \"deporte\" FROM torneos t,compite c,deportes d,trata tr WHERE tr.id_torneo=t.id AND tr.id_deporte=d.id and c.id_torneo=t.id AND c.id_equipos=?";
+            
+            ObservableList<Torneo> listTorneos = FXCollections.observableArrayList();
+            PreparedStatement stmt=this.getConexion().prepareStatement(insertSql);
+            stmt.setInt(1, id);
+            
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                Torneo t=new Torneo();
+                
+                t.setNombre(rs.getString("nombre"));
+                t.setFechaInscripcion(rs.getString("fecha_inscripcion"));
+                t.setFehcaInicio(rs.getString("fecha_inicio"));
+                t.setDeporte(rs.getNString("deporte"));
+                
+                listTorneos.add(t);
+            }
+                
+            return listTorneos;
+	} catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        } 
+	finally {
+            //Cerramos conexión
+            this.cerrarConexion();
+	}
+    }
+    
+    
     
 }
