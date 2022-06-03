@@ -5,6 +5,7 @@
 package model;
 
 import java.sql.Blob;
+import java.util.ArrayList;
 
 /**
  * Clase usada para almacenar la informacion a usar de los equipos
@@ -17,31 +18,40 @@ public class Equipo {
     private int id;
     private int[] jugadores;
     private int admin;
-    private int[] deportes;
+    private ArrayList<Deporte> deportes;
     private String nombre;
     private Blob img;
+    private String descripcion;
     
     //Constructor default
     public Equipo(){}
     
     //Constructor con todos los atributos
-    public Equipo(int id, int[] jugadores, int admin, int[] deportes, String nombre, Blob img) {
-        this.id = id;
+    public Equipo(int[] jugadores, int admin, ArrayList<Deporte> deportes, String nombre,String descripcion , Blob img) {
         this.jugadores = jugadores;
         this.admin = admin;
         this.deportes = deportes;
         this.nombre = nombre;
         this.img = img;
+        this.descripcion=descripcion;
     }
     
     //equipo generico
-    public Equipo(int id, int admin, String nombre, Blob img) {
-        this.id = id;
+    public Equipo(int admin, String nombre,String descripcion ,Blob img) {
         this.admin = admin;
         this.nombre = nombre;
         this.img = img;
+        this.descripcion=descripcion;
     }
 
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+    
     public Blob getImg() {
         return img;
     }
@@ -78,11 +88,11 @@ public class Equipo {
         this.admin = admin;
     }
 
-    public int[] getDeportes() {
+    public ArrayList<Deporte> getDeportes() {
         return deportes;
     }
 
-    public void setDeportes(int[] deportes) {
+    public void setDeportes(ArrayList<Deporte> deportes) {
         this.deportes = deportes;
     }
 
