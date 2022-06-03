@@ -147,7 +147,44 @@ public class UsuarioModel extends DBUtil {
                 u.setImg(rs.getBlob("foto"));
                 u.setDescripcion(rs.getString("descripcion"));
                 
+                //array de deportes que juega el usuario
+                ArrayList<Deporte> arrayDep=new ArrayList();
+                while(rs.next()){
+                    Deporte d=new Deporte();
+                    
+                    d.setId(rs.getInt("deporteId"));
+                    d.setNombre(rs.getString("deporteNombre"));
+                    
+                    arrayDep.add(d);
+                }
+                u.setDeportes(arrayDep);
                 
+                //array de deportes que participa el usuario
+                ArrayList<Equipo> arrayEqi=new ArrayList();
+                while(rs.next()){
+                    Equipo e=new Equipo();
+                    
+                    e.setId(rs.getInt("equipoId"));
+                    e.setNombre(rs.getString("equipoNombre"));
+                    e.setAdmin(rs.getInt("equipoAdmin"));
+                    e.setImg(rs.getBlob("equipoLogo"));
+                    e.setDescripcion(rs.getString("equipoDescripcion"));
+                    
+                    //array de deportes que juega el equipo
+                    ArrayList<Deporte> depE=new ArrayList();
+                    while(rs.next()){
+                        Deporte d=new Deporte();
+
+                        d.setId(rs.getInt("deporteId"));
+                        d.setNombre(rs.getString("deporteNombre"));
+
+                        depE.add(d);
+                    }
+                    e.setDeportes(depE);
+                    
+                    arrayEqi.add(e);
+                }
+                u.setEquipos(arrayEqi); 
             }
             return u;
                         
