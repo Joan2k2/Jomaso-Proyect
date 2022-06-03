@@ -8,6 +8,7 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Blob;
+import java.util.ArrayList;
 
 
 /**
@@ -24,8 +25,8 @@ public class Usuario {
     private String apellidos;
     private String contrasenya;
     private int id;
-    private Equipo[] equipos;
-    private int[] deportes;
+    private ArrayList<Equipo> equipos;
+    private ArrayList<Deporte> deportes;
     private boolean admin;
     private Blob img;
     private String correo;
@@ -36,12 +37,11 @@ public class Usuario {
     public Usuario(){}
     
     //Constructor con todos los atributos
-    public Usuario(String nickName, String nombre, String apellidos, String contrasenya, int id, Equipo[] equipos, int[] deportes, boolean admin, Blob img, String correo, int edad, String descripcion) {    
+    public Usuario(String nickName, String nombre, String apellidos, String contrasenya, ArrayList<Equipo> equipos, ArrayList<Deporte> deportes, boolean admin, Blob img, String correo, int edad, String descripcion) {    
         this.nickName = nickName;
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.contrasenya = contrasenya;
-        this.id = id;
         this.equipos = equipos;
         this.deportes = deportes;
         this.admin = admin;
@@ -131,19 +131,19 @@ public class Usuario {
         this.id = id;
     }
 
-    public Equipo[] getEquipos() {
+    public ArrayList<Equipo> getEquipos() {
         return equipos;
     }
 
-    public void setEquipos(Equipo[] equipos) {
+    public void setEquipos(ArrayList<Equipo> equipos) {
         this.equipos = equipos;
     }
 
-    public int[] getDeportes() {
+    public ArrayList<Deporte> getDeportes() {
         return deportes;
     }
 
-    public void setDeportes(int[] deportes) {
+    public void setDeportes(ArrayList<Deporte> deportes) {
         this.deportes = deportes;
     }
 
@@ -162,7 +162,6 @@ public class Usuario {
     public void setImg(Blob img) {
         this.img = img;
     }
-
-    
+   
     
 }
