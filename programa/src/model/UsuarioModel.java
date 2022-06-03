@@ -153,9 +153,11 @@ public class UsuarioModel extends DBUtil {
                     Deporte d=new Deporte();
                     
                     d.setId(rs.getInt("deporteId"));
-                    d.setNombre(rs.getString("deporteNombre"));
                     
-                    arrayDep.add(d);
+                    int lastId=arrayDep.size()-1;
+                    if(arrayDep.get(lastId).getId()!=d.getId()){
+                        arrayDep.add(d);
+                    }
                 }
                 u.setDeportes(arrayDep);
                 
@@ -165,24 +167,13 @@ public class UsuarioModel extends DBUtil {
                     Equipo e=new Equipo();
                     
                     e.setId(rs.getInt("equipoId"));
-                    e.setNombre(rs.getString("equipoNombre"));
-                    e.setAdmin(rs.getInt("equipoAdmin"));
-                    e.setImg(rs.getBlob("equipoLogo"));
-                    e.setDescripcion(rs.getString("equipoDescripcion"));
                     
-                    //array de deportes que juega el equipo
-                    ArrayList<Deporte> depE=new ArrayList();
-                    while(rs.next()){
-                        Deporte d=new Deporte();
-
-                        d.setId(rs.getInt("deporteId"));
-                        d.setNombre(rs.getString("deporteNombre"));
-
-                        depE.add(d);
+                    int lastId=arrayDep.size()-1; 
+                    if(arrayDep.get(lastId).getId()!=e.getId()){
+                        arrayEqi.add(e);
                     }
-                    e.setDeportes(depE);
                     
-                    arrayEqi.add(e);
+                    
                 }
                 u.setEquipos(arrayEqi); 
             }
