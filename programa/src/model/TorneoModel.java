@@ -5,124 +5,179 @@
 package model;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
-/**Clase encargada de gestionar las acciones de la base de datos
- * en relacion a la clase Torneo
+/**
+ * Clase encargada de gestionar las acciones de la base de datos en relacion a
+ * la clase Torneo
  *
  * @author jose Ramon
  * @version 0.1
  * @extends DBUtil
  */
-public class TorneoModel extends DBUtil{
-    
-    /**Crea nuevo Torneo en la base de datos
-    * segun una clase torneo
-    * (nombre*, descripcion, fechaInicio*, fechaInscripcion*)
-    * 
-    * @author Jose Ramon
-    * @version 0.1
-    * @param "Torneo"
+public class TorneoModel extends DBUtil {
+
+    /**
+     * Crea nuevo Torneo en la base de datos segun una clase torneo (nombre*,
+     * descripcion, fechaInicio*, fechaInscripcion*)
+     *
+     * @author Jose Ramon
+     * @version 0.1
+     * @param "Torneo"
      */
     public void crearTorneo(Torneo t) {
-		
-	try {
+
+        try {
             //Iniciamos conexión
             String insertSql = "CALL addTorneo(?,?,?,?,?)";
 
             PreparedStatement stmt = this.getConexion().prepareStatement(insertSql);
-            stmt.setString(1,t.getNombre());
-            stmt.setString(2,t.getDescripcion());
-            stmt.setString(3,t.getFehcaInicio());
-            stmt.setString(1,t.getFechaInscripcion());
+            stmt.setString(1, t.getNombre());
+            stmt.setString(2, t.getDescripcion());
+            stmt.setString(3, t.getFehcaInicio());
+            stmt.setString(1, t.getFechaInscripcion());
 
             stmt.execute();
-			
-	}catch (SQLException e) {
+
+        } catch (SQLException e) {
             e.printStackTrace();
-	} 
-	finally {
+        } finally {
             //Cerramos conexión
             this.cerrarConexion();
-	}
+        }
     }
-    
-    /**Borra un torneo de la base de datos
-    * segun un los datos de una clase Usuario y Torneo
-    * (Id Usuario e Id Torneo)
-    * 
+
+    /**
+     * Borra un torneo de la base de datos segun un los datos de una clase
+     * Usuario y Torneo (Id Usuario e Id Torneo)
+     *
      * @author Jose Ramon
-    * @version 0.1
-    * @param "Torneo"
-    * @param "Usuario"
+     * @version 0.1
+     * @param "Torneo"
+     * @param "Usuario"
      */
-    public boolean borrarTorneo(Torneo t, Usuario u){
-        boolean retorno=false;
-        
+    public boolean borrarTorneo(Torneo t, Usuario u) {
+        boolean retorno = false;
+
         try {
             //Iniciamos conexión
             String insertSql = "CALL borraTorneo(?,?)";
 
             PreparedStatement stmt = this.getConexion().prepareStatement(insertSql);
-            stmt.setInt(1,u.getId());
-            stmt.setInt(2,t.getId());
+            stmt.setInt(1, u.getId());
+            stmt.setInt(2, t.getId());
 
             stmt.execute();
-			
-	}catch (SQLException e) {
+
+        } catch (SQLException e) {
             e.printStackTrace();
-	} 
-	finally {
+        } finally {
             //Cerramos conexión
             this.cerrarConexion();
-	}
+        }
         return retorno;
     }
-    
-    /**Inscribe 
-     * 
+
+    /**
+     * Inscribe
+     *
      * @param t
-     * @param eq 
+     * @param eq
      */
-    public void inscribEquipo(Torneo t, Equipo eq){
+    public void inscribEquipo(Torneo t, Equipo eq) {
         try {
             //Iniciamos conexión
             String insertSql = "SELECT `inscribEquipo`(?, ?)";
 
             PreparedStatement stmt = this.getConexion().prepareStatement(insertSql);
-            stmt.setInt(1,eq.getId());
-            stmt.setInt(2,t.getId());
+            stmt.setInt(1, eq.getId());
+            stmt.setInt(2, t.getId());
 
             stmt.execute();
-			
-	}catch (SQLException e) {
+
+        } catch (SQLException e) {
             e.printStackTrace();
-	} 
-	finally {
+        } finally {
             //Cerramos conexión
             this.cerrarConexion();
-	}
+        }
     }
-    
-    public void desInscribEquipo(Torneo t, Equipo eq){
+
+    public void desInscribEquipo(Torneo t, Equipo eq) {
         try {
             //Iniciamos conexión
             String insertSql = "CALL desInscribEquipo(?,?)";
 
             PreparedStatement stmt = this.getConexion().prepareStatement(insertSql);
-            stmt.setInt(1,eq.getId());
-            stmt.setInt(2,t.getId());
+            stmt.setInt(1, eq.getId());
+            stmt.setInt(2, t.getId());
 
             stmt.execute();
-			
-	}catch (SQLException e) {
+
+        } catch (SQLException e) {
             e.printStackTrace();
-	} 
-	finally {
+        } finally {
             //Cerramos conexión
             this.cerrarConexion();
-	}
+        }
+    }
+
+    public ArrayList<Torneo> listarTorneosHome() {
+
+        try {
+            //Iniciamos conexión
+            ArrayList<Torneo> almatorneo = new ArrayList();
+            String insertSql = "call obtenerTorneosHome()";
+
+            PreparedStatement stmt = this.getConexion().prepareStatement(insertSql);
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                Torneo t = new Torneo();
+                t.setNombre(rs.getString("nombre"));
+                t.setFehcaInicio("fecha_inicio");
+                t.setFechaInscripcion("fecha_inscripcion");
+                t.setDeporte(rs.getString("deporte"));
+                almatorneo.add(t);
+
+            }
+
+            return almatorneo;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+
     }
     
-    
+    public ArrayList<Torneo> getTorneos() {
+
+        try {
+            //Iniciamos conexión
+            ArrayList<Torneo> listaTorneos = new ArrayList();
+            String insertSql = "CALL obtenerTorneos()";
+
+            PreparedStatement stmt = this.getConexion().prepareStatement(insertSql);
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                Torneo t = new Torneo();
+                t.setFechaInscripcion("fecha inscripcion");
+                t.setNombre("nombre");
+                t.setDeporte("deporte");
+                t.setFehcaInicio("fecha inicio");
+                listaTorneos.add(t);
+            }
+
+            return listaTorneos;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        return null;
+    }
+   }
+
 }
