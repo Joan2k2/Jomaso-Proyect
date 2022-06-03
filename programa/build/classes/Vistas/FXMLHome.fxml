@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -43,18 +44,17 @@
       <Text layoutX="243.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Noticia 1" />
       <Text layoutX="70.0" layoutY="459.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Noticia 1" />
       <Text layoutX="243.0" layoutY="460.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Noticia 1" />
-      <Text layoutX="612.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text layoutX="612.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text layoutX="612.0" layoutY="344.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text layoutX="612.0" layoutY="435.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Label layoutX="461.0" layoutY="140.0" text="Label" />
-      <Label layoutX="461.0" layoutY="231.0" text="Label" />
-      <Label layoutX="461.0" layoutY="331.0" text="Label" />
-      <Label layoutX="461.0" layoutY="422.0" text="Label" />
       <ImageView fitHeight="72.0" fitWidth="47.0" layoutX="788.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../recursos/images/descarga.jpg" />
          </image>
       </ImageView>
+      <TableView layoutX="448.0" layoutY="171.0" prefHeight="200.0" prefWidth="301.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="Nombre" />
+          <TableColumn prefWidth="75.0" text="Fecha" />
+            <TableColumn prefWidth="75.0" text="Deporte" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>
