@@ -159,7 +159,7 @@ public class UsuarioModel extends DBUtil {
                 }
                 u.setDeportes(arrayDep);
                 
-                //array de deportes que participa el usuario
+                //array de equipos que participa el usuario
                 ArrayList<Equipo> arrayEqi=new ArrayList();
                 while(rs.next()){
                     Equipo e=new Equipo();
@@ -190,7 +190,7 @@ public class UsuarioModel extends DBUtil {
                         
 	}catch (SQLException e) {
             e.printStackTrace();
-            return u;
+            return null;
 	} 
 	finally {
             //Cerramos conexión
