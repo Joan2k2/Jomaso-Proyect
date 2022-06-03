@@ -6,7 +6,10 @@ package Controllers;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 
 /**
  * FXML Controller class
@@ -14,6 +17,15 @@ import javafx.fxml.Initializable;
  * @author Joan_2k2
  */
 public class FXMLEquiposController implements Initializable {
+
+    @FXML
+    private TableView<?> tablaEquipos;
+    @FXML
+    private TableColumn<?, ?> nombreEquipo;
+    @FXML
+    private TableColumn<?, ?> nombreDeporte;
+    @FXML
+    private TableColumn<?, ?> nicnameUser;
 
     /**
      * Initializes the controller class.

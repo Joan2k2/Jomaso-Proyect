@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="Controllers.FXMLEquiposController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLEquiposController">
    <children>
-      <Text layoutX="271.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Equipos" />
+      <Text layoutX="236.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Equipos" wrappingWidth="128.01171875">
+         <font>
+            <Font name="Consolas" size="32.0" />
+         </font></Text>
+      <TableView fx:id="tablaEquipos" layoutX="146.0" layoutY="100.0" prefHeight="200.0" prefWidth="309.0">
+        <columns>
+          <TableColumn fx:id="nombreEquipo" prefWidth="106.0" text="Nombre" />
+          <TableColumn fx:id="nombreDeporte" prefWidth="93.0" text="Deporte" />
+            <TableColumn fx:id="nicnameUser" prefWidth="109.0" text="Líder" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>

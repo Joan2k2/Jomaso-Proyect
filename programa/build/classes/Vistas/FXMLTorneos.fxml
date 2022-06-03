@@ -12,8 +12,9 @@
          <font>
             <Font name="Consolas" size="32.0" />
          </font></Text>
-      <TableView fx:id="tablatorneos" layoutX="67.0" layoutY="123.0" prefHeight="251.0" prefWidth="467.0">
+      <TableView fx:id="tablatorneos" layoutX="39.0" layoutY="121.0" prefHeight="251.0" prefWidth="523.0">
         <columns>
+            <TableColumn fx:id="idTorneo" prefWidth="75.0" text="Id" />
           <TableColumn id="fechainscripciontorneos" fx:id="fechaInscripccion" prefWidth="106.0" text="Fecha Inscripcion" />
           <TableColumn id="nombretorneos" fx:id="nombreTorneo" prefWidth="123.0" text="Nombre" />
             <TableColumn id="deportetorneos" fx:id="nombreDeporte" prefWidth="111.0" text="Deporte" />

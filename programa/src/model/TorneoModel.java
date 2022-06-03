@@ -169,6 +169,7 @@ public class TorneoModel extends DBUtil {
 
             while (rs.next()) {
                 Torneo t = new Torneo();
+                t.setId(Integer.parseInt(rs.getString("id")));
                 t.setFechaInscripcion(rs.getString("fecha_inscripcion"));
                 t.setNombre(rs.getString("nombre"));
                 t.setDeporte(rs.getString("deporte"));
@@ -183,5 +184,9 @@ public class TorneoModel extends DBUtil {
         return null;
     }
    }
+    public void getTorneoVista(int idTorneo){
+    
+    
+    }
 
 }
