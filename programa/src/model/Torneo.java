@@ -4,6 +4,8 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 /**
  * Clase usada para almacenar la informacion a usar de Torneos
  * 
@@ -13,15 +15,14 @@ package model;
  */
 public class Torneo {
     private int id;
-    private int[] equipos;
+    private ArrayList<Equipo> equipos;
     private String descripcion;
     private String nombre;
     private String fechaInscripcion;
     private String fehcaInicio;
     
     //Constructor con todos los atributos
-    public Torneo(int id, int[] equipos, String descripcion, String nombre, String fechaInscripcion, String fehcaInicio) {
-        this.id = id;
+    public Torneo(ArrayList<Equipo> equipos, String descripcion, String nombre, String fechaInscripcion, String fehcaInicio) {
         this.equipos = equipos;
         this.descripcion = descripcion;
         this.nombre = nombre;
@@ -29,8 +30,7 @@ public class Torneo {
         this.fehcaInicio = fehcaInicio;
     }
     //Constructor creacion generica
-    public Torneo(int id, String nombre, String fechaInscripcion, String fehcaInicio) {
-        this.id = id;
+    public Torneo(String nombre, String fechaInscripcion, String fehcaInicio) {
         this.nombre = nombre;
         this.fechaInscripcion = fechaInscripcion;
         this.fehcaInicio = fehcaInicio;
@@ -52,11 +52,11 @@ public class Torneo {
         this.id = id;
     }
 
-    public int[] getEquipos() {
+    public ArrayList<Equipo> getEquipos() {
         return equipos;
     }
 
-    public void setEquipos(int[] equipos) {
+    public void setEquipos(ArrayList<Equipo> equipos) {
         this.equipos = equipos;
     }
 
