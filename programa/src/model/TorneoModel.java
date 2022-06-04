@@ -157,7 +157,7 @@ public class TorneoModel extends DBUtil {
 
     }
     
-    public ObservableList<Torneo> getTorneos() {
+    public ObservableList<Torneo> listarTorneos() {
 
         try {
             //Iniciamos conexión
