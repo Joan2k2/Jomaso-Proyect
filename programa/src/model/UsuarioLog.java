@@ -33,6 +33,7 @@ public class UsuarioLog {
     private static int edad;
     private static String descripcion;
     private static UsuarioLog usuarioLog;
+    private static int almacenId; 
     
     //Constructor default
     private UsuarioLog(){}
@@ -55,6 +56,22 @@ public class UsuarioLog {
             return UsuarioLog.usuarioLog;
         }
         return UsuarioLog.usuarioLog;
+    }
+
+    public static UsuarioLog getUsuarioLog() {
+        return usuarioLog;
+    }
+
+    public static void setUsuarioLog(UsuarioLog usuarioLog) {
+        UsuarioLog.usuarioLog = usuarioLog;
+    }
+
+    public static int getAlmacenId() {
+        return almacenId;
+    }
+
+    public static void setAlmacenId(int almacenId) {
+        UsuarioLog.almacenId = almacenId;
     }
 
     public static String getCorreo() {
