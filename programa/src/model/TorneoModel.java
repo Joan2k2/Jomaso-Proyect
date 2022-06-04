@@ -212,5 +212,32 @@ public class TorneoModel extends DBUtil {
             return null;
         }
    }
+    
+    public ObservableList<Equipo> getEquipos() {
+
+        try {
+            //Iniciamos conexión
+            ObservableList<Equipo> equipos = FXCollections.observableArrayList();
+            String insertSql = "SELECT e.nombre,u.nickname,e.descripcion FROM equipos e,torneos t,compite c,participa p,usuarios u WHERE u.id=p.id_usuario and p.id_equipo=e.id and c.id_equipos=e.id and c.id_torneo=t.id and e.admin=u.id AND t.id=?";
+
+            PreparedStatement stmt = this.getConexion().prepareStatement(insertSql);
+            stmt.setInt(1, UsuarioLog.getAlmacenId());
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                Equipo e = new Equipo();
+                e.setNombre(rs.getString("nombre"));
+                e.setDescripcion(rs.getString("descripcion"));
+                e.setNameAdmin(rs.getString("nickname"));
+                equipos.add(e);
+            }
+
+            return equipos;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+   }
 
 }

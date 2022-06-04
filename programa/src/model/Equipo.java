@@ -22,6 +22,7 @@ public class Equipo {
     private String nombre;
     private Blob img;
     private String descripcion;
+    private String nameAdmin;
     
     //Constructor default
     public Equipo(){}
@@ -44,6 +45,15 @@ public class Equipo {
         this.descripcion=descripcion;
     }
 
+    public String getNameAdmin() {
+        return nameAdmin;
+    }
+
+    public void setNameAdmin(String nameAdmin) {
+        this.nameAdmin = nameAdmin;
+    }
+
+    
     public String getDescripcion() {
         return descripcion;
     }
