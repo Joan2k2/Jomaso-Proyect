@@ -181,12 +181,36 @@ public class TorneoModel extends DBUtil {
 
         } catch (SQLException e) {
             e.printStackTrace();
-        return null;
-    }
+            return null;
+        }
    }
-    public void getTorneoVista(int idTorneo){
     
-    
-    }
+    public Torneo getTorneo() {
+        
+        try {
+            //Iniciamos conexión
+            String insertSql = "SELECT t.descripcion,t.fecha_inscripcion,t.fecha_inicio,t.nombre,d.nombre AS \"deporte\" FROM torneos t, deportes d, trata tr WHERE tr.id_torneo=t.id AND t.id=? and tr.id_deporte=d.id";
+
+            PreparedStatement stmt = this.getConexion().prepareStatement(insertSql);
+            
+            stmt.setInt(1, UsuarioLog.getAlmacenId());
+            ResultSet rs = stmt.executeQuery();
+            Torneo t = new Torneo();
+            while (rs.next()) {
+                
+                t.setDescripcion(rs.getString("descripcion"));
+                t.setFechaInscripcion(rs.getString("fecha_inscripcion"));
+                t.setNombre(rs.getString("nombre"));
+                t.setDeporte(rs.getString("deporte"));
+                t.setFehcaInicio(rs.getString("fecha_inicio"));
+            }
+
+            return t;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+   }
 
 }
