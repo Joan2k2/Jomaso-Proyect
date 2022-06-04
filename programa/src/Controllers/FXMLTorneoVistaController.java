@@ -27,6 +27,7 @@ import javafx.stage.Stage;
 import model.Equipo;
 import model.Torneo;
 import model.TorneoModel;
+import model.Usuario;
 import model.UsuarioLog;
 
 /**
@@ -87,10 +88,23 @@ public class FXMLTorneoVistaController implements Initializable {
 
     @FXML
     private void unirEquipo(ActionEvent event) {
+//        Usuario u =new Usuario();
+//        u.set
+//        
+//        boolean resultado=inscribEquipo;
+//        
+//        if(resultado==true){
+//        
+//        
+//        
+//        }
+        
     }
 
     @FXML
     private void quitarEquipo(ActionEvent event) {
+        
+        
     }
 
 
