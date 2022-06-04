@@ -84,49 +84,86 @@ public class TorneoModel extends DBUtil {
     }
 
     /**
-     * Inscribe
+     * Inscribe a un equipo a un torneo y guarda el registro en la base de datos,
+     * para lograr eso solo necesitas pasarle el nombre del equipo y el mismo accedera
+     * a la id del usuario y del torneo mediante la clase estatica UsuarioLog
      *
-     * @param t
-     * @param eq
+     * @author Jose Ramon
+     * @version 0.2
+     * @param "String"
+     * @return boolean
      */
-    public void inscribEquipo(Torneo t, Equipo eq) {
+    public boolean inscribEquipo(String equipoName) {
         try {
             //Iniciamos conexión
-            String insertSql = "SELECT `inscribEquipo`(?, ?)";
+            //name, contra, equipoName, idUsrLog
+            String insertSql = "SELECT `inscribEquipo`(?, ?, ?)";
 
             PreparedStatement stmt = this.getConexion().prepareStatement(insertSql);
-            stmt.setInt(1, eq.getId());
-            stmt.setInt(2, t.getId());
+            stmt.setString(1, equipoName);
+            stmt.setInt(2, UsuarioLog.getId());
+            stmt.setInt(3,UsuarioLog.getAlmacenId());
 
-            stmt.execute();
-
+            ResultSet rs=stmt.executeQuery();
+            boolean resultado=false;
+            
+            while(rs.next()){
+                resultado=rs.getBoolean(1);
+            }
+            return resultado;
+            
         } catch (SQLException e) {
             e.printStackTrace();
+            return false;
         } finally {
             //Cerramos conexión
             this.cerrarConexion();
         }
     }
 
-    public void desInscribEquipo(Torneo t, Equipo eq) {
+    /**
+     * desapunta a un equipo a un torneo y guarda el registro en la base de datos,
+     * para lograr eso solo necesitas pasarle el nombre del equipo y el mismo accedera
+     * a la id del usuario y del torneo mediante la clase estatica UsuarioLog
+     *
+     * @author Jose Ramon
+     * @version 0.2
+     * @param "String"
+     * @return boolean
+     */
+    public boolean desInscribEquipo(String equipoName) {
         try {
             //Iniciamos conexión
-            String insertSql = "CALL desInscribEquipo(?,?)";
+            String insertSql = "CALL desInscribEquipo(?,?,?)";
 
             PreparedStatement stmt = this.getConexion().prepareStatement(insertSql);
-            stmt.setInt(1, eq.getId());
-            stmt.setInt(2, t.getId());
+            stmt.setString(1, equipoName);
+            stmt.setInt(2, UsuarioLog.getId());
+            stmt.setInt(3,UsuarioLog.getAlmacenId());
 
-            stmt.execute();
+            ResultSet rs=stmt.executeQuery();
+            boolean resultado=false;
+            
+            while(rs.next()){
+                resultado=rs.getBoolean(1);
+            }
+            return resultado;
 
         } catch (SQLException e) {
             e.printStackTrace();
+            return false;
         } finally {
             //Cerramos conexión
             this.cerrarConexion();
         }
     }
 
+    /**Retorna una lista de los torneos creados mas recientemente
+     *
+     * @author Jose Ramon
+     * @version 0.1
+     * @return "ObservableList<Torneo>"
+     */
     public ObservableList<Torneo> listarTorneosHome() {
 
         try {
@@ -157,6 +194,12 @@ public class TorneoModel extends DBUtil {
 
     }
     
+    /**Retorna una lista de TODOS los torneos en DB
+     *
+     * @author Jose Ramon
+     * @version 0.1
+     * @return "ObservableList<Torneo>"
+     */
     public ObservableList<Torneo> listarTorneos() {
 
         try {
@@ -185,6 +228,13 @@ public class TorneoModel extends DBUtil {
         }
    }
     
+    /**Retorna un objeto Torneo con la informacion necesara de este
+     * para mostrarlo en su perfil
+     *
+     * @author Jose Ramon
+     * @version 0.1
+     * @return "Torneo"
+     */
     public Torneo getTorneo() {
         
         try {
@@ -213,6 +263,13 @@ public class TorneoModel extends DBUtil {
         }
    }
     
+    /**Retorna una lista de TODOS los equipos que participan en X torneo
+     * (es necesario que en UsuarioLog.almacenId se encuentre la id del torneo)
+     *
+     * @author Jose Ramon
+     * @version 0.1
+     * @return "ObservableList<Equipo>"
+     */
     public ObservableList<Equipo> getEquipos() {
 
         try {

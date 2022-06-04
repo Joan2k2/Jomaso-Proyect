@@ -32,6 +32,7 @@ public class Usuario {
     private String correo;
     private int edad;
     private String descripcion;
+    private String almacenString;
     
     //Constructor default
     public Usuario(){}
@@ -65,6 +66,14 @@ public class Usuario {
     //Constructor con solo id
     public Usuario(int id) {
         this.id = id;
+    }
+
+    public String getAlmacenString() {
+        return almacenString;
+    }
+
+    public void setAlmacenString(String almacenString) {
+        this.almacenString = almacenString;
     }
 
     public String getCorreo() {

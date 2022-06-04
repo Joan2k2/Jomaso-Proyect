@@ -88,6 +88,17 @@ public class UsuarioModel extends DBUtil {
 		}
     }
     
+    /**Analiza en nickName y contraseña de usuario a logearse y devuelve los dos parametros anteriores
+     * son ciertos o no.
+     * (si el nick y contraseña son iguales devuelve true, de lo contrario devuelve false)
+     * al final de la funcion si el booleano a retornar es true llama a la funcion obtUsuario
+     * para crear y almacenar los datos del usuario logeado para un uso futuro.
+     * 
+     * @author Jose Ramon
+     * @version 0.2
+     * @param "Usuario"
+     * @return boolean
+     */
     public boolean usrLog(Usuario u){
         boolean retorno=false;
         try{				
@@ -108,6 +119,7 @@ public class UsuarioModel extends DBUtil {
               retorno=rs.getBoolean(1);
             }
             
+            obtUsuario(u.getNickName());
             return retorno;
 
 			
@@ -122,7 +134,15 @@ public class UsuarioModel extends DBUtil {
         
     }
     
-    public UsuarioLog obtUsuario(String nick){
+    /**saca los datos personales de usuario legeado (en caso de que el logeo sea exitoso)
+     * y posteriormente lo almacena los datos en la clase estatica "UsuarioLog"
+     * 
+     * @author Jose Ramon
+     * @version 0.2
+     * @param "Usuario"
+     * @return "UsuarioLog"
+     */
+    private UsuarioLog obtUsuario(String nick){
         Usuario u=new Usuario();
         
         try {

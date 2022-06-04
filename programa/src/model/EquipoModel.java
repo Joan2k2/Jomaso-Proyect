@@ -129,7 +129,14 @@ public class EquipoModel extends DBUtil {
             this.cerrarConexion();
 	}
     }
-    
+    /**Retorna una lista de los Usuarios que participan en X equipo,
+     * necesita la id del equipo como parametro
+     * 
+     * @author Jose Ramon
+     * @version 0.1
+     * @param "int id"
+     * @return "ObservableList<Usuario>"
+     */
     public ObservableList<Usuario> getJugadores(int id){
         try{				
             String insertSql="SELECT u.id,u.nickname,u.correo,u.nombre from usuarios u,participa p WHERE p.id_usuario=u.id AND p.id_equipo=?";
@@ -159,6 +166,14 @@ public class EquipoModel extends DBUtil {
 	}
     }
     
+    /**Retorna una lista de los proximos Torneos que se apunto X equipo,
+     * necesita la id del equipo como parametro
+     * 
+     * @author Jose Ramon
+     * @version 0.1
+     * @param "int id"
+     * @return "ObservableList<Torneo>"
+     */
     public ObservableList<Torneo> getTorneos(int id){
         try{				
             String insertSql="SELECT t.nombre,t.fecha_inicio,t.fecha_inscripcion,d.nombre AS \"deporte\" FROM torneos t,compite c,deportes d,trata tr WHERE tr.id_torneo=t.id AND tr.id_deporte=d.id and c.id_torneo=t.id AND c.id_equipos=?";
