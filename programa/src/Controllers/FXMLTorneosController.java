@@ -26,6 +26,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import model.Torneo;
 import model.TorneoModel;
+import model.UsuarioLog;
 
 /**
  * FXML Controller class
@@ -61,7 +62,7 @@ public class FXMLTorneosController implements Initializable {
 
         TorneoModel tm = new TorneoModel();
 
-        ObservableList<Torneo> listaTorneos = tm.getTorneos();
+        ObservableList<Torneo> listaTorneos = tm.listarTorneos();
         this.idTorneo.setCellValueFactory(new PropertyValueFactory("id"));
         this.fechaInscripccion.setCellValueFactory(new PropertyValueFactory("fechaInscripcion"));
         this.nombreTorneo.setCellValueFactory(new PropertyValueFactory("nombre"));
@@ -73,6 +74,11 @@ public class FXMLTorneosController implements Initializable {
 
     @FXML
     private void llevaTorneoVista(ActionEvent event) {
+        
+        UsuarioLog.setAlmacenId(Integer.parseInt(idVerTorneo.getText()));
+        
+        
+        
         try {
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vistas/FXMLTorneoVista.fxml"));
