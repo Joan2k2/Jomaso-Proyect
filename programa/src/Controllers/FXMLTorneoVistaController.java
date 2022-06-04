@@ -15,6 +15,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import model.Equipo;
+import model.Torneo;
 
 /**
  * FXML Controller class
@@ -47,9 +48,9 @@ public class FXMLTorneoVistaController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-        
-        
+        Torneo t = new Torneo();
+        textoDescripccion.setText(t.getDescripcion());
+        nombreTorneo.setText(t.getNombre());
     }    
 
     @FXML
