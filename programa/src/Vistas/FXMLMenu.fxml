@@ -29,6 +29,7 @@
           <Menu fx:id="menuEquipos" mnemonicParsing="false" onAction="#llevaEquipos" text="Equipos">
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#llevaEquipos" text="Equipos" />
+                  <MenuItem mnemonicParsing="false" onAction="#llevaCrearEquipos" text="Crear equipo" />
                </items></Menu>
           <Menu fx:id="menuTorneos" mnemonicParsing="false" text="Torneos">
                <items>

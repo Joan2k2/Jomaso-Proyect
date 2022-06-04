@@ -102,6 +102,10 @@ public class FXMLMenuController implements Initializable {
         }  
     }
 
+    @FXML
+    private void llevaCrearEquipos(ActionEvent event) {
+    }
+
     
     
 
