@@ -20,24 +20,22 @@ import javafx.collections.ObservableList;
 public class EquipoModel extends DBUtil {
     
     /**Crea nuevo Equipo en la base de datos
-    * segun una clase Equipo y Usuario
-    * (Id Usuario, nombre equipo y descripcion equipo)
+    * segun un nombre y descripcion
     *  
     * @author Jose Ramon
     * @version 0.1
-    * @param "Equipo"
-    * @param "Usuario"
+    * @param "String"
     */
-    public void crearEquipo(Usuario u,Equipo eq) {
+    public void crearEquipo(String name, String desc) {
 		
 	try {
             //Iniciamos conexión
             String insertSql = "CALL addEquipo(?,?,?)";
 
             PreparedStatement stmt = this.getConexion().prepareStatement(insertSql);
-            stmt.setInt(1,u.getId());
-            stmt.setString(2,eq.getNombre());
-            stmt.setBlob(3,eq.getImg());
+            stmt.setInt(1,UsuarioLog.getId());
+            stmt.setString(2,name);
+            stmt.setString(3,desc);
 
             stmt.execute();		
 	}catch (SQLException e) {
@@ -50,21 +48,19 @@ public class EquipoModel extends DBUtil {
     }
     
     /**Borra un equipo de la base de datos
-    * segun un los datos de una clase Usuario y Equipo
-    * (Id Usuario e Id Equipo)
+    * segun el nombre del equipo
     *  
     * @author Jose Ramon
     * @version 0.1
-    * @param "Equipo"
-    * @param "Usuario"
+    * @param "String"
     */
-    public void borraEquipo(Usuario u,Equipo eq){
+    public void borraEquipo(String name){
         try{				
 	String insertSql="CALL borraEquipo(?,?)";
                 
             PreparedStatement stmt=this.getConexion().prepareStatement(insertSql);
-            stmt.setInt(1, u.getId());
-            stmt.setInt(2, eq.getId());
+            stmt.setInt(1, UsuarioLog.getId());
+            stmt.setString(2, name);
                 
             stmt.execute();
 	} catch (SQLException e) {
