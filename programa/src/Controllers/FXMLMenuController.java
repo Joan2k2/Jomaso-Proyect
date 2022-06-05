@@ -104,6 +104,13 @@ public class FXMLMenuController implements Initializable {
 
     @FXML
     private void llevaCrearEquipos(ActionEvent event) {
+        
+        try {
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/Vistas/FXMLCrearEquipo.fxml"));
+            this.rootPane.getChildren().setAll(pane);
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLMenuController.class.getName()).log(Level.SEVERE, null, ex);
+        } 
     }
 
     

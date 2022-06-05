@@ -6,6 +6,9 @@ package Controllers;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -16,6 +19,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -29,6 +33,7 @@ import model.Torneo;
 import model.TorneoModel;
 import model.Usuario;
 import model.UsuarioLog;
+import model.UsuarioModel;
 
 /**
  * FXML Controller class
@@ -69,48 +74,75 @@ public class FXMLTorneoVistaController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-        TorneoModel tm=new TorneoModel();
+
+        TorneoModel tm = new TorneoModel();
         ObservableList<Equipo> listaEquipos = tm.getEquipos();
-        Torneo t =tm.getTorneo();
+        Torneo t = tm.getTorneo();
 //        this.nombreEquipoTabla.setCellFactory(new PropertyValueFactory("nombre"));
 //        this.liderEquipoTabla.setCellFactory(new PropertyValueFactory("nameAdmin"));
 //        this.descripcionEquipoTabla.setCellFactory(new PropertyValueFactory("descripcion"));
 //        this.tablaEquipos.setItems(listaEquipos);
-        
+
         textoDescripccion.setText(t.getDescripcion());
         nombreTorneo.setText(t.getNombre());
         fechaInicioDato.setText(t.getFehcaInicio());
         fechaInscripccionDato.setText(t.getFechaInscripcion());
         deporteDato.setText(t.getDeporte());
-       
-    }    
+
+    }
 
     @FXML
+
     private void unirEquipo(ActionEvent event) {
-//        Usuario u =new Usuario();
-//        u.set
-//        
-//        boolean resultado=inscribEquipo;
-//        
-//        if(resultado==true){
-//        
-//        
-//        
-//        }
-        
+        boolean resultado = false;
+        LocalDate date_of_today = LocalDate.now();
+        UsuarioModel um = new UsuarioModel();
+        Usuario u = new Usuario();
+        TorneoModel tm = new TorneoModel();
+        u.setNickName(nombreUsuarioInsertar.getText());
+        u.setContrasenya(contraseñaUsuarioInsertar.getText());
+//comprobar que la fecha de inscripccion es mayor o igual a la fecha actual
+//comprobar que el nombre de usuario y contraseña de usuario son los mismos que en usuarioLog
+
+        if (u.getNickName() == UsuarioLog.getNickName() && u.getContrasenya() == UsuarioLog.getContrasenya()) {
+
+//            if (resultadofunccion==true) {
+//
+//                resultado = tm.inscribEquipo(nombreEquipoInsertar.getText());
+//                Alert a = new Alert(Alert.AlertType.CONFIRMATION);
+//                a.setContentText("Te has inscrito correctamente");
+//                a.setHeaderText("Todo Ok!!");
+//                a.showAndWait();
+//            } else {
+//                Alert a = new Alert(Alert.AlertType.ERROR);
+//                a.setContentText("El plazo de la fecha a expirado");
+//                a.setHeaderText("Error de Inscribirse");
+//                a.showAndWait();
+//            }
+
+        } else {
+            Alert a = new Alert(Alert.AlertType.ERROR);
+            a.setContentText("El usuario o contraseña no coinciden");
+            a.setHeaderText("Error de autenticacion");
+            a.showAndWait();
+        }
+
     }
 
     @FXML
     private void quitarEquipo(ActionEvent event) {
-        
-        
-    }
+        Usuario u = new Usuario();
+        u.setNickName(nombreUsuarioInsertar.getText());
+        u.setContrasenya(contraseñaUsuarioInsertar.getText());
+        if (u.getNickName() == UsuarioLog.getNickName() && u.getContrasenya() == UsuarioLog.getContrasenya()) {
 
+            
+        }else{}
+    }
 
     @FXML
     private void llevarHome(ActionEvent event) {
-                try {
+        try {
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vistas/FXMLMenu.fxml"));
 
@@ -129,5 +161,5 @@ public class FXMLTorneoVistaController implements Initializable {
             Logger.getLogger(FXMLRegistrarseController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
 }
