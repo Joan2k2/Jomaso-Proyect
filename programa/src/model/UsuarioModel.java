@@ -118,8 +118,9 @@ public class UsuarioModel extends DBUtil {
             while(rs.next()){
               retorno=rs.getBoolean(1);
             }
-            
-            obtUsuario(u.getNickName());
+            if(retorno=true){
+                obtUsuario(u.getNickName());
+            }
             return retorno;
 
 			
