@@ -96,7 +96,6 @@ public class FXMLTorneoVistaController implements Initializable {
     private void unirEquipo(ActionEvent event) {
         boolean resultado = false;
         LocalDate date_of_today = LocalDate.now();
-        UsuarioModel um = new UsuarioModel();
         Usuario u = new Usuario();
         TorneoModel tm = new TorneoModel();
         u.setNickName(nombreUsuarioInsertar.getText());
@@ -106,19 +105,20 @@ public class FXMLTorneoVistaController implements Initializable {
 
         if (u.getNickName() == UsuarioLog.getNickName() && u.getContrasenya() == UsuarioLog.getContrasenya()) {
 
-//            if (resultadofunccion==true) {
-//
-//                resultado = tm.inscribEquipo(nombreEquipoInsertar.getText());
-//                Alert a = new Alert(Alert.AlertType.CONFIRMATION);
-//                a.setContentText("Te has inscrito correctamente");
-//                a.setHeaderText("Todo Ok!!");
-//                a.showAndWait();
-//            } else {
-//                Alert a = new Alert(Alert.AlertType.ERROR);
-//                a.setContentText("El plazo de la fecha a expirado");
-//                a.setHeaderText("Error de Inscribirse");
-//                a.showAndWait();
-//            }
+                resultado = tm.inscribEquipo(nombreEquipoInsertar.getText());
+            if (resultado==true) {
+
+                
+                Alert a = new Alert(Alert.AlertType.CONFIRMATION);
+                a.setContentText("Te has inscrito correctamente");
+                a.setHeaderText("Todo Ok!!");
+                a.showAndWait();
+            } else {
+                Alert a = new Alert(Alert.AlertType.ERROR);
+                a.setContentText("No funciona");
+                a.setHeaderText("Error de Inscribirse");
+                a.showAndWait();
+            }
 
         } else {
             Alert a = new Alert(Alert.AlertType.ERROR);
@@ -131,13 +131,35 @@ public class FXMLTorneoVistaController implements Initializable {
 
     @FXML
     private void quitarEquipo(ActionEvent event) {
+        boolean resultado=false;
         Usuario u = new Usuario();
         u.setNickName(nombreUsuarioInsertar.getText());
         u.setContrasenya(contraseñaUsuarioInsertar.getText());
+        TorneoModel tm = new TorneoModel();
+        
+        
         if (u.getNickName() == UsuarioLog.getNickName() && u.getContrasenya() == UsuarioLog.getContrasenya()) {
+            resultado=tm.desInscribEquipo(nombreEquipoInsertar.getText());
+            if (resultado==true) {
 
+                
+                Alert a = new Alert(Alert.AlertType.CONFIRMATION);
+                a.setContentText("Te has eliminado correctamente");
+                a.setHeaderText("Todo Ok!!");
+                a.showAndWait();
+            } else {
+                Alert a = new Alert(Alert.AlertType.ERROR);
+                a.setContentText("No funciona");
+                a.setHeaderText("Error de eliminarse");
+                a.showAndWait();
+            }
             
-        }else{}
+            
+        }else{
+         Alert a = new Alert(Alert.AlertType.ERROR);
+            a.setContentText("El usuario o contraseña no coinciden");
+            a.setHeaderText("Error de autenticacion");
+            a.showAndWait();}
     }
 
     @FXML
