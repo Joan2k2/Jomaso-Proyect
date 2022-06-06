@@ -39,46 +39,50 @@ public class FXMLCrearEquipoController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-           String Futbol="Futbol";
-        String Tenis="Tenis";
-        String Petanca="Petanca";
-        ObservableList<String> lista =FXCollections.observableArrayList();
+        String Futbol = "Futbol";
+        String Tenis = "Tenis";
+        String Petanca = "Petanca";
+        ObservableList<String> lista = FXCollections.observableArrayList();
         lista.add(Futbol);
         lista.add(Petanca);
         lista.add(Tenis);
         laBox.setItems(lista);
-    }    
+    }
 
     @FXML
     private void crearEquipo(ActionEvent event) {
-        EquipoModel em= new EquipoModel();
-        boolean resultado=false;
-        
-        String s= laBox.getSelectionModel().getSelectedItem();
-        
-        if(textoNombreEquipo.getText().isEmpty() || s==null){
-            
-             Alert ale = new Alert(Alert.AlertType.ERROR);
+        EquipoModel em = new EquipoModel();
+        boolean resultado = false;
+
+        String s = laBox.getSelectionModel().getSelectedItem();
+
+        if (textoNombreEquipo.getText().isEmpty() || s == null) {
+
+            Alert ale = new Alert(Alert.AlertType.ERROR);
             ale.setHeaderText("Error");
             ale.setContentText("No puedes dejar ni el deporte ni el nombre vacio");
             ale.showAndWait();
-        }else{
-        resultado=em.crearEquipo(textoNombreEquipo.getText(), descripccionEquipo.getText(),laBox.getValue());
-        if(resultado==true){
-        Alert ale = new Alert(Alert.AlertType.CONFIRMATION);
-            ale.setHeaderText("Creado con exito");
-            ale.setContentText("Se ha creado con exito");
-            ale.showAndWait();
-        }else{
-        Alert ale = new Alert(Alert.AlertType.ERROR);
-            ale.setHeaderText("No se puede crear");
-            ale.setContentText("Ya existen");
-            ale.showAndWait();
+        } else {
+            
+            resultado = em.crearEquipo(textoNombreEquipo.getText(), descripccionEquipo.getText(), laBox.getValue());
+            
+            if (resultado == true) {
+                
+                Alert ale = new Alert(Alert.AlertType.CONFIRMATION);
+                ale.setHeaderText("Creado con exito");
+                ale.setContentText("Se ha creado con exito");
+                ale.showAndWait();
+                
+            } else {
+                
+                Alert ale = new Alert(Alert.AlertType.ERROR);
+                ale.setHeaderText("No se puede crear");
+                ale.setContentText("Ya existen");
+                ale.showAndWait();
+            }
+
         }
-        
-        }
-        
-        
+
     }
-    
+
 }

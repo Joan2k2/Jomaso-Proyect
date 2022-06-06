@@ -32,8 +32,6 @@ public class FXMLMenuController implements Initializable {
     @FXML
     private Menu menuTorneos;
     @FXML
-    private Menu menuJugadores;
-    @FXML
     private AnchorPane rootPane;
 
     /**
@@ -80,7 +78,6 @@ public class FXMLMenuController implements Initializable {
     }
     
 
-    @FXML
     private void llevaJugadores(ActionEvent event) {
          try {
             AnchorPane pane = FXMLLoader.load(getClass().getResource("/Vistas/FXMLJugadores.fxml"));

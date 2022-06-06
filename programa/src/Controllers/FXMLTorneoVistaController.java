@@ -95,7 +95,7 @@ public class FXMLTorneoVistaController implements Initializable {
 
     private void unirEquipo(ActionEvent event) {
         boolean resultado = false;
-        LocalDate date_of_today = LocalDate.now();
+        
         Usuario u = new Usuario();
         TorneoModel tm = new TorneoModel();
         u.setNickName(nombreUsuarioInsertar.getText());
@@ -115,15 +115,15 @@ public class FXMLTorneoVistaController implements Initializable {
                 a.showAndWait();
             } else {
                 Alert a = new Alert(Alert.AlertType.ERROR);
-                a.setContentText(UsuarioLog.getNickName());
+                a.setContentText("Error de autenticación");
                 a.setHeaderText("Error de Inscribirse");
                 a.showAndWait();
             }
 
         } else {
             Alert a = new Alert(Alert.AlertType.ERROR);
-            a.setContentText(UsuarioLog.getNickName());
-            a.setHeaderText(UsuarioLog.getContrasenya());
+            a.setContentText("Usuario o contraseña no coincien");
+            a.setHeaderText("Error");
             a.showAndWait();
         }
 
