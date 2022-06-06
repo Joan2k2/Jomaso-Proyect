@@ -47,6 +47,8 @@ public class FXMLPerfilController implements Initializable {
     private TextField apellidosperfil;
     @FXML
     private TextField correoperfil;
+    @FXML
+    private TextField nombreperfilText;
 
     /**
      * Initializes the controller class.
@@ -65,7 +67,7 @@ public class FXMLPerfilController implements Initializable {
         
         this.nicknameperfil.setText(UsuarioLog.getNickName());
         this.edadperfil.setText(Integer.toString(UsuarioLog.getEdad()));
-        this.nombreperfil.setText(UsuarioLog.getNombre());
+        this.nombreperfilText.setText(UsuarioLog.getNombre());
         this.apellidosperfil.setText(UsuarioLog.getApellidos());
         this.descripcionperfil.setText(UsuarioLog.getDescripcion());
         this.correoperfil.setText(UsuarioLog.getCorreo());
