@@ -26,16 +26,17 @@ public class EquipoModel extends DBUtil {
     * @version 0.1
     * @param "String"
     */
-    public void crearEquipo(String name, String desc) {
+    public void crearEquipo(String name, String desc,String deporte) {
 		
 	try {
             //Iniciamos conexión
-            String insertSql = "CALL addEquipo(?,?,?)";
+            String insertSql = "CALL addEquipo(?,?,?,?)";
 
             PreparedStatement stmt = this.getConexion().prepareStatement(insertSql);
             stmt.setInt(1,UsuarioLog.getId());
             stmt.setString(2,name);
             stmt.setString(3,desc);
+            stmt.setString(4,deporte);
 
             stmt.execute();		
 	}catch (SQLException e) {
