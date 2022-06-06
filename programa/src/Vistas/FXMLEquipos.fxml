@@ -14,14 +14,15 @@
          <font>
             <Font name="Consolas" size="32.0" />
          </font></Text>
-      <TableView fx:id="tablaEquipos" layoutX="146.0" layoutY="100.0" prefHeight="200.0" prefWidth="309.0">
+      <TableView fx:id="tablaEquipos" layoutX="55.0" layoutY="100.0" prefHeight="200.0" prefWidth="382.0">
         <columns>
+            <TableColumn fx:id="idEquipos" prefWidth="75.0" text="Id" />
           <TableColumn fx:id="nombreEquipo" prefWidth="106.0" text="Nombre" />
           <TableColumn fx:id="nombreDeporte" prefWidth="93.0" text="Deporte" />
             <TableColumn fx:id="nicnameUser" prefWidth="109.0" text="Líder" />
         </columns>
       </TableView>
-      <TextField fx:id="nombreEquipoText" layoutX="162.0" layoutY="326.0" promptText="Nombre Equipo" />
-      <Button fx:id="botonunirseEquipo" layoutX="351.0" layoutY="326.0" mnemonicParsing="false" onAction="#unirseEquipo" text="Unirse" />
+      <TextField fx:id="IdEquipo" layoutX="162.0" layoutY="326.0" promptText="Id del Equipo" />
+      <Button fx:id="botonunirseEquipo" layoutX="351.0" layoutY="326.0" mnemonicParsing="false" onAction="#llevaEquipoVista" text="ir" />
    </children>
 </AnchorPane>

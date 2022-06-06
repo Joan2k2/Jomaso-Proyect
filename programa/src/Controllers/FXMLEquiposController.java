@@ -4,15 +4,27 @@
  */
 package Controllers;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
+import model.Equipo;
+import model.EquipoModel;
+import model.UsuarioLog;
 
 /**
  * FXML Controller class
@@ -22,28 +34,58 @@ import javafx.scene.control.TextField;
 public class FXMLEquiposController implements Initializable {
 
     @FXML
-    private TableView<?> tablaEquipos;
+    private TableView<Equipo> tablaEquipos;
     @FXML
-    private TableColumn<?, ?> nombreEquipo;
+    private TableColumn nombreEquipo;
     @FXML
-    private TableColumn<?, ?> nombreDeporte;
+    private TableColumn nombreDeporte;
     @FXML
-    private TableColumn<?, ?> nicnameUser;
-    @FXML
-    private TextField nombreEquipoText;
+    private TableColumn nicnameUser;
     @FXML
     private Button botonunirseEquipo;
+    @FXML
+    private TextField IdEquipo;
+    @FXML
+    private TableColumn idEquipos;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+    EquipoModel em = new EquipoModel();
+
+        ObservableList<Equipo> listaequipos = em.listarEquipo();
+        this.idEquipos.setCellValueFactory(new PropertyValueFactory("id"));
+        this.nombreEquipo.setCellValueFactory(new PropertyValueFactory("nombre"));
+        this.nombreDeporte.setCellValueFactory(new PropertyValueFactory("descripcion"));   
+        this.nicnameUser.setCellValueFactory(new PropertyValueFactory("nameAdmin"));              
+        this.tablaEquipos.setItems(listaequipos);
     }    
 
     @FXML
-    private void unirseEquipo(ActionEvent event) {
+    private void llevaEquipoVista(ActionEvent event) {
+        
+        UsuarioLog.setAlmacenId(Integer.parseInt(IdEquipo.getText()));
+        
+         try {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vistas/FXMLEquipoVista.fxml"));
+
+            Parent root = loader.load();
+
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+
+            stage.setScene(scene);
+            stage.show();
+
+            Stage myStage = (Stage) this.botonunirseEquipo.getScene().getWindow();
+            myStage.close();
+
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLRegistrarseController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 }

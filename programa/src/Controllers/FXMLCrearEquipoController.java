@@ -52,13 +52,31 @@ public class FXMLCrearEquipoController implements Initializable {
     @FXML
     private void crearEquipo(ActionEvent event) {
         EquipoModel em= new EquipoModel();
-        em.crearEquipo(textoNombreEquipo.getText(), descripccionEquipo.getText());
-        Alert ale = new Alert(Alert.AlertType.ERROR);
+        boolean resultado=false;
+        
+        String s= laBox.getSelectionModel().getSelectedItem();
+        
+        if(textoNombreEquipo.getText().isEmpty() || s==null){
+            
+             Alert ale = new Alert(Alert.AlertType.ERROR);
             ale.setHeaderText("Error");
-            ale.setContentText(laBox.getValue());
+            ale.setContentText("No puedes dejar ni el deporte ni el nombre vacio");
             ale.showAndWait();
+        }else{
+        resultado=em.crearEquipo(textoNombreEquipo.getText(), descripccionEquipo.getText(),laBox.getValue());
+        if(resultado==true){
+        Alert ale = new Alert(Alert.AlertType.CONFIRMATION);
+            ale.setHeaderText("Creado con exito");
+            ale.setContentText("Se ha creado con exito");
+            ale.showAndWait();
+        }else{
+        Alert ale = new Alert(Alert.AlertType.ERROR);
+            ale.setHeaderText("No se puede crear");
+            ale.setContentText("Ya existen");
+            ale.showAndWait();
+        }
         
-        
+        }
         
         
     }

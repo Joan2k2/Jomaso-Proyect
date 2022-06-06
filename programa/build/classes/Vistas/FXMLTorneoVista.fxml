@@ -24,7 +24,7 @@
       <TextField fx:id="nombreEquipoInsertar" layoutX="200.0" layoutY="467.0" promptText="Nombre equipo" />
       <TextField fx:id="nombreUsuarioInsertar" layoutX="377.0" layoutY="467.0" promptText="Nombre Usuario" />
       <TextField fx:id="contraseñaUsuarioInsertar" layoutX="560.0" layoutY="467.0" promptText="Contraseña Usuario" />
-      <TextArea fx:id="textoDescripccion" editable="false" layoutX="72.0" layoutY="110.0" prefHeight="121.0" prefWidth="739.0" text="fghhfg" />
+      <TextArea fx:id="textoDescripccion" editable="false" layoutX="72.0" layoutY="110.0" prefHeight="121.0" prefWidth="739.0" promptText="Descripcion" />
       <Button fx:id="botonVolverTorneos" layoutX="501.0" layoutY="519.0" mnemonicParsing="false" onAction="#llevarHome" text="Volver" />
       <Text layoutX="14.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fecha Inicio" />
       <TextField fx:id="fechaInicioDato" editable="false" layoutX="85.0" layoutY="270.0" prefHeight="25.0" prefWidth="121.0" />

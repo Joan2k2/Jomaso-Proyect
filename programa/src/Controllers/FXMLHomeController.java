@@ -4,13 +4,17 @@
  */
 package Controllers;
 
+import java.awt.Desktop;
+import java.net.URI;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -34,6 +38,8 @@ public class FXMLHomeController implements Initializable {
     private TableColumn fechaInicio;
     @FXML
     private TableView<Torneo> tablaHome;
+    @FXML
+    private Hyperlink noticia1;
 
 
     /**
@@ -51,5 +57,18 @@ public class FXMLHomeController implements Initializable {
         this.fechaInicio.setCellValueFactory(new PropertyValueFactory("fehcaInicio"));
         this.tablaHome.setItems(listarTorneosHome);
     }    
-    
+    @FXML
+    private void vermas1(ActionEvent event) {
+        try {
+            if (Desktop.isDesktopSupported()) {
+                Desktop desktop = Desktop.getDesktop();
+                if (desktop.isSupported(Desktop.Action.BROWSE)) {
+                    desktop.browse(new URI("https://jomaso.ddns.net/noticias.html"));
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    } 
 }
+

@@ -78,10 +78,10 @@ public class FXMLTorneoVistaController implements Initializable {
         TorneoModel tm = new TorneoModel();
         ObservableList<Equipo> listaEquipos = tm.getEquipos();
         Torneo t = tm.getTorneo();
-//        this.nombreEquipoTabla.setCellFactory(new PropertyValueFactory("nombre"));
-//        this.liderEquipoTabla.setCellFactory(new PropertyValueFactory("nameAdmin"));
-//        this.descripcionEquipoTabla.setCellFactory(new PropertyValueFactory("descripcion"));
-//        this.tablaEquipos.setItems(listaEquipos);
+        this.nombreEquipoTabla.setCellValueFactory(new PropertyValueFactory("nombre"));
+        this.liderEquipoTabla.setCellValueFactory(new PropertyValueFactory("nameAdmin"));
+        this.descripcionEquipoTabla.setCellValueFactory(new PropertyValueFactory("descripcion"));
+        this.tablaEquipos.setItems(listaEquipos);
 
         textoDescripccion.setText(t.getDescripcion());
         nombreTorneo.setText(t.getNombre());

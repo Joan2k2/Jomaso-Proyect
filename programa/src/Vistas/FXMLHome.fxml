@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
@@ -10,7 +11,7 @@
 
 <AnchorPane prefHeight="578.0" prefWidth="848.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLHomeController">
    <children>
-      <Text layoutX="108.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Noticias" wrappingWidth="149.13671875">
+      <Text layoutX="112.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Noticias" wrappingWidth="149.13671875">
          <font>
             <Font name="Consolas" size="32.0" />
          </font>
@@ -20,37 +21,28 @@
             <Font name="Consolas" size="32.0" />
          </font>
       </Text>
-      <ImageView fitHeight="120.0" fitWidth="140.0" layoutX="26.0" layoutY="122.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="256.0" fitWidth="323.0" layoutX="25.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../recursos/images/noticias/basketcallejero.jpg" />
+            <Image url="@../recursos/images/padel.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="83.0" fitWidth="140.0" layoutX="199.0" layoutY="122.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../recursos/images/noticias/futbolcallejero.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="120.0" fitWidth="140.0" layoutX="26.0" layoutY="307.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../recursos/images/noticias/hockey.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="120.0" fitWidth="140.0" layoutX="199.0" layoutY="307.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../recursos/images/noticias/balondeoro.jpg" />
-         </image>
-      </ImageView>
-      <Text layoutX="70.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Noticia 1" />
-      <Text layoutX="243.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Noticia 1" />
-      <Text layoutX="70.0" layoutY="459.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Noticia 1" />
-      <Text layoutX="243.0" layoutY="460.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Noticia 1" />
-      <TableView fx:id="tablaHome" layoutX="448.0" layoutY="171.0" prefHeight="200.0" prefWidth="364.0">
+      <TableView fx:id="tablaHome" layoutX="398.0" layoutY="145.0" prefHeight="388.0" prefWidth="414.0">
         <columns>
-            <TableColumn fx:id="fechaInscripccion" prefWidth="138.0" text="Fecha inscripción" />
-          <TableColumn fx:id="nombreTorneo" prefWidth="75.0" text="Nombre" />
-            <TableColumn fx:id="nombreDeporte" prefWidth="75.0" text="Deporte" />
-          <TableColumn fx:id="fechaInicio" prefWidth="75.0" text="Fecha Inicio" />
+            <TableColumn fx:id="fechaInscripccion" prefWidth="124.79998779296875" text="Fecha inscripción" />
+          <TableColumn fx:id="nombreTorneo" prefWidth="84.0" text="Nombre" />
+            <TableColumn fx:id="nombreDeporte" prefWidth="98.4000244140625" text="Deporte" />
+          <TableColumn fx:id="fechaInicio" prefWidth="108.0" text="Fecha Inicio" />
         </columns>
       </TableView>
+      <Hyperlink fx:id="noticia1" layoutX="129.0" layoutY="471.0" onAction="#vermas1" prefHeight="50.0" prefWidth="115.0" text="Ver más">
+         <font>
+            <Font name="Consolas" size="24.0" />
+         </font>
+      </Hyperlink>
+      <Text layoutX="25.0" layoutY="391.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Los favoritos se citan en unos cuartos de final apasionantes" textAlignment="CENTER" wrappingWidth="323.0">
+         <font>
+            <Font name="Consolas" size="21.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

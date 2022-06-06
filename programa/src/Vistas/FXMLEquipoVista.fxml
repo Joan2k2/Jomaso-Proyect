@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="559.0" prefWidth="708.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLEquipoVistaController">
+   <children>
+      <TableView fx:id="tablaJugadores" layoutX="44.0" layoutY="215.0" prefHeight="200.0" prefWidth="226.0">
+        <columns>
+          <TableColumn fx:id="nicknameTablaJuga" prefWidth="75.0" text="Nickname" />
+          <TableColumn fx:id="nombreTablaJuga" prefWidth="75.0" text="Nombre" />
+            <TableColumn fx:id="correoTablaJuga" prefWidth="75.0" text="Correo" />
+        </columns>
+      </TableView>
+      <TableView fx:id="tablaTorneo" layoutX="354.0" layoutY="215.0" prefHeight="200.0" prefWidth="297.0">
+        <columns>
+          <TableColumn fx:id="nombreTablaTorneo" prefWidth="75.0" text="Nombre" />
+          <TableColumn fx:id="fechaInicioTablaTorneos" prefWidth="75.0" text="Fecha Inicio" />
+            <TableColumn fx:id="FechaInscripTablaTorneo" prefWidth="75.0" text="Fecha Inscripcion" />
+            <TableColumn fx:id="deporteTablaTorneo" prefWidth="75.0" text="Deporte" />
+        </columns>
+      </TableView>
+      <Text layoutX="135.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jugadores" />
+      <Text layoutX="481.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Torneos" />
+      <Text fx:id="nombreEquipoTextp" layoutX="258.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre Equipo" />
+      <Button fx:id="botonUnirseEquipo" layoutX="401.0" layoutY="442.0" mnemonicParsing="false" onAction="#seUne" text="Unirse " />
+      <Button fx:id="botonSalirEquipo" layoutX="483.0" layoutY="442.0" mnemonicParsing="false" onAction="#seSale" text="Salirse" />
+      <TextField fx:id="nicknameUserText" layoutX="26.0" layoutY="442.0" promptText="Tu nickname" />
+      <TextField fx:id="userPaswordText" layoutX="189.0" layoutY="442.0" promptText="Tu contraseña" />
+      <TextArea fx:id="descripcionText" layoutX="26.0" layoutY="50.0" prefHeight="111.0" prefWidth="626.0" promptText="Descripción" />
+      <Button fx:id="botonVolverHome" layoutX="565.0" layoutY="442.0" mnemonicParsing="false" onAction="#llevarHome" text="Volver" />
+   </children>
+</AnchorPane>
