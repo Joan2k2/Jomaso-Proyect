@@ -26,7 +26,7 @@ public class EquipoModel extends DBUtil {
     * @version 0.1
     * @param "String"
     */
-    public void crearEquipo(String name, String desc,String deporte) {
+    public boolean crearEquipo(String name, String desc,String deporte) {
 		
 	try {
             //Iniciamos conexión
@@ -37,10 +37,17 @@ public class EquipoModel extends DBUtil {
             stmt.setString(2,name);
             stmt.setString(3,desc);
             stmt.setString(4,deporte);
-
-            stmt.execute();		
+            
+            ResultSet rs=stmt.executeQuery();
+            boolean resultado=false;
+            
+            while(rs.next()){
+                resultado=rs.getBoolean(1);
+            }
+            return resultado;		
 	}catch (SQLException e) {
             e.printStackTrace();
+            return false;
 	} 
 	finally {
             //Cerramos conexión
