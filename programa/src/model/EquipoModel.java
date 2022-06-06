@@ -124,7 +124,7 @@ public class EquipoModel extends DBUtil {
     */
     public boolean borrarJugador(){
         try{				
-	String insertSql="CALL borrarJugador(?,?)";
+	String insertSql="SELECT borrarJugador(?,?)";
                 
             PreparedStatement stmt=this.getConexion().prepareStatement(insertSql);
             stmt.setInt(1, UsuarioLog.getId());
