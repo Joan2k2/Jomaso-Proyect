@@ -80,13 +80,13 @@ public class EquipoModel extends DBUtil {
     * @version 0.1
     * @param "String"
     */
-    public boolean addJugador(String equipo){
+    public boolean addJugador(){
         try{				
 	String insertSql="SELECT addJugador(?,?)";
                 
             PreparedStatement stmt=this.getConexion().prepareStatement(insertSql);
             stmt.setInt(1, UsuarioLog.getId());
-            stmt.setString(2, equipo);
+            stmt.setInt(2, UsuarioLog.getAlmacenId());
                 
             ResultSet rs=stmt.executeQuery();
             boolean resultado=false;
@@ -115,13 +115,13 @@ public class EquipoModel extends DBUtil {
     * @param "Equipo"
     * @param "Usuario"
     */
-    public boolean borrarJugador(String equipo){
+    public boolean borrarJugador(){
         try{				
 	String insertSql="CALL borrarJugador(?,?)";
                 
             PreparedStatement stmt=this.getConexion().prepareStatement(insertSql);
             stmt.setInt(1, UsuarioLog.getId());
-            stmt.setString(2, equipo);
+            stmt.setInt(2, UsuarioLog.getAlmacenId());
                 
             ResultSet rs=stmt.executeQuery();
             boolean resultado=false;
@@ -148,7 +148,7 @@ public class EquipoModel extends DBUtil {
      * @param "int id"
      * @return "ObservableList<Usuario>"
      */
-    public ObservableList<Usuario> getJugadores(int id){
+    public ObservableList<Usuario> getJugadores(){
         try{				
             String insertSql="SELECT u.id,u.nickname,u.correo,u.nombre from usuarios u,participa p WHERE p.id_usuario=u.id AND p.id_equipo=?";
             
@@ -156,7 +156,7 @@ public class EquipoModel extends DBUtil {
             PreparedStatement stmt=this.getConexion().prepareStatement(insertSql);
             stmt.setInt(1, UsuarioLog.getAlmacenId());
             
-            ResultSet rs = stmt.executeQuery();
+            ResultSet rs = stmt.executeQuery();        
 
             while (rs.next()) {
                 Usuario u = new Usuario();
@@ -262,6 +262,32 @@ public class EquipoModel extends DBUtil {
             }
 
             return listaTorneos;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+   }
+   
+   public ObservableList<Equipo> listarEquipo() {
+
+        try {
+            //Iniciamos conexión
+            ObservableList<Equipo> listaEquipo = FXCollections.observableArrayList();
+            String insertSql = "SELECT e.id,e.nombre, d.nombre AS \"deporte\", u.nombre AS \"lider\" FROM equipos e, deportes d, usuarios u, practica p, participa pa WHERE p.id_equipo=e.id AND p.id_deporte=d.id AND pa.id_usuario=u.id AND pa.id_equipo=e.id AND e.admin=u.id";
+            PreparedStatement stmt = this.getConexion().prepareStatement(insertSql);
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                Equipo e = new Equipo();
+                e.setId(0);
+                e.setNombre(rs.getNString("nombre"));
+                e.setNameAdmin(rs.getString("lider"));
+                e.setDescripcion("deporte");
+                listaEquipo.add(e);
+            }
+
+            return listaEquipo;
 
         } catch (SQLException e) {
             e.printStackTrace();
