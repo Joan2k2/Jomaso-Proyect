@@ -121,6 +121,7 @@ public class UsuarioModel extends DBUtil {
               retorno=rs.getBoolean(1);
             }
             if(retorno=true){
+                UsuarioLog.setContrasenya(u.getContrasenya());
                 obtUsuario(u.getNickName());
             }
             return retorno;
@@ -165,7 +166,6 @@ public class UsuarioModel extends DBUtil {
                 u.setNombre(rs.getString("nombre"));
                 u.setApellidos(rs.getString("apellidos"));
                 u.setEdad(rs.getInt("edad"));
-                u.setContrasenya(rs.getString("contrasenya"));
                 u.setAdmin(rs.getBoolean("admin"));//OJO QUE IGUAL NO FURULA
                 u.setImg(rs.getBlob("foto"));
                 u.setDescripcion(rs.getString("descripcion"));
