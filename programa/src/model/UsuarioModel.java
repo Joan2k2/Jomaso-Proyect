@@ -10,6 +10,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /**Clase encargada de gestionar las acciones de la base de datos
  * en relacion a la clase Usuario
@@ -179,6 +181,32 @@ public class UsuarioModel extends DBUtil {
             this.cerrarConexion();
 	}
     }
+    
+    public ObservableList<Equipo> getEquipo() {
+
+        try {
+            //Iniciamos conexión
+            ObservableList<Equipo> listEquipo = FXCollections.observableArrayList();
+            String insertSql = "SELECT e.nombre, d.nombre AS \"deporte\" FROM equipos e, participa p, practica pr, deportes d, usuarios u WHERE p.id_usuario=u.id AND p.id_equipo=e.id AND pr.id_equipo=e.id AND pr.id_deporte=d.id AND u.id=?";
+
+            PreparedStatement stmt = this.getConexion().prepareStatement(insertSql);
+            stmt.setInt(1,UsuarioLog.getId());
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                Equipo e = new Equipo();
+                e.setNombre(rs.getString("nombre"));
+                e.setNameAdmin(rs.getString("deporte"));
+                listEquipo.add(e);
+            }
+
+            return listEquipo;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+   }
     
     
     
