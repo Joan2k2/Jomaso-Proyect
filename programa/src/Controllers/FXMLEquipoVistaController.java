@@ -131,13 +131,14 @@ public class FXMLEquipoVistaController implements Initializable {
     @FXML
     private void seSale(ActionEvent event) {
         EquipoModel em = new EquipoModel();
-        boolean resultado = false;
+        boolean resultado=false;
         Usuario u = new Usuario();
         u.setNickName(nicknameUserText.getText());
         u.setContrasenya(userPaswordText.getText());
 
         if (u.getNickName().equals(UsuarioLog.getNickName()) && u.getContrasenya().equals(UsuarioLog.getContrasenya())) {
             resultado = em.borrarJugador();
+            System.out.println(resultado);
              if (resultado == true) {
 
                 Alert a = new Alert(Alert.AlertType.CONFIRMATION);
