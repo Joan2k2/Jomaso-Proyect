@@ -35,10 +35,6 @@
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#llevaTorneos" text="Torneos" />
                </items></Menu>
-            <Menu fx:id="menuJugadores" mnemonicParsing="false" onAction="#llevaJugadores" text="Jugadores">
-               <items>
-                  <MenuItem mnemonicParsing="false" onAction="#llevaJugadores" text="Jugadores" />
-               </items></Menu>
             <Menu mnemonicParsing="false" text="Perfil">
               <items>
                 <MenuItem mnemonicParsing="false" onAction="#llevaPerfil" text="Mi Perfil" />
