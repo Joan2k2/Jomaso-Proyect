@@ -154,7 +154,7 @@ public class EquipoModel extends DBUtil {
             
             ObservableList<Usuario> listJugadores = FXCollections.observableArrayList();
             PreparedStatement stmt=this.getConexion().prepareStatement(insertSql);
-            stmt.setInt(1, id);
+            stmt.setInt(1, UsuarioLog.getAlmacenId());
             
             ResultSet rs = stmt.executeQuery();
 
