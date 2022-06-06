@@ -217,6 +217,58 @@ public class EquipoModel extends DBUtil {
 	}
     }
     
+    public Equipo getEquipo() {
+        
+        try {
+            //Iniciamos conexión
+            String insertSql = "SELECT e.nombre,e.descripcion,d.nombre AS \"deporte\" FROM equipos e, practica p, deportes d WHERE e.id=p.id_equipo AND p.id_deporte=d.id AND e.id=?";
+
+            PreparedStatement stmt = this.getConexion().prepareStatement(insertSql);
+            
+            stmt.setInt(1, UsuarioLog.getAlmacenId());
+            ResultSet rs = stmt.executeQuery();
+            Equipo e = new Equipo();
+            while (rs.next()) {
+                e.setDescripcion(rs.getNString("descripcion"));
+                e.setNombre(rs.getNString("nombre"));
+                e.setNameAdmin(rs.getNString("deporte"));
+            }
+
+            return e;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+   }
+   
+   public ObservableList<Torneo> listarTorneo() {
+
+        try {
+            //Iniciamos conexión
+            ObservableList<Torneo> listaTorneos = FXCollections.observableArrayList();
+            String insertSql = "SELECT t.nombre,t.fecha_inicio,t.fecha_inscripcion,d.nombre AS \"deporte\" FROM torneos t, compite c, deportes d, trata tr WHERE c.id_equipos=? and tr.id_torneo=t.id AND d.id=tr.id_deporte AND t.id=c.id_torneo;";
+            PreparedStatement stmt = this.getConexion().prepareStatement(insertSql);
+            stmt.setInt(1, UsuarioLog.getAlmacenId());
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                Torneo t = new Torneo();
+                t.setFechaInscripcion(rs.getString("fecha_inscripcion"));
+                t.setNombre(rs.getString("nombre"));
+                t.setDeporte(rs.getString("deporte"));
+                t.setFehcaInicio(rs.getString("fecha_inicio"));
+                listaTorneos.add(t);
+            }
+
+            return listaTorneos;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+   }
+    
     
     
 }
