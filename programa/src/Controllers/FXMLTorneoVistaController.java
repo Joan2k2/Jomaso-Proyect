@@ -103,7 +103,7 @@ public class FXMLTorneoVistaController implements Initializable {
 //comprobar que la fecha de inscripccion es mayor o igual a la fecha actual
 //comprobar que el nombre de usuario y contraseña de usuario son los mismos que en usuarioLog
 
-        if (u.getNickName() == UsuarioLog.getNickName() && u.getContrasenya() == UsuarioLog.getContrasenya()) {
+        if (u.getNickName().equals(UsuarioLog.getNickName())  && u.getContrasenya().equals(UsuarioLog.getContrasenya())) {
 
                 resultado = tm.inscribEquipo(nombreEquipoInsertar.getText());
             if (resultado==true) {
@@ -115,15 +115,15 @@ public class FXMLTorneoVistaController implements Initializable {
                 a.showAndWait();
             } else {
                 Alert a = new Alert(Alert.AlertType.ERROR);
-                a.setContentText("No funciona");
+                a.setContentText(UsuarioLog.getNickName());
                 a.setHeaderText("Error de Inscribirse");
                 a.showAndWait();
             }
 
         } else {
             Alert a = new Alert(Alert.AlertType.ERROR);
-            a.setContentText("El usuario o contraseña no coinciden");
-            a.setHeaderText("Error de autenticacion");
+            a.setContentText(UsuarioLog.getNickName());
+            a.setHeaderText(UsuarioLog.getContrasenya());
             a.showAndWait();
         }
 
@@ -138,7 +138,7 @@ public class FXMLTorneoVistaController implements Initializable {
         TorneoModel tm = new TorneoModel();
         
         
-        if (u.getNickName() == UsuarioLog.getNickName() && u.getContrasenya() == UsuarioLog.getContrasenya()) {
+        if (u.getNickName().equals(UsuarioLog.getNickName())  && u.getContrasenya().equals(UsuarioLog.getContrasenya())) {
             resultado=tm.desInscribEquipo(nombreEquipoInsertar.getText());
             if (resultado==true) {
 
@@ -150,6 +150,7 @@ public class FXMLTorneoVistaController implements Initializable {
             } else {
                 Alert a = new Alert(Alert.AlertType.ERROR);
                 a.setContentText("No funciona");
+                System.out.println(resultado);
                 a.setHeaderText("Error de eliminarse");
                 a.showAndWait();
             }

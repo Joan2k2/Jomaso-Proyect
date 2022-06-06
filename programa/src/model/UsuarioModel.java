@@ -148,7 +148,7 @@ public class UsuarioModel extends DBUtil {
         
         try {
             //Iniciamos conexión
-            String insertSql = "SELECT obtUsuario(?)";
+            String insertSql = "SELECT * FROM usuarios u WHERE u.nickname=?";
 
             PreparedStatement stmt = this.getConexion().prepareStatement(insertSql);
             stmt.setString(1,nick);
@@ -167,36 +167,6 @@ public class UsuarioModel extends DBUtil {
                 u.setAdmin(rs.getBoolean("admin"));//OJO QUE IGUAL NO FURULA
                 u.setImg(rs.getBlob("foto"));
                 u.setDescripcion(rs.getString("descripcion"));
-                
-                //array de deportes que juega el usuario
-                ArrayList<Deporte> arrayDep=new ArrayList();
-                while(rs.next()){
-                    Deporte d=new Deporte();
-                    
-                    d.setId(rs.getInt("deporteId"));
-                    
-                    int lastId=arrayDep.size()-1;
-                    if(arrayDep.get(lastId).getId()!=d.getId()){
-                        arrayDep.add(d);
-                    }
-                }
-                u.setDeportes(arrayDep);
-                
-                //array de equipos que participa el usuario
-                ArrayList<Equipo> arrayEqi=new ArrayList();
-                while(rs.next()){
-                    Equipo e=new Equipo();
-                    
-                    e.setId(rs.getInt("equipoId"));
-                    
-                    int lastId=arrayDep.size()-1; 
-                    if(arrayDep.get(lastId).getId()!=e.getId()){
-                        arrayEqi.add(e);
-                    }
-                    
-                    
-                }
-                u.setEquipos(arrayEqi); 
             }
             return UsuarioLog.getSingletonInstance(u);
                         
