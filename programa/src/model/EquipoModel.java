@@ -280,7 +280,7 @@ public class EquipoModel extends DBUtil {
 
             while (rs.next()) {
                 Equipo e = new Equipo();
-                e.setId("id");
+                e.setId(rs.getInt("id"));
                 e.setNombre(rs.getNString("nombre"));
                 e.setNameAdmin(rs.getString("lider"));
                 e.setDescripcion("deporte");
