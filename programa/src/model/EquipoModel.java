@@ -73,26 +73,32 @@ public class EquipoModel extends DBUtil {
 	}
     }
     
-    /**Aplica nuevos jugadores a un equipo en la base de datos
-     * segun los datos  de la clase Usuario y Equipo
-     * (Id Usuario e Id Equipo)
+    /**Aplica nuevos jugadores a un equipo en la base a
+     * un String con el nombre del equipo
     *  
     * @author Jose Ramon
     * @version 0.1
-    * @param "Equipo"
-    * @param "Usuario"
+    * @param "String"
     */
-    public void addJugador(Usuario u,Equipo eq){
+    public boolean addJugador(String equipo){
         try{				
-	String insertSql="CALL addJugador(?,?)";
+	String insertSql="SELECT addJugador(?,?)";
                 
             PreparedStatement stmt=this.getConexion().prepareStatement(insertSql);
-            stmt.setInt(1, u.getId());
-            stmt.setInt(2, eq.getId());
+            stmt.setInt(1, UsuarioLog.getId());
+            stmt.setString(2, equipo);
                 
-            stmt.execute();
+            ResultSet rs=stmt.executeQuery();
+            boolean resultado=false;
+            
+            while(rs.next()){
+                resultado=rs.getBoolean(1);
+            }
+            return resultado;
+            
 	} catch (SQLException e) {
             e.printStackTrace();
+            return false;
         } 
 	finally {
             //Cerramos conexión
@@ -109,17 +115,25 @@ public class EquipoModel extends DBUtil {
     * @param "Equipo"
     * @param "Usuario"
     */
-    public void borrarJugador(Usuario u,Equipo eq){
+    public boolean borrarJugador(String equipo){
         try{				
 	String insertSql="CALL borrarJugador(?,?)";
                 
             PreparedStatement stmt=this.getConexion().prepareStatement(insertSql);
-            stmt.setInt(1, u.getId());
-            stmt.setInt(2, eq.getId());
+            stmt.setInt(1, UsuarioLog.getId());
+            stmt.setString(2, equipo);
                 
-            stmt.execute();
+            ResultSet rs=stmt.executeQuery();
+            boolean resultado=false;
+            
+            while(rs.next()){
+                resultado=rs.getBoolean(1);
+            }
+            return resultado;
+            
 	} catch (SQLException e) {
             e.printStackTrace();
+            return false;
         } 
 	finally {
             //Cerramos conexión
