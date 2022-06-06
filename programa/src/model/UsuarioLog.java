@@ -43,7 +43,7 @@ public class UsuarioLog {
             usuarioLog=new UsuarioLog();
             UsuarioLog.admin=u.getAdmin();
             UsuarioLog.apellidos=u.getApellidos();
-            UsuarioLog.contrasenya=u.getContrasenya();
+           // UsuarioLog.contrasenya=u.getContrasenya();
             UsuarioLog.correo=u.getCorreo();
             UsuarioLog.deportes=u.getDeportes();
             UsuarioLog.descripcion=u.getDescripcion();
