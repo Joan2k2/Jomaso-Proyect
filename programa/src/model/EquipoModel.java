@@ -290,7 +290,7 @@ public class EquipoModel extends DBUtil {
                 e.setId(rs.getInt("id"));
                 e.setNombre(rs.getNString("nombre"));
                 e.setNameAdmin(rs.getString("lider"));
-                e.setDescripcion("deporte");
+                e.setDescripcion(rs.getString("deporte"));
                 listaEquipo.add(e);
             }
 
