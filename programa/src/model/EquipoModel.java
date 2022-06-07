@@ -254,7 +254,7 @@ public class EquipoModel extends DBUtil {
         try {
             //Iniciamos conexión
             ObservableList<Torneo> listaTorneos = FXCollections.observableArrayList();
-            String insertSql = "SELECT t.nombre,t.fecha_inicio,t.fecha_inscripcion,d.nombre AS \"deporte\" FROM torneos t, compite c, deportes d, trata tr WHERE c.id_equipos=? and tr.id_torneo=t.id AND d.id=tr.id_deporte AND t.id=c.id_torneo;";
+            String insertSql = "SELECT t.id,t.nombre,t.fecha_inicio,t.fecha_inscripcion,d.nombre AS \"deporte\" FROM torneos t, compite c, deportes d, trata tr WHERE c.id_equipos=? and tr.id_torneo=t.id AND d.id=tr.id_deporte AND t.id=c.id_torneo;";
             PreparedStatement stmt = this.getConexion().prepareStatement(insertSql);
             stmt.setInt(1, UsuarioLog.getAlmacenId());
             ResultSet rs = stmt.executeQuery();
