@@ -61,16 +61,14 @@ public class TorneoModel extends DBUtil {
      * @param "Torneo"
      * @param "Usuario"
      */
-    public boolean borrarTorneo(Torneo t, Usuario u) {
-        boolean retorno = false;
+    public void borrarTorneo(int id) {
 
         try {
             //Iniciamos conexión
-            String insertSql = "CALL borraTorneo(?,?)";
+            String insertSql = "DELETE FROM torneos  WHERE id=?";
 
             PreparedStatement stmt = this.getConexion().prepareStatement(insertSql);
-            stmt.setInt(1, u.getId());
-            stmt.setInt(2, t.getId());
+            stmt.setInt(1, id);
 
             stmt.execute();
 
@@ -80,7 +78,6 @@ public class TorneoModel extends DBUtil {
             //Cerramos conexión
             this.cerrarConexion();
         }
-        return retorno;
     }
 
     /**

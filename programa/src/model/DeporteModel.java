@@ -5,7 +5,10 @@
 package model;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /**Clase encargada de gestionar las acciones de la base de datos
  * en relacion a la clase Deporte
@@ -67,5 +70,33 @@ public class DeporteModel extends DBUtil {
 	//Cerramos conexión
 	this.cerrarConexion();
         }
+    }
+    
+    public ObservableList<Deporte> getDeportes() {
+
+        try {
+            //Iniciamos conexión
+            ObservableList<Deporte> almaDeporte =FXCollections.observableArrayList();
+            String insertSql = "SELECT id,nombre FROM deportes";
+
+            PreparedStatement stmt = this.getConexion().prepareStatement(insertSql);
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                Deporte d = new Deporte();
+                
+                d.setId(rs.getInt("id"));
+                d.setNombre(rs.getString("nombre"));
+                
+                almaDeporte.add(d);
+            }
+
+            return almaDeporte;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+
     }
 }
