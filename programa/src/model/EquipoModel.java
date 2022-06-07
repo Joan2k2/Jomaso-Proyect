@@ -194,7 +194,7 @@ public class EquipoModel extends DBUtil {
      */
     public ObservableList<Torneo> getTorneos(int id){
         try{				
-            String insertSql="SELECT t.nombre,t.fecha_inicio,t.fecha_inscripcion,d.nombre AS \"deporte\" FROM torneos t,compite c,deportes d,trata tr WHERE tr.id_torneo=t.id AND tr.id_deporte=d.id and c.id_torneo=t.id AND c.id_equipos=?";
+            String insertSql="SELECT t.id,t.nombre,t.fecha_inicio,t.fecha_inscripcion,d.nombre AS \"deporte\" FROM torneos t,compite c,deportes d,trata tr WHERE tr.id_torneo=t.id AND tr.id_deporte=d.id and c.id_torneo=t.id AND c.id_equipos=?";
             
             ObservableList<Torneo> listTorneos = FXCollections.observableArrayList();
             PreparedStatement stmt=this.getConexion().prepareStatement(insertSql);
@@ -204,11 +204,11 @@ public class EquipoModel extends DBUtil {
 
             while (rs.next()) {
                 Torneo t=new Torneo();
-                
+                t.setId(rs.getInt("id"));
                 t.setNombre(rs.getString("nombre"));
                 t.setFechaInscripcion(rs.getString("fecha_inscripcion"));
                 t.setFehcaInicio(rs.getString("fecha_inicio"));
-                t.setDeporte(rs.getNString("deporte"));
+                t.setDeporte(rs.getString("deporte"));
                 
                 listTorneos.add(t);
             }
