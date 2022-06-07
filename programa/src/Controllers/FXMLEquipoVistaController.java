@@ -23,6 +23,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import model.Equipo;
@@ -180,6 +182,35 @@ public class FXMLEquipoVistaController implements Initializable {
 
         } catch (IOException ex) {
             Logger.getLogger(FXMLRegistrarseController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void torneoTablViewMouseClickedddesdeEquipo(MouseEvent event) {
+        Torneo t = tablaTorneo.getSelectionModel().getSelectedItem();
+        
+        if (event.getButton().equals(MouseButton.PRIMARY) && event.getClickCount() == 2){
+            Torneo torneoSeleccionado = this.tablaTorneo.getSelectionModel().getSelectedItem();
+            UsuarioLog.setAlmacenId(torneoSeleccionado.getId());
+            try {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vistas/FXMLTorneoVista.fxml"));
+
+            Parent root = loader.load();
+
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+
+            stage.setScene(scene);
+            stage.show();
+
+            Stage myStage = (Stage) this.tablaTorneo.getScene().getWindow();
+            myStage.close();
+
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLRegistrarseController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
         }
     }
 

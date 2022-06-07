@@ -23,6 +23,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import model.Torneo;
 import model.TorneoModel;
@@ -98,6 +100,35 @@ public class FXMLTorneosController implements Initializable {
         }
         
         
+    }
+
+    @FXML
+    private void torneoTablViewMouseClicked(MouseEvent event) {
+        Torneo t = tablatorneos.getSelectionModel().getSelectedItem();
+        
+        if (event.getButton().equals(MouseButton.PRIMARY) && event.getClickCount() == 2){
+            Torneo torneoSeleccionado = this.tablatorneos.getSelectionModel().getSelectedItem();
+            UsuarioLog.setAlmacenId(torneoSeleccionado.getId());
+            try {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vistas/FXMLTorneoVista.fxml"));
+
+            Parent root = loader.load();
+
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+
+            stage.setScene(scene);
+            stage.show();
+
+            Stage myStage = (Stage) this.tablatorneos.getScene().getWindow();
+            myStage.close();
+
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLRegistrarseController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+        }
     }
     }    
     

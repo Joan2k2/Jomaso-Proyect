@@ -13,7 +13,7 @@
          <font>
             <Font name="Consolas" size="32.0" />
          </font></Text>
-      <TableView fx:id="tablaEquipos" layoutX="35.0" layoutY="100.0" prefHeight="200.0" prefWidth="531.0">
+      <TableView fx:id="tablaEquipos" layoutX="35.0" layoutY="100.0" onMouseClicked="#equiposTablViewMouseClicked" prefHeight="200.0" prefWidth="531.0">
         <columns>
             <TableColumn fx:id="idEquipos" prefWidth="109.0" text="Id" />
           <TableColumn fx:id="nombreEquipo" prefWidth="146.0" text="Nombre" />

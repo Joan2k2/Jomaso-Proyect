@@ -16,7 +16,7 @@
             <TableColumn fx:id="correoTablaJuga" prefWidth="75.0" text="Correo" />
         </columns>
       </TableView>
-      <TableView fx:id="tablaTorneo" layoutX="354.0" layoutY="215.0" prefHeight="200.0" prefWidth="297.0">
+      <TableView fx:id="tablaTorneo" layoutX="354.0" layoutY="215.0" onMouseClicked="#torneoTablViewMouseClickedddesdeEquipo" prefHeight="200.0" prefWidth="297.0">
         <columns>
           <TableColumn fx:id="nombreTablaTorneo" prefWidth="75.0" text="Nombre" />
           <TableColumn fx:id="fechaInicioTablaTorneos" prefWidth="75.0" text="Fecha Inicio" />

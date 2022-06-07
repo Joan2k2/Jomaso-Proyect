@@ -16,7 +16,7 @@
             <Font name="Consolas" size="32.0" />
          </font></Text>
       <ImageView fx:id="fotoperfil" fitHeight="74.0" fitWidth="80.0" layoutX="31.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true" />
-      <TableView fx:id="tablaperfil" layoutX="469.0" layoutY="160.0" prefHeight="284.0" prefWidth="272.0">
+      <TableView fx:id="tablaperfil" layoutX="469.0" layoutY="160.0" onMouseClicked="#equiposTablViewMouseClickeddesdeperfil" prefHeight="284.0" prefWidth="272.0">
         <columns>
           <TableColumn id="nombredeporteperfil" fx:id="nombreperfil" prefWidth="136.0" text="Nombre" />
           <TableColumn id="deporteperfil" fx:id="deporteperfil" prefWidth="135.0" text="Deporte" />

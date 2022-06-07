@@ -10,7 +10,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="622.0" prefWidth="894.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLTorneoVistaController">
    <children>
-      <TableView fx:id="tablaEquipos" layoutX="233.0" layoutY="90.0" prefHeight="200.0" prefWidth="418.0">
+      <TableView fx:id="tablaEquipos" layoutX="233.0" layoutY="90.0" onMouseClicked="#equipoTablViewMouseClickeddesddetorneoview" prefHeight="200.0" prefWidth="418.0">
         <columns>
           <TableColumn fx:id="nombreEquipoTabla" prefWidth="114.0" text="Nombre Equipo" />
           <TableColumn fx:id="liderEquipoTabla" prefWidth="134.0" text="Lider" />
