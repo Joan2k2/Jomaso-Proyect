@@ -208,6 +208,29 @@ public class UsuarioModel extends DBUtil {
         }
    }
     
+   public ObservableList<Deporte> listarDeporte() {
+
+        try {
+            //Iniciamos conexión
+            ObservableList<Deporte> listaDeporte = FXCollections.observableArrayList();
+            String insertSql = "SELECT id,nombre FROM deportes";
+            PreparedStatement stmt = this.getConexion().prepareStatement(insertSql);
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                Deporte d = new Deporte();
+                d.setNombre(rs.getString("nombre"));
+                listaDeporte.add(d);
+            }
+
+            return listaDeporte;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+   }
+    
     
     
 

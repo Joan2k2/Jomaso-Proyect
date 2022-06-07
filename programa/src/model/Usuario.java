@@ -36,37 +36,6 @@ public class Usuario {
     
     //Constructor default
     public Usuario(){}
-    
-    //Constructor con todos los atributos
-    public Usuario(String nickName, String nombre, String apellidos, String contrasenya, ArrayList<Equipo> equipos, ArrayList<Deporte> deportes, boolean admin, Blob img, String correo, int edad, String descripcion) {    
-        this.nickName = nickName;
-        this.nombre = nombre;
-        this.apellidos = apellidos;
-        this.contrasenya = contrasenya;
-        this.equipos = equipos;
-        this.deportes = deportes;
-        this.admin = admin;
-        this.img = img;
-        this.correo = correo;
-        this.edad = edad;
-        this.descripcion = descripcion;
-    }
-
-    //user creacion generica
-
-    public Usuario(String nickName, String nombre, String contrasenya, String correo, int edad) {
-        this.nickName = nickName;
-        this.nombre = nombre;
-        this.contrasenya = contrasenya;
-        this.correo = correo;
-        this.edad = edad;
-    }
-    
-    
-    //Constructor con solo id
-    public Usuario(int id) {
-        this.id = id;
-    }
 
     public String getAlmacenString() {
         return almacenString;

@@ -22,28 +22,8 @@ public class Torneo {
     private String fehcaInicio;
     private String deporte;
     
-    //Constructor con todos los atributos
-    public Torneo(ArrayList<Equipo> equipos, String descripcion, String nombre, String fechaInscripcion, String fehcaInicio) {
-        this.equipos = equipos;
-        this.descripcion = descripcion;
-        this.nombre = nombre;
-        this.fechaInscripcion = fechaInscripcion;
-        this.fehcaInicio = fehcaInicio;
-    }
-    //Constructor creacion generica
-    public Torneo(String nombre, String fechaInscripcion, String fehcaInicio) {
-        this.nombre = nombre;
-        this.fechaInscripcion = fechaInscripcion;
-        this.fehcaInicio = fehcaInicio;
-    }
-    
     //Constructor default
     public Torneo() {}
-    
-    //Constructor con solo id
-    public Torneo(int id) {
-        this.id = id;
-    }
 
     public String getDeporte() {
         return deporte;

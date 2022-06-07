@@ -5,7 +5,10 @@
 package model;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /**Clase encargada de gestionar las acciones de la base de datos
  * en relacion a la clase Deporte
@@ -68,4 +71,52 @@ public class DeporteModel extends DBUtil {
 	this.cerrarConexion();
         }
     }
+    
+    public ObservableList<String> getDeportes() {
+
+        try {
+            //Iniciamos conexión
+            ObservableList<String> almaDeporte =FXCollections.observableArrayList();
+            String insertSql = "SELECT nombre FROM deportes";
+
+            PreparedStatement stmt = this.getConexion().prepareStatement(insertSql);
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                String a=rs.getString("nombre");
+                
+                almaDeporte.add(a);
+            }
+
+            return almaDeporte;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+
+    }
+    
+    public ObservableList<Deporte> listarDeporte() {
+
+        try {
+            //Iniciamos conexión
+            ObservableList<Deporte> listaDeporte = FXCollections.observableArrayList();
+            String insertSql = "SELECT id,nombre FROM deportes";
+            PreparedStatement stmt = this.getConexion().prepareStatement(insertSql);
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                Deporte d = new Deporte();
+                d.setNombre(rs.getString("nombre"));
+                listaDeporte.add(d);
+            }
+
+            return listaDeporte;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+   }
 }
