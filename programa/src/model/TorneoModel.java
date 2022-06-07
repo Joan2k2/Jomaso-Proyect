@@ -134,7 +134,7 @@ public class TorneoModel extends DBUtil {
     public boolean desInscribEquipo(String equipoName) {
         try {
             //Iniciamos conexión
-            String insertSql = "SELECT desInscribEquipo(?,?,?)";
+            String insertSql = "SELECT desinscribirEquipo(?,?,?)";
 
             PreparedStatement stmt = this.getConexion().prepareStatement(insertSql);
             stmt.setString(1, equipoName);
