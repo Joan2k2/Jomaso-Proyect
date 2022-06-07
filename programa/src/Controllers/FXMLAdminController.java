@@ -14,11 +14,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.text.Text;
 import model.Deporte;
 import model.DeporteModel;
 import model.Equipo;
@@ -26,6 +28,7 @@ import model.EquipoModel;
 import model.Torneo;
 import model.TorneoModel;
 import model.Usuario;
+import model.UsuarioLog;
 import model.UsuarioModel;
 
 /**
@@ -42,14 +45,6 @@ public class FXMLAdminController implements Initializable {
     @FXML
     private Button borrarUsuario;
     @FXML
-    private TextField nombreAdminTorneo;
-    @FXML
-    private TextField descripcionAdminTorneo;
-    @FXML
-    private TextField fechaInsAdminTorneo;
-    @FXML
-    private TextField fechaIniAdminTorneo;
-    @FXML
     private TextField idBorrarUsuario;
     @FXML
     private Button borrarEquipo;
@@ -63,8 +58,6 @@ public class FXMLAdminController implements Initializable {
     private TextField nombreAdminDeporte;
     @FXML
     private Button crearDeporte;
-    @FXML
-    private TextArea descripcionAdminDeporte;
     @FXML
     private TextField idBorrarTorneo;
     @FXML
@@ -91,13 +84,29 @@ public class FXMLAdminController implements Initializable {
     private TableColumn idTablaUsuario;
     @FXML
     private TableColumn nombreTablaUsuario;
+    @FXML
+    private TextField nameAdmin;
+    @FXML
+    private TextArea descripcionDeporte;
+    @FXML
+    private TextArea descripcionTorneo;
+    @FXML
+    private TextField nombreTorneo;
+    @FXML
+    private ChoiceBox<String> listDeporte;
+    @FXML
+    private DatePicker fechaInicioTorn;
+    @FXML
+    private DatePicker fechaInscripcionTorn;
+
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+        this.nameAdmin.setText(UsuarioLog.getNickName());
+                
         TorneoModel tm = new TorneoModel();
 
         ObservableList<Torneo> torneoAdmin = tm.listarTorneos();
@@ -126,15 +135,28 @@ public class FXMLAdminController implements Initializable {
 
         ObservableList<Usuario> usuarioAdmin = um.listarUsuario();
         this.idTablaUsuario.setCellValueFactory(new PropertyValueFactory("id"));
-        this.nombreTablaUsuario.setCellValueFactory(new PropertyValueFactory("nickname"));           
+        this.nombreTablaUsuario.setCellValueFactory(new PropertyValueFactory("nickName"));           
         this.tablaUsuarioAdmin.setItems(usuarioAdmin);
+        
+        ObservableList<String> lista =dm.getDeportes();
+        listDeporte.setItems(lista);
         
     }    
  
     
     @FXML
     private void crearTorneo(ActionEvent event) {
+        String s = listDeporte.getSelectionModel().getSelectedItem();
         
+        if(this.nombreTorneo.getText().isEmpty() || this.fechaInicioTorn.getValue().toString().isEmpty() || this.fechaInscripcionTorn.getValue().toString().isEmpty() || s==null){
+            Alert ale = new Alert(Alert.AlertType.ERROR);
+            ale.setHeaderText("Error");
+            ale.setContentText("No puedes dejar ni el nombre, fecha inicio, fecha inscripcion o deporte del torneo vacio");
+            ale.showAndWait();
+        }
+        //else if(this.fechaInicioTorn.){
+            
+        //}
     }
 
     @FXML
