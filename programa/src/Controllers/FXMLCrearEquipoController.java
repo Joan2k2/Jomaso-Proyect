@@ -39,10 +39,12 @@ public class FXMLCrearEquipoController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        String Futbol = "Futbol";
-        String Tenis = "Tenis";
-        String Petanca = "Petanca";
+        String Futbol = "futbol";
+        String Tenis = "tenis";
+        String Petanca = "petanca";
         ObservableList<String> lista = FXCollections.observableArrayList();
+        
+        
         lista.add(Futbol);
         lista.add(Petanca);
         lista.add(Tenis);
@@ -55,7 +57,7 @@ public class FXMLCrearEquipoController implements Initializable {
         boolean resultado = false;
 
         String s = laBox.getSelectionModel().getSelectedItem();
-
+        System.out.println(s);
         if (textoNombreEquipo.getText().isEmpty() || s == null) {
 
             Alert ale = new Alert(Alert.AlertType.ERROR);
