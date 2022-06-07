@@ -17,6 +17,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Menu;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import model.UsuarioLog;
 
 /**
  * FXML Controller class
@@ -37,7 +38,9 @@ public class FXMLMenuController implements Initializable {
     /**
      * Initializes the controller class.
      */
+    
     @Override
+    
     public void initialize(URL url, ResourceBundle rb) {
         try {
             AnchorPane pane = FXMLLoader.load(getClass().getResource("/Vistas/FXMLHome.fxml"));

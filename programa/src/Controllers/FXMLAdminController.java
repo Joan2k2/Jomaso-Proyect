@@ -266,5 +266,21 @@ private void borrarDeporte(ActionEvent event) {
 
     @FXML
 private void crearDeporte(ActionEvent event) {
+    
+    if(this.nombreAdminDeporte.getText().isEmpty() || this.descripcionDeporte.getText().isEmpty()){
+     Alert ale = new Alert(Alert.AlertType.ERROR);
+            ale.setHeaderText("Error");
+            ale.setContentText("No puedes dejar ni el nombre ni la descripcción vacia");
+            ale.showAndWait();
+    
+    }else{
+        DeporteModel dm = new DeporteModel();
+        Deporte d = new Deporte();
+        d.setNombre(nombreAdminDeporte.getText());
+        d.setDescripcion(descripcionDeporte.getText());
+        dm.crearDeporte(d);
+    }
+    
+    
 }
 }
