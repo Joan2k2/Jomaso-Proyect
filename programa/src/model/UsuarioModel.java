@@ -120,7 +120,7 @@ public class UsuarioModel extends DBUtil {
             while(rs.next()){
               retorno=rs.getBoolean(1);
             }
-            if(retorno=true){
+            if(retorno==true){
                 UsuarioLog.setContrasenya(u.getContrasenya());
                 obtUsuario(u.getNickName());
             }
