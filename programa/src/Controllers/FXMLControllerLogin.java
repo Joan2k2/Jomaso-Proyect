@@ -23,6 +23,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import model.Usuario;
+import model.UsuarioLog;
 import model.UsuarioModel;
 
 /**
@@ -85,8 +86,9 @@ public class FXMLControllerLogin implements Initializable {
         u.setContrasenya(PasswUser.getText());
 
         if (um.usrLog(u) == true) {
-
-            try {
+            
+            if(UsuarioLog.getAdmin()==false){
+                try {
 
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vistas/FXMLMenu.fxml"));
 
@@ -104,6 +106,27 @@ public class FXMLControllerLogin implements Initializable {
             } catch (IOException ex) {
                 Logger.getLogger(FXMLRegistrarseController.class.getName()).log(Level.SEVERE, null, ex);
             }
+        }else{
+                try {
+
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Vistas/FXMLAdmin.fxml"));
+
+                Parent root = loader.load();
+
+                Scene scene = new Scene(root);
+                Stage stage = new Stage();
+
+                stage.setScene(scene);
+                stage.show();
+
+                Stage myStage = (Stage) this.botonLogin.getScene().getWindow();
+                myStage.close();
+
+            } catch (IOException ex) {
+                Logger.getLogger(FXMLRegistrarseController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            }
+            
 
         } else {
             Alert ale = new Alert(Alert.AlertType.ERROR);
