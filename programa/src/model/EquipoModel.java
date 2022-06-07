@@ -261,6 +261,7 @@ public class EquipoModel extends DBUtil {
 
             while (rs.next()) {
                 Torneo t = new Torneo();
+                t.setId(rs.getInt("id"));
                 t.setFechaInscripcion(rs.getString("fecha_inscripcion"));
                 t.setNombre(rs.getString("nombre"));
                 t.setDeporte(rs.getString("deporte"));
