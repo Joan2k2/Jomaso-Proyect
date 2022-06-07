@@ -99,91 +99,127 @@ public class FXMLAdminController implements Initializable {
     @FXML
     private DatePicker fechaInscripcionTorn;
 
-
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         this.nameAdmin.setText(UsuarioLog.getNickName());
-                
+
         TorneoModel tm = new TorneoModel();
 
         ObservableList<Torneo> torneoAdmin = tm.listarTorneos();
         this.idTablaTorneo.setCellValueFactory(new PropertyValueFactory("id"));
-        this.nombreTablaTorneo.setCellValueFactory(new PropertyValueFactory("nombre"));           
+        this.nombreTablaTorneo.setCellValueFactory(new PropertyValueFactory("nombre"));
         this.tablaTorneoAdmin.setItems(torneoAdmin);
-        
-        
+
         DeporteModel dm = new DeporteModel();
 
         ObservableList<Deporte> deporteAdmin = dm.listarDeporte();
         this.idTablaDeporte.setCellValueFactory(new PropertyValueFactory("id"));
-        this.nombreTablaDeporte.setCellValueFactory(new PropertyValueFactory("nombre"));           
+        this.nombreTablaDeporte.setCellValueFactory(new PropertyValueFactory("nombre"));
         this.tablaDeporteAdmin.setItems(deporteAdmin);
-        
-        
+
         EquipoModel em = new EquipoModel();
 
         ObservableList<Equipo> equipoAdmin = em.listarEquipo();
         this.idTablaEquipo.setCellValueFactory(new PropertyValueFactory("id"));
-        this.nombreTablaEquipo.setCellValueFactory(new PropertyValueFactory("nombre"));           
+        this.nombreTablaEquipo.setCellValueFactory(new PropertyValueFactory("nombre"));
         this.tablaEquipoAdmin.setItems(equipoAdmin);
-        
-        
+
         UsuarioModel um = new UsuarioModel();
 
         ObservableList<Usuario> usuarioAdmin = um.listarUsuario();
         this.idTablaUsuario.setCellValueFactory(new PropertyValueFactory("id"));
-        this.nombreTablaUsuario.setCellValueFactory(new PropertyValueFactory("nickName"));           
+        this.nombreTablaUsuario.setCellValueFactory(new PropertyValueFactory("nickName"));
         this.tablaUsuarioAdmin.setItems(usuarioAdmin);
-        
-        ObservableList<String> lista =dm.getDeportes();
+
+        ObservableList<String> lista = dm.getDeportes();
         listDeporte.setItems(lista);
-        
-    }    
- 
-    
+
+    }
+
     @FXML
     private void crearTorneo(ActionEvent event) {
         String s = listDeporte.getSelectionModel().getSelectedItem();
-        
-        if(this.nombreTorneo.getText().isEmpty() || this.fechaInicioTorn.getValue().toString().isEmpty() || this.fechaInscripcionTorn.getValue().toString().isEmpty() || s==null){
+
+        if (this.nombreTorneo.getText().isEmpty() || this.fechaInicioTorn.getValue().toString().isEmpty() || this.fechaInscripcionTorn.getValue().toString().isEmpty() || s == null) {
             Alert ale = new Alert(Alert.AlertType.ERROR);
             ale.setHeaderText("Error");
             ale.setContentText("No puedes dejar ni el nombre, fecha inicio, fecha inscripcion o deporte del torneo vacio");
             ale.showAndWait();
         }
         //else if(this.fechaInicioTorn.){
-            
+
         //}
     }
 
     @FXML
     private void borrarTorneo(ActionEvent event) {
-        
+        if (this.idBorrarTorneo.getText().isEmpty()) {
+            Alert ale = new Alert(Alert.AlertType.ERROR);
+            ale.setHeaderText("Error");
+            ale.setContentText("No puedes dejar la id vacia");
+            ale.showAndWait();
+        } else {
+            TorneoModel tm = new TorneoModel();
+
+            tm.borrarTorneo(Integer.parseInt(idBorrarTorneo.getText()));
+            Alert ale = new Alert(Alert.AlertType.CONFIRMATION);
+            ale.setHeaderText("Correcto");
+            ale.setContentText("Todo ok");
+            ale.showAndWait();
+
+            tm = new TorneoModel();
+
+            ObservableList<Torneo> torneoAdmin = tm.listarTorneos();
+            this.idTablaTorneo.setCellValueFactory(new PropertyValueFactory("id"));
+            this.nombreTablaTorneo.setCellValueFactory(new PropertyValueFactory("nombre"));
+            this.tablaTorneoAdmin.setItems(torneoAdmin);
+        }
+
     }
 
     @FXML
     private void borrarUsuario(ActionEvent event) {
-        
+
     }
 
-           
     private void crearEquipo(ActionEvent event) {
-        
+
     }
-    
+
     @FXML
     private void borrarEquipo(ActionEvent event) {
-        
+        if (this.idBorrarEquipo.getText().isEmpty()) {
+            Alert ale = new Alert(Alert.AlertType.ERROR);
+            ale.setHeaderText("Error");
+            ale.setContentText("No puedes dejar la id vacia");
+            ale.showAndWait();
+        } else {
+            EquipoModel em = new EquipoModel();
+
+//            em.borraEquipo(Integer.parseInt(idBorrarEquipo.getText()));
+            Alert ale = new Alert(Alert.AlertType.CONFIRMATION);
+            ale.setHeaderText("Correcto");
+            ale.setContentText("Todo ok");
+            ale.showAndWait();
+
+             em = new EquipoModel();
+
+            ObservableList<Equipo> equipoAdmin = em.listarEquipo();
+            this.idTablaEquipo.setCellValueFactory(new PropertyValueFactory("id"));
+            this.nombreTablaEquipo.setCellValueFactory(new PropertyValueFactory("nombre"));
+            this.tablaEquipoAdmin.setItems(equipoAdmin);
+//            
+    }
+}
+
+@FXML
+private void borrarDeporte(ActionEvent event) {
     }
 
     @FXML
-    private void borrarDeporte(ActionEvent event) {
-    }
-
-    @FXML
-    private void crearDeporte(ActionEvent event) {
+private void crearDeporte(ActionEvent event) {
 }
 }
