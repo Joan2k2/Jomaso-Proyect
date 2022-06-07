@@ -30,7 +30,7 @@ public class EquipoModel extends DBUtil {
 		
 	try {
             //Iniciamos conexión
-            String insertSql = "CALL addEquipo(?,?,?,?)";
+            String insertSql = "SELECT addEquipo(?,?,?,?)";
 
             PreparedStatement stmt = this.getConexion().prepareStatement(insertSql);
             stmt.setInt(1,UsuarioLog.getId());
@@ -47,7 +47,7 @@ public class EquipoModel extends DBUtil {
             return resultado;		
 	}catch (SQLException e) {
             e.printStackTrace();
-            return false;
+                return false;
 	} 
 	finally {
             //Cerramos conexión

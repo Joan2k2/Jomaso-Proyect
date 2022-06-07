@@ -40,8 +40,8 @@ public class UsuarioModel extends DBUtil {
             PreparedStatement stmt = this.getConexion().prepareStatement(insertSql);
             stmt.setString(1,u.getNickName() );
             stmt.setString(2,u.getNombre());
-            stmt.setString(3,u.getApellidos()); 
-            stmt.setString(4,u.getCorreo());
+            stmt.setString(3,u.getCorreo()); 
+            stmt.setString(4,u.getApellidos());
             stmt.setString(5,u.getContrasenya());
             stmt.setInt(6,u.getEdad());
 
