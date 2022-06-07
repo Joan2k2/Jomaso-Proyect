@@ -72,23 +72,20 @@ public class DeporteModel extends DBUtil {
         }
     }
     
-    public ObservableList<Deporte> getDeportes() {
+    public ObservableList<String> getDeportes() {
 
         try {
             //Iniciamos conexión
-            ObservableList<Deporte> almaDeporte =FXCollections.observableArrayList();
-            String insertSql = "SELECT id,nombre FROM deportes";
+            ObservableList<String> almaDeporte =FXCollections.observableArrayList();
+            String insertSql = "SELECT nombre FROM deportes";
 
             PreparedStatement stmt = this.getConexion().prepareStatement(insertSql);
             ResultSet rs = stmt.executeQuery();
 
             while (rs.next()) {
-                Deporte d = new Deporte();
+                String a=rs.getString("nombre");
                 
-                d.setId(rs.getInt("id"));
-                d.setNombre(rs.getString("nombre"));
-                
-                almaDeporte.add(d);
+                almaDeporte.add(a);
             }
 
             return almaDeporte;
