@@ -4,7 +4,6 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
@@ -27,12 +26,10 @@
       </TableView>
       <Text layoutX="135.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jugadores" />
       <Text layoutX="481.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Torneos" />
-      <Text fx:id="nombreEquipoTextp" layoutX="258.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre Equipo" />
-      <Button fx:id="botonUnirseEquipo" layoutX="401.0" layoutY="442.0" mnemonicParsing="false" onAction="#seUne" text="Unirse " />
-      <Button fx:id="botonSalirEquipo" layoutX="483.0" layoutY="442.0" mnemonicParsing="false" onAction="#seSale" text="Salirse" />
-      <TextField fx:id="nicknameUserText" layoutX="26.0" layoutY="442.0" promptText="Tu nickname" />
-      <TextField fx:id="userPaswordText" layoutX="189.0" layoutY="442.0" promptText="Tu contraseña" />
+      <Text fx:id="nombreEquipoTextp" layoutX="300.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre Equipo" />
+      <Button fx:id="botonUnirseEquipo" layoutX="235.0" layoutY="478.0" mnemonicParsing="false" onAction="#seUne" text="Unirse " />
+      <Button fx:id="botonSalirEquipo" layoutX="317.0" layoutY="478.0" mnemonicParsing="false" onAction="#seSale" text="Salirse" />
       <TextArea fx:id="descripcionText" layoutX="26.0" layoutY="50.0" prefHeight="111.0" prefWidth="626.0" promptText="Descripción" />
-      <Button fx:id="botonVolverHome" layoutX="565.0" layoutY="442.0" mnemonicParsing="false" onAction="#llevarHome" text="Volver" />
+      <Button fx:id="botonVolverHome" layoutX="399.0" layoutY="478.0" mnemonicParsing="false" onAction="#llevarHome" text="Volver" />
    </children>
 </AnchorPane>

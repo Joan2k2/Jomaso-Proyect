@@ -63,10 +63,6 @@ public class FXMLEquipoVistaController implements Initializable {
     @FXML
     private Button botonSalirEquipo;
     @FXML
-    private TextField nicknameUserText;
-    @FXML
-    private TextField userPaswordText;
-    @FXML
     private TextArea descripcionText;
     @FXML
     private Button botonVolverHome;
@@ -101,27 +97,30 @@ public class FXMLEquipoVistaController implements Initializable {
     private void seUne(ActionEvent event) {
         EquipoModel em = new EquipoModel();
         boolean resultado = false;
-        Usuario u = new Usuario();
-        u.setNickName(nicknameUserText.getText());
-        u.setContrasenya(userPaswordText.getText());
 
-        if (u.getNickName().equals(UsuarioLog.getNickName()) && u.getContrasenya().equals(UsuarioLog.getContrasenya())) {
-            resultado = em.addJugador();
-            if (resultado == true) {
+        resultado = em.addJugador();
+        if (resultado == true) {
 
-                Alert a = new Alert(Alert.AlertType.CONFIRMATION);
-                a.setContentText("Te has unido correctamente");
-                a.setHeaderText("Todo Ok!!");
-                a.showAndWait();
-            } else {
-                Alert a = new Alert(Alert.AlertType.ERROR);
-                a.setContentText("ha fallado");
-                a.setHeaderText("Error de Inscribirse");
-                a.showAndWait();
-            }
+            Alert a = new Alert(Alert.AlertType.CONFIRMATION);
+            a.setContentText("Te has unido correctamente");
+            a.setHeaderText("Todo Ok!!");
+            a.showAndWait();
+            ObservableList<Torneo> listaEquipos = em.listarTorneo();
+
+            this.nombreTablaTorneo.setCellValueFactory(new PropertyValueFactory("nombre"));
+            this.fechaInicioTablaTorneos.setCellValueFactory(new PropertyValueFactory("fehcaInicio"));
+            this.FechaInscripTablaTorneo.setCellValueFactory(new PropertyValueFactory("fechaInscripcion"));
+            this.deporteTablaTorneo.setCellValueFactory(new PropertyValueFactory("deporte"));
+            this.tablaTorneo.setItems(listaEquipos);
+
+            ObservableList<Usuario> listausuario = em.getJugadores();
+            this.nicknameTablaJuga.setCellValueFactory(new PropertyValueFactory("nickName"));
+            this.nombreTablaJuga.setCellValueFactory(new PropertyValueFactory("nombre"));
+            this.correoTablaJuga.setCellValueFactory(new PropertyValueFactory("correo"));
+            this.tablaJugadores.setItems(listausuario);
         } else {
             Alert a = new Alert(Alert.AlertType.ERROR);
-            a.setContentText("Error de autenticación");
+            a.setContentText("ha fallado");
             a.setHeaderText("Error de Inscribirse");
             a.showAndWait();
         }
@@ -131,33 +130,35 @@ public class FXMLEquipoVistaController implements Initializable {
     @FXML
     private void seSale(ActionEvent event) {
         EquipoModel em = new EquipoModel();
-        boolean resultado=false;
-        Usuario u = new Usuario();
-        u.setNickName(nicknameUserText.getText());
-        u.setContrasenya(userPaswordText.getText());
+        boolean resultado = false;
 
-        if (u.getNickName().equals(UsuarioLog.getNickName()) && u.getContrasenya().equals(UsuarioLog.getContrasenya())) {
-            resultado = em.borrarJugador();
-            System.out.println(resultado);
-             if (resultado == true) {
+        resultado = em.borrarJugador();
+        if (resultado == true) {
 
-                Alert a = new Alert(Alert.AlertType.CONFIRMATION);
-                a.setContentText("Te has salido correctamente");
-                a.setHeaderText("Todo Ok!!");
-                a.showAndWait();
-            } else {
-                Alert a = new Alert(Alert.AlertType.ERROR);
-                a.setContentText("ha fallado");
-                a.setHeaderText("Error de eliminarse");
-                a.showAndWait();
-            }
+            Alert a = new Alert(Alert.AlertType.CONFIRMATION);
+            a.setContentText("Te has salido correctamente");
+            a.setHeaderText("Todo Ok!!");
+            a.showAndWait();
+            ObservableList<Torneo> listaEquipos = em.listarTorneo();
+
+            this.nombreTablaTorneo.setCellValueFactory(new PropertyValueFactory("nombre"));
+            this.fechaInicioTablaTorneos.setCellValueFactory(new PropertyValueFactory("fehcaInicio"));
+            this.FechaInscripTablaTorneo.setCellValueFactory(new PropertyValueFactory("fechaInscripcion"));
+            this.deporteTablaTorneo.setCellValueFactory(new PropertyValueFactory("deporte"));
+            this.tablaTorneo.setItems(listaEquipos);
+
+            ObservableList<Usuario> listausuario = em.getJugadores();
+            this.nicknameTablaJuga.setCellValueFactory(new PropertyValueFactory("nickName"));
+            this.nombreTablaJuga.setCellValueFactory(new PropertyValueFactory("nombre"));
+            this.correoTablaJuga.setCellValueFactory(new PropertyValueFactory("correo"));
+            this.tablaJugadores.setItems(listausuario);
         } else {
             Alert a = new Alert(Alert.AlertType.ERROR);
-            a.setContentText("Error de autenticación");
+            a.setContentText("ha fallado");
             a.setHeaderText("Error de eliminarse");
             a.showAndWait();
         }
-        
+
     }
 
     @FXML

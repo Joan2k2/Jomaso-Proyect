@@ -44,8 +44,6 @@ public class FXMLEquiposController implements Initializable {
     @FXML
     private Button botonunirseEquipo;
     @FXML
-    private TextField IdEquipo;
-    @FXML
     private TableColumn idEquipos;
 
     /**
@@ -65,8 +63,8 @@ public class FXMLEquiposController implements Initializable {
 
     @FXML
     private void llevaEquipoVista(ActionEvent event) {
-        
-        UsuarioLog.setAlmacenId(Integer.parseInt(IdEquipo.getText()));
+        Equipo e = tablaEquipos.getSelectionModel().getSelectedItem();
+        UsuarioLog.setAlmacenId(e.getId());
         
          try {
 

@@ -16,6 +16,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import model.Deporte;
+import model.DeporteModel;
 import model.EquipoModel;
 
 /**
@@ -39,15 +41,14 @@ public class FXMLCrearEquipoController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        String Futbol = "futbol";
-        String Tenis = "tenis";
-        String Petanca = "petanca";
-        ObservableList<String> lista = FXCollections.observableArrayList();
         
+        DeporteModel dm = new DeporteModel();
+        ObservableList<String> lista =dm.getDeportes();
+
         
-        lista.add(Futbol);
-        lista.add(Petanca);
-        lista.add(Tenis);
+            
+        
+
         laBox.setItems(lista);
     }
 

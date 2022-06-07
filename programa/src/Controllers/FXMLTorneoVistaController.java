@@ -55,10 +55,6 @@ public class FXMLTorneoVistaController implements Initializable {
     @FXML
     private TextField nombreEquipoInsertar;
     @FXML
-    private TextField nombreUsuarioInsertar;
-    @FXML
-    private TextField contraseñaUsuarioInsertar;
-    @FXML
     private TextArea textoDescripccion;
     @FXML
     private Button botonVolverTorneos;
@@ -95,35 +91,27 @@ public class FXMLTorneoVistaController implements Initializable {
 
     private void unirEquipo(ActionEvent event) {
         boolean resultado = false;
-        
-        Usuario u = new Usuario();
         TorneoModel tm = new TorneoModel();
-        u.setNickName(nombreUsuarioInsertar.getText());
-        u.setContrasenya(contraseñaUsuarioInsertar.getText());
 //comprobar que la fecha de inscripccion es mayor o igual a la fecha actual
 //comprobar que el nombre de usuario y contraseña de usuario son los mismos que en usuarioLog
 
-        if (u.getNickName().equals(UsuarioLog.getNickName())  && u.getContrasenya().equals(UsuarioLog.getContrasenya())) {
+        resultado = tm.inscribEquipo(nombreEquipoInsertar.getText());
+        if (resultado == true) {
 
-                resultado = tm.inscribEquipo(nombreEquipoInsertar.getText());
-            if (resultado==true) {
+            Alert a = new Alert(Alert.AlertType.CONFIRMATION);
+            a.setContentText("Te has inscrito correctamente");
+            a.setHeaderText("Todo Ok!!");
+            a.showAndWait();
+            ObservableList<Equipo> listaEquipos = tm.getEquipos();
 
-                
-                Alert a = new Alert(Alert.AlertType.CONFIRMATION);
-                a.setContentText("Te has inscrito correctamente");
-                a.setHeaderText("Todo Ok!!");
-                a.showAndWait();
-            } else {
-                Alert a = new Alert(Alert.AlertType.ERROR);
-                a.setContentText("Error de autenticación");
-                a.setHeaderText("Error de Inscribirse");
-                a.showAndWait();
-            }
-
+            this.nombreEquipoTabla.setCellValueFactory(new PropertyValueFactory("nombre"));
+            this.liderEquipoTabla.setCellValueFactory(new PropertyValueFactory("nameAdmin"));
+            this.descripcionEquipoTabla.setCellValueFactory(new PropertyValueFactory("descripcion"));
+            this.tablaEquipos.setItems(listaEquipos);
         } else {
             Alert a = new Alert(Alert.AlertType.ERROR);
-            a.setContentText("Usuario o contraseña no coincien");
-            a.setHeaderText("Error");
+            a.setContentText("Error de autenticación");
+            a.setHeaderText("Error de Inscribirse");
             a.showAndWait();
         }
 
@@ -131,36 +119,30 @@ public class FXMLTorneoVistaController implements Initializable {
 
     @FXML
     private void quitarEquipo(ActionEvent event) {
-        boolean resultado=false;
-        Usuario u = new Usuario();
-        u.setNickName(nombreUsuarioInsertar.getText());
-        u.setContrasenya(contraseñaUsuarioInsertar.getText());
+        boolean resultado = false;
         TorneoModel tm = new TorneoModel();
-        
-        
-        if (u.getNickName().equals(UsuarioLog.getNickName())  && u.getContrasenya().equals(UsuarioLog.getContrasenya())) {
-            resultado=tm.desInscribEquipo(nombreEquipoInsertar.getText());
-            if (resultado==true) {
 
-                
-                Alert a = new Alert(Alert.AlertType.CONFIRMATION);
-                a.setContentText("Te has eliminado correctamente");
-                a.setHeaderText("Todo Ok!!");
-                a.showAndWait();
-            } else {
-                Alert a = new Alert(Alert.AlertType.ERROR);
-                a.setContentText("No funciona");
-                System.out.println(resultado);
-                a.setHeaderText("Error de eliminarse");
-                a.showAndWait();
-            }
-            
-            
-        }else{
-         Alert a = new Alert(Alert.AlertType.ERROR);
-            a.setContentText("El usuario o contraseña no coinciden");
-            a.setHeaderText("Error de autenticacion");
-            a.showAndWait();}
+        resultado = tm.desInscribEquipo(nombreEquipoInsertar.getText());
+        if (resultado == true) {
+
+            Alert a = new Alert(Alert.AlertType.CONFIRMATION);
+            a.setContentText("Te has eliminado correctamente");
+            a.setHeaderText("Todo Ok!!");
+            a.showAndWait();
+            ObservableList<Equipo> listaEquipos = tm.getEquipos();
+
+            this.nombreEquipoTabla.setCellValueFactory(new PropertyValueFactory("nombre"));
+            this.liderEquipoTabla.setCellValueFactory(new PropertyValueFactory("nameAdmin"));
+            this.descripcionEquipoTabla.setCellValueFactory(new PropertyValueFactory("descripcion"));
+            this.tablaEquipos.setItems(listaEquipos);
+        } else {
+            Alert a = new Alert(Alert.AlertType.ERROR);
+            a.setContentText("No funciona");
+            System.out.println(resultado);
+            a.setHeaderText("Error de eliminarse");
+            a.showAndWait();
+        }
+
     }
 
     @FXML

@@ -26,7 +26,7 @@
             <Image url="@../recursos/images/padel.jpg" />
          </image>
       </ImageView>
-      <TableView fx:id="tablaHome" layoutX="398.0" layoutY="145.0" prefHeight="388.0" prefWidth="414.0">
+      <TableView fx:id="tablaHome" layoutX="398.0" layoutY="145.0" onMouseClicked="#torneoTablViewMouseClicked" prefHeight="388.0" prefWidth="414.0">
         <columns>
             <TableColumn fx:id="fechaInscripccion" prefWidth="124.79998779296875" text="Fecha inscripción" />
           <TableColumn fx:id="nombreTorneo" prefWidth="84.0" text="Nombre" />
