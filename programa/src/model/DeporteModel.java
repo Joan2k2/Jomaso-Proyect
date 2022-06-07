@@ -55,12 +55,12 @@ public class DeporteModel extends DBUtil {
     * @param "Deporte"
     * @version 0.1
     */
-    public void borraDeporte(Deporte d){
+    public void borraDeporte(int id){
        try{				
             String insertSql="CALL borraDeporte(?)";
                 
             PreparedStatement stmt=this.getConexion().prepareStatement(insertSql);
-            stmt.setInt(1, d.getId());
+            stmt.setInt(1, id);
 
             stmt.execute();			
         } catch (SQLException e) {

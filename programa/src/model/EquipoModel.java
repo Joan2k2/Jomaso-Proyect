@@ -79,6 +79,28 @@ public class EquipoModel extends DBUtil {
             this.cerrarConexion();
 	}
     }
+    /**Borra un equipo de la base de datos
+    * segun el id de un equipo
+    * (Unicamente para admin)
+     * 
+     * @param "id" 
+     */
+    public void borraEquipoAdmin(int id){
+        try{				
+	String insertSql="DELETE FROM equipos WHERE id=?";
+                
+            PreparedStatement stmt=this.getConexion().prepareStatement(insertSql);
+            stmt.setInt(1, id);
+                
+            stmt.execute();
+	} catch (SQLException e) {
+            e.printStackTrace();
+        } 
+	finally {
+            //Cerramos conexión
+            this.cerrarConexion();
+	}
+    }
     
     /**Aplica nuevos jugadores a un equipo en la base a
      * un String con el nombre del equipo
