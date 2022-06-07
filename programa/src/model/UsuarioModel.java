@@ -90,6 +90,30 @@ public class UsuarioModel extends DBUtil {
 		}
     }
     
+    /**Borra un usuario de la base de datos
+    * segun el id de un Usuario
+    * (Unicamente para admin)
+     * 
+     * @param "id" 
+     */ 
+    public void borraUsuarioAdmin(int id){
+        try{				
+		String insertSql="DELETE FROM usuarios WHERE id=?";
+                
+                PreparedStatement stmt=this.getConexion().prepareStatement(insertSql);
+                stmt.setInt(1, id);
+                
+                stmt.execute();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} 
+		finally {
+			//Cerramos conexión
+			this.cerrarConexion();
+		}
+    }
+    
     /**Analiza en nickName y contraseña de usuario a logearse y devuelve los dos parametros anteriores
      * son ciertos o no.
      * (si el nick y contraseña son iguales devuelve true, de lo contrario devuelve false)
