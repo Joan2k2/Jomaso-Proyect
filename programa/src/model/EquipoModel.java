@@ -223,7 +223,12 @@ public class EquipoModel extends DBUtil {
             this.cerrarConexion();
 	}
     }
-    
+    /** Pasa un objeto equipo de contiene la informacion de X equipo
+    * 
+    * @author Jose Ramon
+     * @version 0.2 
+     * @return "Equipo"
+    */
     public Equipo getEquipo() {
         
         try {
@@ -248,7 +253,12 @@ public class EquipoModel extends DBUtil {
             return null;
         }
    }
-   
+   /** Pasa un ObservableList de los torneos a jugar de X equipo
+    * 
+    * @author Jose Ramon
+    * @version 0.2 
+    * @return "ObservableList(torneo)"
+    */
    public ObservableList<Torneo> listarTorneo() {
 
         try {
@@ -276,7 +286,12 @@ public class EquipoModel extends DBUtil {
             return null;
         }
    }
-   
+   /**Pasa un ObservableList list de todos los equipos
+    * 
+    * @author Jose Ramon
+    * @version 0.2
+    * @return "ObservableList(Equipo)"
+    */
    public ObservableList<Equipo> listarEquipo() {
 
         try {

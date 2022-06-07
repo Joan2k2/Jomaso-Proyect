@@ -182,12 +182,18 @@ public class UsuarioModel extends DBUtil {
 	}
     }
     
+    /**Devuelve un observable list de los equipos del usuairo
+     * 
+     * @author Jose Ramon
+     * @version 0.1
+     * @return "ObservableList(Equipo)"
+     */
     public ObservableList<Equipo> getEquipo() {
 
         try {
             //Iniciamos conexión
             ObservableList<Equipo> listEquipo = FXCollections.observableArrayList();
-            String insertSql = "SELECT e.nombre, d.nombre AS \"deporte\" FROM equipos e, participa p, practica pr, deportes d, usuarios u WHERE p.id_usuario=u.id AND p.id_equipo=e.id AND pr.id_equipo=e.id AND pr.id_deporte=d.id AND u.id=?";
+            String insertSql = "SELECT e.id,e.nombre, d.nombre AS \"deporte\" FROM equipos e, participa p, practica pr, deportes d, usuarios u WHERE p.id_usuario=u.id AND p.id_equipo=e.id AND pr.id_equipo=e.id AND pr.id_deporte=d.id AND u.id=?";
 
             PreparedStatement stmt = this.getConexion().prepareStatement(insertSql);
             stmt.setInt(1,UsuarioLog.getId());
@@ -195,6 +201,7 @@ public class UsuarioModel extends DBUtil {
 
             while (rs.next()) {
                 Equipo e = new Equipo();
+                e.setId(rs.getInt("id"));
                 e.setNombre(rs.getString("nombre"));
                 e.setNameAdmin(rs.getString("deporte"));
                 listEquipo.add(e);
@@ -207,7 +214,11 @@ public class UsuarioModel extends DBUtil {
             return null;
         }
    }
-    
+    /**Devuelve un observable list de los usuarios 
+     * para uso del administrador
+     * 
+     * @return "ObservableList(torneo)"
+     */
    public ObservableList<Usuario> listarUsuario() {
 
         try {

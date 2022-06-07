@@ -272,7 +272,7 @@ public class TorneoModel extends DBUtil {
         try {
             //Iniciamos conexión
             ObservableList<Equipo> equipos = FXCollections.observableArrayList();
-            String insertSql = "SELECT e.nombre,u.nickname,e.descripcion FROM equipos e,torneos t,compite c,participa p,usuarios u WHERE u.id=p.id_usuario and p.id_equipo=e.id and c.id_equipos=e.id and c.id_torneo=t.id and e.admin=u.id AND t.id=?";
+            String insertSql = "SELECT e.id,e.nombre,u.nickname,e.descripcion FROM equipos e,torneos t,compite c,participa p,usuarios u WHERE u.id=p.id_usuario and p.id_equipo=e.id and c.id_equipos=e.id and c.id_torneo=t.id and e.admin=u.id AND t.id=?";
 
             PreparedStatement stmt = this.getConexion().prepareStatement(insertSql);
             stmt.setInt(1, UsuarioLog.getAlmacenId());
@@ -280,6 +280,7 @@ public class TorneoModel extends DBUtil {
 
             while (rs.next()) {
                 Equipo e = new Equipo();
+                e.setId(rs.getInt("id"));
                 e.setNombre(rs.getString("nombre"));
                 e.setDescripcion(rs.getString("descripcion"));
                 e.setNameAdmin(rs.getString("nickname"));
