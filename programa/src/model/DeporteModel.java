@@ -108,6 +108,7 @@ public class DeporteModel extends DBUtil {
 
             while (rs.next()) {
                 Deporte d = new Deporte();
+                d.setId(rs.getInt("id"));
                 d.setNombre(rs.getString("nombre"));
                 listaDeporte.add(d);
             }
