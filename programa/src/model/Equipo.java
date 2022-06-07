@@ -26,24 +26,6 @@ public class Equipo {
     
     //Constructor default
     public Equipo(){}
-    
-    //Constructor con todos los atributos
-    public Equipo(int[] jugadores, int admin, ArrayList<Deporte> deportes, String nombre,String descripcion , Blob img) {
-        this.jugadores = jugadores;
-        this.admin = admin;
-        this.deportes = deportes;
-        this.nombre = nombre;
-        this.img = img;
-        this.descripcion=descripcion;
-    }
-    
-    //equipo generico
-    public Equipo(int admin, String nombre,String descripcion ,Blob img) {
-        this.admin = admin;
-        this.nombre = nombre;
-        this.img = img;
-        this.descripcion=descripcion;
-    }
 
     public String getNameAdmin() {
         return nameAdmin;
@@ -53,7 +35,6 @@ public class Equipo {
         this.nameAdmin = nameAdmin;
     }
 
-    
     public String getDescripcion() {
         return descripcion;
     }

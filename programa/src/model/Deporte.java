@@ -14,18 +14,8 @@ public class Deporte {
     private int id;
     private String nombre;
     private String descripcion;
-    
-    //Constructor default
-    public Deporte(String nombre, String descripcion) {
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-    }
 
-    public Deporte(int id) {
-        this.id = id;
-    }
-
-    Deporte() {}
+    public Deporte() {}
 
     public int getId() {
         return id;
