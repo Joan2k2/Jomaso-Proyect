@@ -6,6 +6,7 @@ package Controllers;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -18,6 +19,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
@@ -99,7 +101,14 @@ public class FXMLEquipoVistaController implements Initializable {
     private void seUne(ActionEvent event) {
         EquipoModel em = new EquipoModel();
         boolean resultado = false;
+        
+         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setHeaderText(null);
+            alert.setTitle("Confirmación");
+            alert.setContentText("¿Seguro que quiere unirse al equipo?");
+            Optional<ButtonType> action = alert.showAndWait();
 
+            if (action.get() == ButtonType.OK) {
         resultado = em.addJugador();
         if (resultado == true) {
 
@@ -126,7 +135,7 @@ public class FXMLEquipoVistaController implements Initializable {
             a.setHeaderText("Error de Inscribirse");
             a.showAndWait();
         }
-
+            }
     }
 
     @FXML
@@ -134,6 +143,13 @@ public class FXMLEquipoVistaController implements Initializable {
         EquipoModel em = new EquipoModel();
         boolean resultado = false;
 
+         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+         alert.setHeaderText(null);
+         alert.setTitle("Confirmación");
+         alert.setContentText("¿Seguro que quiere abandonar el equipo?");
+         Optional<ButtonType> action = alert.showAndWait();
+
+         if (action.get() == ButtonType.OK) {
         resultado = em.borrarJugador();
         if (resultado == true) {
 
@@ -160,6 +176,7 @@ public class FXMLEquipoVistaController implements Initializable {
             a.setHeaderText("Error de eliminarse");
             a.showAndWait();
         }
+         }
 
     }
 

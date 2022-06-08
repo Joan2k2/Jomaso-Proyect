@@ -8,6 +8,7 @@ import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
 import java.net.URL;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -16,6 +17,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
@@ -199,55 +201,75 @@ public class FXMLAdminController implements Initializable {
         if (this.idBorrarTorneo.getText().isEmpty()) {
             Alert ale = new Alert(Alert.AlertType.ERROR);
             ale.setHeaderText("Error");
-            ale.setContentText("No puedes dejar la id vacia");
+            ale.setContentText("Introduce la ID del Torneo");
             ale.showAndWait();
         } else {
-            TorneoModel tm = new TorneoModel();
+            
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setHeaderText(null);
+            alert.setTitle("Confirmación");
+            alert.setContentText("¿Seguro que quiere borrar el torneo?");
+            Optional<ButtonType> action = alert.showAndWait();
+            
+            if (action.get() == ButtonType.OK) {
+                
+                 TorneoModel tm = new TorneoModel();
 
-            tm.borrarTorneo(Integer.parseInt(idBorrarTorneo.getText()));
-            Alert ale = new Alert(Alert.AlertType.CONFIRMATION);
-            ale.setHeaderText("Correcto");
-            ale.setContentText("Todo ok");
-            ale.showAndWait();
+                tm.borrarTorneo(Integer.parseInt(idBorrarTorneo.getText()));
+                Alert ale = new Alert(Alert.AlertType.CONFIRMATION);
+                ale.setHeaderText("Correcto");
+                ale.setContentText("Todo ok");
+                ale.showAndWait();
 
-            tm = new TorneoModel();
+                tm = new TorneoModel();
 
-            ObservableList<Torneo> torneoAdmin = tm.listarTorneos();
-            this.idTablaTorneo.setCellValueFactory(new PropertyValueFactory("id"));
-            this.nombreTablaTorneo.setCellValueFactory(new PropertyValueFactory("nombre"));
-            this.tablaTorneoAdmin.setItems(torneoAdmin);
+                ObservableList<Torneo> torneoAdmin = tm.listarTorneos();
+                this.idTablaTorneo.setCellValueFactory(new PropertyValueFactory("id"));
+                this.nombreTablaTorneo.setCellValueFactory(new PropertyValueFactory("nombre"));
+                this.tablaTorneoAdmin.setItems(torneoAdmin);
+            
+            } 
+            
+           
+
+         
         }
 
     }
 
     @FXML
     private void borrarUsuario(ActionEvent event) {
-
         if (this.idBorrarUsuario.getText().isEmpty()) {
             Alert ale = new Alert(Alert.AlertType.ERROR);
             ale.setHeaderText("Error");
-            ale.setContentText("No puedes dejar la id vacia");
+            ale.setContentText("Introduce la ID del Usuario");
             ale.showAndWait();
         } else {
-            UsuarioModel um = new UsuarioModel();
+            
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setHeaderText(null);
+                alert.setTitle("Confirmación");
+                alert.setContentText("¿Seguro que quiere borrar el usuario?");
+                Optional<ButtonType> action = alert.showAndWait();
 
-            um.borraUsuario(Integer.parseInt(idBorrarUsuario.getText()));
-            Alert ale = new Alert(Alert.AlertType.CONFIRMATION);
-            ale.setHeaderText("Correcto");
-            ale.setContentText("Todo ok");
-            ale.showAndWait();
+                if (action.get() == ButtonType.OK) {
+                    
+                    UsuarioModel um = new UsuarioModel();
 
-            um = new UsuarioModel();
+                    um.borraUsuario(Integer.parseInt(idBorrarUsuario.getText()));
+                    Alert ale = new Alert(Alert.AlertType.CONFIRMATION);
+                    ale.setHeaderText("Correcto");
+                    ale.setContentText("Todo ok");
+                    ale.showAndWait();
 
-            ObservableList<Usuario> usuarioAdmin = um.listarUsuario();
-            this.idTablaUsuario.setCellValueFactory(new PropertyValueFactory("id"));
-            this.nombreTablaUsuario.setCellValueFactory(new PropertyValueFactory("nickName"));
-            this.tablaUsuarioAdmin.setItems(usuarioAdmin);
+                    um = new UsuarioModel();
+
+                    ObservableList<Usuario> usuarioAdmin = um.listarUsuario();
+                    this.idTablaUsuario.setCellValueFactory(new PropertyValueFactory("id"));
+                    this.nombreTablaUsuario.setCellValueFactory(new PropertyValueFactory("nickName"));
+                    this.tablaUsuarioAdmin.setItems(usuarioAdmin);
+            }
         }
-
-    }
-
-    private void crearEquipo(ActionEvent event) {
 
     }
 
@@ -259,20 +281,29 @@ public class FXMLAdminController implements Initializable {
             ale.setContentText("No puedes dejar la id vacia");
             ale.showAndWait();
         } else {
-            EquipoModel em = new EquipoModel();
+            
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setHeaderText(null);
+            alert.setTitle("Confirmación");
+            alert.setContentText("¿Seguro que quiere borrar el usuario?");
+            Optional<ButtonType> action = alert.showAndWait();
 
-            em.borraEquipoAdmin(Integer.parseInt(idBorrarEquipo.getText()));
-            Alert ale = new Alert(Alert.AlertType.CONFIRMATION);
-            ale.setHeaderText("Correcto");
-            ale.setContentText("Todo ok");
-            ale.showAndWait();
+            if (action.get() == ButtonType.OK) {
+                EquipoModel em = new EquipoModel();
 
-            em = new EquipoModel();
+                em.borraEquipoAdmin(Integer.parseInt(idBorrarEquipo.getText()));
+                Alert ale = new Alert(Alert.AlertType.CONFIRMATION);
+                ale.setHeaderText("Correcto");
+                ale.setContentText("Todo ok");
+                ale.showAndWait();
 
-            ObservableList<Equipo> equipoAdmin = em.listarEquipo();
-            this.idTablaEquipo.setCellValueFactory(new PropertyValueFactory("id"));
-            this.nombreTablaEquipo.setCellValueFactory(new PropertyValueFactory("nombre"));
-            this.tablaEquipoAdmin.setItems(equipoAdmin);
+                em = new EquipoModel();
+
+                ObservableList<Equipo> equipoAdmin = em.listarEquipo();
+                this.idTablaEquipo.setCellValueFactory(new PropertyValueFactory("id"));
+                this.nombreTablaEquipo.setCellValueFactory(new PropertyValueFactory("nombre"));
+                this.tablaEquipoAdmin.setItems(equipoAdmin);
+            }
 //            
         }
     }
@@ -286,20 +317,29 @@ public class FXMLAdminController implements Initializable {
             ale.setContentText("No puedes dejar la id vacia");
             ale.showAndWait();
         } else {
-            DeporteModel dm = new DeporteModel();
+            
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setHeaderText(null);
+            alert.setTitle("Confirmación");
+            alert.setContentText("¿Seguro que quiere borrar el usuario?");
+            Optional<ButtonType> action = alert.showAndWait();
 
-            dm.borraDeporte(Integer.parseInt(idBorrarDeporte.getText()));
-            Alert ale = new Alert(Alert.AlertType.CONFIRMATION);
-            ale.setHeaderText("Correcto");
-            ale.setContentText("Todo ok");
-            ale.showAndWait();
+            if (action.get() == ButtonType.OK) {
+                DeporteModel dm = new DeporteModel();
 
-            dm = new DeporteModel();
+                dm.borraDeporte(Integer.parseInt(idBorrarDeporte.getText()));
+                Alert ale = new Alert(Alert.AlertType.CONFIRMATION);
+                ale.setHeaderText("Correcto");
+                ale.setContentText("Todo ok");
+                ale.showAndWait();
 
-            ObservableList<Deporte> deporteAdmin = dm.listarDeporte();
-            this.idTablaDeporte.setCellValueFactory(new PropertyValueFactory("id"));
-            this.nombreTablaDeporte.setCellValueFactory(new PropertyValueFactory("nombre"));
-            this.tablaDeporteAdmin.setItems(deporteAdmin);
+                dm = new DeporteModel();
+
+                ObservableList<Deporte> deporteAdmin = dm.listarDeporte();
+                this.idTablaDeporte.setCellValueFactory(new PropertyValueFactory("id"));
+                this.nombreTablaDeporte.setCellValueFactory(new PropertyValueFactory("nombre"));
+                this.tablaDeporteAdmin.setItems(deporteAdmin);
+            }
         }
     }
 
