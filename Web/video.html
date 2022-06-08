@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="jomaso.css" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+    <link href="Styles.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="images/jomasonuevo.png">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <title>Jomaso</title>
+
+    <header>
+        <nav class="
+        relative
+        w-full
+        flex flex-wrap
+        items-center
+        justify-between
+        py-4
+        bg-gray-100
+        text-gray-500
+        hover:text-gray-700
+        focus:text-gray-700
+        shadow-lg
+        navbar navbar-expand-lg navbar-light
+        ">
+            <div class="container-fluid w-full flex flex-wrap items-center justify-between px-6">
+                <button class="
+            navbar-toggler
+            text-gray-500
+            border-0
+            hover:shadow-none hover:no-underline
+            py-2
+            px-2.5
+            bg-transparent
+            focus:outline-none focus:ring-0 focus:shadow-none focus:no-underline
+          " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" class="w-6" role="img"
+                        viewBox="0 0 448 512">
+                        <path fill="currentColor"
+                            d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z">
+                        </path>
+                    </svg>
+                </button>
+                <div class="collapse navbar-collapse flex-grow items-center" id="navbarSupportedContent">
+                    <a class="
+              flex
+              items-center
+              text-gray-900
+              hover:text-gray-900
+              focus:text-gray-900
+              mt-2
+              lg:mt-0
+              mr-1
+            " href="index.html">
+                        <img src="images/jomasonuevo.png" style="height: 35px" alt="" loading="lazy" />
+                    </a>
+
+                    <ul class="navbar-nav flex flex-col pl-0 list-style-none mr-auto">
+                        <li class="nav-item p-2">
+                            <a class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
+                                style="color:#ffffff" href="noticias.html">Noticias</a>
+                        </li>
+                        <li class="nav-item p-2">
+                            <a class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
+                                style="color:#ffffff" href="nuestroequipo.html">Nuestro Equipo</a>
+                        </li>
+                        <li class="nav-item p-2">
+                            <a class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
+                                style="color:#ffffff" href="contacto.html">Contacto</a>
+                        </li>
+                        <li class="nav-item p-2">
+                            <a class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
+                                style="color:#ffffff" href="video.html">Video</a>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="flex items-center relative">
+                    <div class="dropdown relative">
+                        <ul class="
+          dropdown-menu
+          min-w-max
+          absolute
+          hidden
+          bg-white
+          text-base
+          z-50
+          float-left
+          py-2
+          list-none
+          text-left
+          rounded-lg
+          shadow-lg
+          mt-1
+          hidden
+          m-0
+          bg-clip-padding
+          border-none
+          left-auto
+          right-0
+        " aria-labelledby="dropdownMenuButton2">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+</head>
+
+<body>
+    <div class="embed-responsive embed-responsive-21by9 relative w-full overflow-hidden">
+        <iframe class="video" width="1000" height="500" src="https://www.youtube.com/embed/CjkxsSCqBsg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</body>
+
+<footer id="contacto">
+    <div class="contenedor footer-content">
+        <a><img class="icono-footer" src="images/administracion.png" alt="Logo"></a>
+        <div class="redes-sociales">
+            <a class="red-social-icono" href="https://www.instagram.com/xuquer_ce">
+                <i class='bx bxl-instagram'></i>
+            </a>
+            <a class="red-social-icono" href="https://twitter.com/xuquer_ce">
+                <i class='bx bxl-twitter'></i>
+            </a>
+            <a class="red-social-icono" href="https://github.com/Joan2k2/Jomaso-Proyect">
+                <i class='bx bxl-github'></i>
+            </a>
+        </div>
+    </div>
+
+    <hr size="300px" color="white" />
+
+    <div class="text-center p-4" style="background-color: burlywood;">
+        © 2022 Copyright:
+        <a class="text-white">JOMASO</a>
+
+</footer>
+
+</html>

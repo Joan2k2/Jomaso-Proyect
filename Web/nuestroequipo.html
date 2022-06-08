@@ -1,139 +1,204 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="jomaso.css" type="text/css" />
-    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
-    <link href="Styles.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="jomaso.css" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+  <link href="Styles.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="images/jomasonuevo.png">
+  <script>
     tailwind.config = {
-        theme: {
+      theme: {
         extend: {
-            fontFamily: {
+          fontFamily: {
             sans: ['Inter', 'sans-serif'],
-            },
+          },
         }
-        }
+      }
     }
-    </script>
-    <title>Jomaso</title>
+  </script>
+  <title>Nuestro equipo</title>
 
-    <header>
-        <a href="index.html" class="logo">
-            <img src="images/jomasonuevo.png" alt="logo jomaso">
-        </a>
+  <header>
+    <nav class="
+          relative
+          w-full
+          flex flex-wrap
+          items-center
+          justify-between
+          py-4
+          bg-gray-100
+          text-gray-500
+          hover:text-gray-700
+          focus:text-gray-700
+          shadow-lg
+          navbar navbar-expand-lg navbar-light
+          ">
+      <div class="container-fluid w-full flex flex-wrap items-center justify-between px-6">
+        <button class="
+              navbar-toggler
+              text-gray-500
+              border-0
+              hover:shadow-none hover:no-underline
+              py-2
+              px-2.5
+              bg-transparent
+              focus:outline-none focus:ring-0 focus:shadow-none focus:no-underline
+            " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" class="w-6" role="img"
+            viewBox="0 0 448 512">
+            <path fill="currentColor"
+              d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z">
+            </path>
+          </svg>
+        </button>
+        <div class="collapse navbar-collapse flex-grow items-center" id="navbarSupportedContent">
+          <a class="
+                flex
+                items-center
+                text-gray-900
+                hover:text-gray-900
+                focus:text-gray-900
+                mt-2
+                lg:mt-0
+                mr-1
+              " href="index.html">
+            <img src="images/jomasonuevo.png" style="height: 35px" alt="" loading="lazy" />
+          </a>
 
-        <nav>
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="noticias.html" class="nav-link">Noticias</a>
-            <a href="nuestroequipo.html" class="nav-link">Nuestro equipo</a>
-            <a href="contacto.html" class="nav-link">Contacto</a>
-        </nav>
-    </header>
+          <ul class="navbar-nav flex flex-col pl-0 list-style-none mr-auto">
+            <li class="nav-item p-2">
+              <a class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0" style="color:#ffffff"
+                href="noticias.html">Noticias</a>
+            </li>
+            <li class="nav-item p-2">
+              <a class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0" style="color:#ffffff"
+                href="nuestroequipo.html">Nuestro Equipo</a>
+            </li>
+            <li class="nav-item p-2">
+              <a class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0" style="color:#ffffff"
+                href="contacto.html">Contacto</a>
+            </li>
+            <li class="nav-item p-2">
+              <a class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0" style="color:#ffffff"
+                href="video.html">Video</a>
+            </li>
+          </ul>
+
+        </div>
+
+        <div class="flex items-center relative">
+          <div class="dropdown relative">
+            <ul class="
+            dropdown-menu
+            min-w-max
+            absolute
+            hidden
+            bg-white
+            text-base
+            z-50
+            float-left
+            py-2
+            list-none
+            text-left
+            rounded-lg
+            shadow-lg
+            mt-1
+            hidden
+            m-0
+            bg-clip-padding
+            border-none
+            left-auto
+            right-0
+          " aria-labelledby="dropdownMenuButton2">
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
 </head>
 
 <body>
-    
-    <main>
-        <section class="mb-20">
+  <main>
+    <section class="mb-20">
+      <div class="div-equipo">
+        <h2>
+          Nuesto equipo
+        </h2>
+      </div>
 
-            <div class="div-equipo">
-                <h2>
-                    Nuesto equipo
-                </h2>
-            </div>
+      <h2 class="text-2xl font-bold mb-12 text-center">Nuestro equipo</h2>
+      <div id="div-cartas">
+        <div class="text-center">
+          <img src="images/equipo/jose.jpg" class="rounded-full w-32 mb-4 mx-auto" alt="Avatar" />
+          <h5 class="text-xl font-bold leading-tight mb-2">Jose Ramon Jimenez Garcia</h5>
+          <h6 class="text-xl font-normal leading-tight mb-1">Scrum Master</h6>
+          <p class="text-gray-500">Se encarga de gestionar el proceso Scrum y ayudar a eliminar impedimentos que puedan
+            afectar a la entrega del producto.</p>
+        </div>
 
-            <div id="div-cartas">
-                <div class="flex justify-center border-4 border-white">
-                    <div class="rounded-lg shadow-lg bg-white max-w-sm">
-                        <img class="rounded-t-lg" src="../../cosas/descarga.jpg" alt=""/>
-                        <div class="p-6">
-                            <h5 class="text-gray-900 text-xl font-medium mb-2">Jose Ramon Jimenez Garcia</h5>
-                            <p class="text-gray-700 text-base mb-4">Scrum Master</p>
-                            <a>
-                                <div class=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">+ Info</div>
-                            </a>
-                            <h6>Se encarga de gestionar el proceso Scrum y ayudar a eliminar impedimentos que puedan afectar a la entrega del producto. Además, se encarga de las labores de mentoring y formación, coaching y de facilitar reuniones y eventos si es necesario.</h6>
-                        </div>
-                    </div>
-                </div>
+        <div class="text-center">
+          <img src="images/equipo/joan.jpg" class="rounded-full w-32 mb-4 mx-auto" alt="Avatar" />
+          <h5 class="text-xl font-bold leading-tight mb-2">Joan Ruiz Martinez</h5>
+          <h6 class="text-xl font-normal leading-tight mb-1"> Developer team</h6>
+          <p class="text-gray-500">Se encargan de desarrollar el producto, para conseguir entregar un incremento de
+            software al final del ciclo de desarrollo.</p>
+        </div>
 
-                <div class="flex justify-center border-4 border-white">
-                    <div class="rounded-lg shadow-lg bg-white max-w-sm">
-                        <img class="rounded-t-lg" src="../../cosas/FERRAN.png" alt=""/>
-                        <div class="p-6">
-                            <h5 class="text-gray-900 text-xl font-medium mb-2">Joan Ruiz Martinez</h5>
-                            <p class="text-gray-700 text-base mb-4">Developmer Team</p>
-                            <a>
-                                <div class=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">ver más</div>
-                            </a>
-                            <h6>Se encargan de desarrollar el producto, auto-organizándose y auto-gestionándose para conseguir entregar un incremento de software al final del ciclo de desarrollo.</h6>
-                        </div>
-                    </div>
-                </div>
+        <div class="text-center">
+          <img src="images/equipo/yo.jpg" class="rounded-full w-32 mb-4 mx-auto" alt="Avatar" />
+          <h5 class="text-xl font-bold leading-tight mb-2">Miguel Angel Duque Calatayud</h5>
+          <h6 class="text-xl font-normal leading-tight mb-1"> Developer team</h6>
+          <p class="text-gray-500">Se encargan de desarrollar el producto, para conseguir entregar un incremento de
+            software al final del ciclo de desarrollo.</p>
+        </div>
 
-                <div class="flex justify-center border-4 border-white">
-                    <div class="rounded-lg shadow-lg bg-white max-w-sm">
-                        <img class="rounded-t-lg" src="../../cosas/Nallo/nallo.png" alt=""/>
-                        <div class="p-6">
-                            <h5 class="text-gray-900 text-xl font-medium mb-2">Miguel Angel Duque Calatayud</h5>
-                            <p class="text-gray-700 text-base mb-4">Developmer Team</p>
-                            <a>
-                                <div class=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">ver más</div>
-                            </a>
-                            <h6>Se encargan de desarrollar el producto, auto-organizándose y auto-gestionándose para conseguir entregar un incremento de software al final del ciclo de desarrollo.</h6>
-                        </div>
-                    </div>
-                </div>
+        <div class="text-center">
+          <img src="images/equipo/oscar.jpg" class="rounded-full w-32 mb-4 mx-auto" alt="Avatar" />
+          <h5 class="text-xl font-bold leading-tight mb-2">Oscar Martinez Rosell</h5>
+          <h6 class="text-xl font-normal leading-tight mb-1">Product Owner</h6>
+          <p class="text-gray-500">Se encarga de gestionar el proceso Scrum y ayudar a eliminar impedimentos que puedan
+            afectar a la entrega del producto..</p>
+        </div>
+      </div>
+    </section>
+  </main>
 
-                <div class="flex justify-center border-4 border-white">
-                    <div class="rounded-lg shadow-lg bg-white max-w-sm">
-                        <img class="rounded-t-lg" src="../../cosas/copia.jpg" alt=""/>
-                        <div class="p-6">
-                            <h5 class="text-gray-900 text-xl font-medium mb-2">Oscar Martinez Rosell</h5>
-                            <p class="text-gray-700 text-base mb-4">Product Owner</p>
-                            <a>
-                                <div class=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">ver más</div>
-                            </a>
-                            <h6>Se encarga de obtener el máximo valor posible al mínimo costo. También es el responsable de la cartera de productos, conocida como pila de producto o Product Backlog. Por esta razón, comprende las necesidades de los usuarios dentro del negocio.</h6>
-                        </div>
-                    </div>
-                </div>
-            </div>  
-        </section>
-    </main>
-        
 </body>
 
 <footer id="contacto">
-    <div class="contenedor footer-content">
-        <a><img class="icono-footer" src="images/administracion.png" alt="Logo"></a>
-        <div class="redes-sociales">
-        <a class="red-social-icono" href="https://www.instagram.com/xuquer_ce">
-            <i class='bx bxl-instagram'></i>
-        </a>
-        <a class="red-social-icono" href="https://twitter.com/xuquer_ce">
-            <i class='bx bxl-twitter'></i>
-        </a>
-        <a class="red-social-icono" href="https://github.com/Joan2k2/Jomaso-Proyect">
-            <i class='bx bxl-github' ></i>
-        </a>
-        </div>
+  <div class="contenedor footer-content">
+    <a><img class="icono-footer" src="images/administracion.png" alt="Logo"></a>
+    <div class="redes-sociales">
+      <a class="red-social-icono" href="https://www.instagram.com/xuquer_ce">
+        <i class='bx bxl-instagram'></i>
+      </a>
+      <a class="red-social-icono" href="https://twitter.com/xuquer_ce">
+        <i class='bx bxl-twitter'></i>
+      </a>
+      <a class="red-social-icono" href="https://github.com/Joan2k2/Jomaso-Proyect">
+        <i class='bx bxl-github'></i>
+      </a>
     </div>
+  </div>
 
-<hr size="300px" color="white"/>
+  <hr size="300px" color="white" />
 
-<div class="text-center p-4" style="background-color: burlywood;">
-© 2021 Copyright:
-<a class="text-white">JOMASO</a>
-</div>
+  <div class="text-center p-4" style="background-color: burlywood;">
+    © 2022 Copyright:
+    <a class="text-white">JOMASO</a>
+  </div>
 
 </footer>
+
 </html>
