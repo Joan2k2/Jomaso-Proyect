@@ -72,6 +72,13 @@ public class DeporteModel extends DBUtil {
         }
     }
     
+    /**retorna un observableList de los nombres de los deportes,
+     * esta funcion se utiliza para los desplegables
+    *  
+    * @author Jose Ramon
+    * @return "ObservableList(String)"
+    * @version 0.1
+    */
     public ObservableList<String> getDeportes() {
 
         try {
@@ -97,6 +104,13 @@ public class DeporteModel extends DBUtil {
 
     }
     
+    /**retorna un observableList de los deportes,
+     * esta funcion se utiliza unicamente para el panel de admin
+    *  
+    * @author Jose Ramon
+    * @return "ObservableList(Deporte)"
+    * @version 0.1
+    */
     public ObservableList<Deporte> listarDeporte() {
 
         try {
