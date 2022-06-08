@@ -19,23 +19,23 @@
             <Image url="@../recursos/images/index/My%20project.png" />
          </image>
       </ImageView>
-      <AnchorPane fx:id="anchorpanel2" layoutX="254.0" layoutY="41.0" prefHeight="483.0" prefWidth="339.0" styleClass="fondologin" stylesheets="@../recursos/jomaso.css">
+      <AnchorPane fx:id="anchorpanel2" layoutX="256.0" layoutY="39.0" prefHeight="483.0" prefWidth="339.0" style="-fx-background-radius: 35;" styleClass="fondologin" stylesheets="@../recursos/jomaso.css">
          <children>
-            <Text layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inicia sesión para continuar" textAlignment="CENTER" wrappingWidth="340.0">
+            <Text layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inicia sesión" textAlignment="CENTER" wrappingWidth="340.0">
                <font>
                   <Font size="22.0" />
                </font>
             </Text>
-            <TextField fx:id="Nicknameuser" layoutX="95.0" layoutY="215.0" prefHeight="3.0" prefWidth="150.0" promptText="Username" styleClass="fontPrincipal" stylesheets="@../recursos/jomaso.css">
+            <TextField fx:id="Nicknameuser" layoutX="95.0" layoutY="219.0" prefHeight="3.0" prefWidth="150.0" promptText="Username" styleClass="fontPrincipal" stylesheets="@../recursos/jomaso.css">
                <font>
                   <Font size="14.0" />
                </font></TextField>
-            <Separator layoutY="354.0" prefHeight="3.0" prefWidth="339.0" />
-            <Text layoutX="44.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No tienes cuenta?">
+            <Separator layoutY="361.0" prefHeight="3.0" prefWidth="339.0" />
+            <Text layoutX="44.0" layoutY="391.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No tienes cuenta?">
                <font>
                   <Font size="13.0" />
                </font></Text>
-            <Hyperlink fx:id="hypervinculoregistrarse" layoutX="218.0" layoutY="366.0" onAction="#llevaaregistrarse" styleClass="fontPrincipal" stylesheets="@../recursos/jomaso.css" text="Sign-UP">
+            <Hyperlink fx:id="hypervinculoregistrarse" layoutX="218.0" layoutY="373.0" onAction="#llevaaregistrarse" styleClass="fontPrincipal" stylesheets="@../recursos/jomaso.css" text="Sign-UP">
                <effect>
                   <Bloom />
                </effect>
@@ -43,17 +43,22 @@
                   <Font size="13.0" />
                </font>
             </Hyperlink>
-            <Button fx:id="botonLogin" layoutX="85.0" layoutY="302.0" mnemonicParsing="false" onAction="#logearte" prefHeight="30.0" prefWidth="170.0" styleClass="boton" stylesheets="@../recursos/jomaso.css" text="Log-In">
+            <Button fx:id="botonLogin" layoutX="85.0" layoutY="307.0" mnemonicParsing="false" onAction="#logearte" prefHeight="30.0" prefWidth="170.0" styleClass="boton" stylesheets="@../recursos/jomaso.css" text="Log-In">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Button>
-            <PasswordField fx:id="PasswUser" layoutX="95.0" layoutY="255.0" prefHeight="3.0" prefWidth="150.0" promptText="Password" styleClass="fontPrincipal" stylesheets="@../recursos/jomaso.css">
+            <PasswordField fx:id="PasswUser" layoutX="95.0" layoutY="259.0" prefHeight="3.0" prefWidth="150.0" promptText="Password" styleClass="fontPrincipal" stylesheets="@../recursos/jomaso.css">
                <font>
                   <Font size="14.0" />
                </font></PasswordField>
             <ImageView fitHeight="112.0" fitWidth="264.0" layoutX="29.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../recursos/jomasonuevo2.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="45.0" fitWidth="46.0" layoutX="147.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../recursos/images/iniciar-sesion.png" />
                </image>
             </ImageView>
          </children>

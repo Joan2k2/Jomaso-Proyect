@@ -6,8 +6,13 @@
     -fx-background-color: seashell;
 }
 
+.fondoMenu{
+    -fx-background-color: burlywood;
+}
+
 .boton{
     -fx-background-color: burlywood;
+    -fx-background-radius: 35;
 }
 
 .boton:hover{

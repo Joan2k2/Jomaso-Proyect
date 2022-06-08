@@ -19,7 +19,7 @@
         </columns>
       </TableView>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text fx:id="nombreTorneo" layoutX="83.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre del torneo">
+      <Text fx:id="nombreTorneo" layoutX="35.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre del torneo">
          <font>
             <Font size="28.0" />
          </font></Text>

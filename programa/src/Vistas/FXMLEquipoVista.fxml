@@ -10,14 +10,14 @@
 
 <AnchorPane id="AnchorPane" prefHeight="560.0" prefWidth="850.0" styleClass="fondoGeneral" stylesheets="@../recursos/jomaso.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLEquipoVistaController">
    <children>
-      <TableView fx:id="tablaJugadores" layoutX="14.0" layoutY="255.0" prefHeight="222.0" prefWidth="378.0">
+      <TableView fx:id="tablaJugadores" layoutX="22.0" layoutY="250.0" prefHeight="222.0" prefWidth="378.0">
         <columns>
           <TableColumn fx:id="nicknameTablaJuga" prefWidth="122.0" text="Nickname" />
           <TableColumn fx:id="nombreTablaJuga" prefWidth="128.0" text="Nombre" />
             <TableColumn fx:id="correoTablaJuga" prefWidth="127.0" text="Correo" />
         </columns>
       </TableView>
-      <TableView fx:id="tablaTorneo" layoutX="451.0" layoutY="255.0" onMouseClicked="#torneoTablViewMouseClickedddesdeEquipo" prefHeight="222.0" prefWidth="378.0">
+      <TableView fx:id="tablaTorneo" layoutX="443.0" layoutY="250.0" onMouseClicked="#torneoTablViewMouseClickedddesdeEquipo" prefHeight="222.0" prefWidth="378.0">
         <columns>
           <TableColumn fx:id="nombreTablaTorneo" prefWidth="86.0" text="Nombre" />
           <TableColumn fx:id="fechaInicioTablaTorneos" prefWidth="94.0" text="Fecha Inicio" />
@@ -25,28 +25,28 @@
             <TableColumn fx:id="deporteTablaTorneo" prefWidth="103.0" text="Deporte" />
         </columns>
       </TableView>
-      <Text layoutX="153.0" layoutY="234.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jugadores">
+      <Text layoutX="164.0" layoutY="234.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jugadores">
          <font>
             <Font size="21.0" />
          </font></Text>
-      <Text layoutX="594.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Torneos">
+      <Text layoutX="595.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Torneos">
          <font>
             <Font size="21.0" />
          </font></Text>
-      <Text fx:id="nombreEquipoTextp" layoutX="365.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre Equipo">
+      <Text fx:id="nombreEquipoTextp" layoutX="365.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre Equipo" textAlignment="CENTER">
          <font>
             <Font size="17.0" />
          </font></Text>
-      <Button fx:id="botonUnirseEquipo" layoutX="200.0" layoutY="504.0" mnemonicParsing="false" onAction="#seUne" prefHeight="25.0" prefWidth="104.0" styleClass="boton" stylesheets="@../recursos/jomaso.css" text="Unirse ">
+      <Button fx:id="botonUnirseEquipo" layoutX="200.0" layoutY="496.0" mnemonicParsing="false" onAction="#seUne" prefHeight="25.0" prefWidth="104.0" styleClass="boton" stylesheets="@../recursos/jomaso.css" text="Unirse ">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <Button fx:id="botonSalirEquipo" layoutX="374.0" layoutY="504.0" mnemonicParsing="false" onAction="#seSale" prefHeight="25.0" prefWidth="104.0" styleClass="boton" stylesheets="@../recursos/jomaso.css" text="Salirse">
+      <Button fx:id="botonSalirEquipo" layoutX="373.0" layoutY="496.0" mnemonicParsing="false" onAction="#seSale" prefHeight="25.0" prefWidth="104.0" styleClass="boton" stylesheets="@../recursos/jomaso.css" text="Salirse">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <TextArea fx:id="descripcionText" layoutX="113.0" layoutY="70.0" prefHeight="111.0" prefWidth="626.0" promptText="Descripción" />
-      <Button fx:id="botonVolverHome" layoutX="546.0" layoutY="504.0" mnemonicParsing="false" onAction="#llevarHome" prefHeight="25.0" prefWidth="104.0" styleClass="boton" stylesheets="@../recursos/jomaso.css" text="Volver">
+      <TextArea fx:id="descripcionText" layoutX="113.0" layoutY="74.0" prefHeight="111.0" prefWidth="626.0" promptText="Descripción" />
+      <Button fx:id="botonVolverHome" layoutX="545.0" layoutY="496.0" mnemonicParsing="false" onAction="#llevarHome" prefHeight="25.0" prefWidth="104.0" styleClass="boton" stylesheets="@../recursos/jomaso.css" text="Volver">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>

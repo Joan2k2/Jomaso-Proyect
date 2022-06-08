@@ -16,29 +16,29 @@
             <Image url="@../recursos/images/index/My%20project.png" />
          </image>
       </ImageView>
-      <AnchorPane fx:id="anchorpanel2" layoutX="180.0" layoutY="42.0" prefHeight="477.0" prefWidth="491.0" styleClass="fondoRegister" stylesheets="@../recursos/jomaso.css">
+      <AnchorPane fx:id="anchorpanel2" layoutX="256.0" layoutY="39.0" prefHeight="483.0" prefWidth="339.0" style="-fx-background-radius: 35;" styleClass="fondologin" stylesheets="@../recursos/jomaso.css">
          <children>
-            <ImageView fitHeight="112.0" fitWidth="264.0" layoutX="113.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="112.0" fitWidth="264.0" layoutX="39.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../recursos/jomasonuevo2.png" />
                </image>
             </ImageView>
-            <Text layoutX="190.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Regístrate">
+            <Text layoutX="111.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Regístrate">
                <font>
                   <Font name="Comic Sans MS" size="24.0" />
                </font>
             </Text>
-            <TextField fx:id="NicknameUser" layoutX="170.0" layoutY="302.0" onAction="#loginUsr" promptText="Username*" />
-            <Button fx:id="botonRegistrarte" layoutX="160.0" layoutY="433.0" mnemonicParsing="false" onAction="#registrarte" prefHeight="30.0" prefWidth="170.0" styleClass="boton" stylesheets="@../recursos/jomaso.css" text="Regístrate">
+            <TextField fx:id="NicknameUser" layoutX="96.0" layoutY="299.0" onAction="#loginUsr" promptText="Username*" />
+            <Button fx:id="botonRegistrarte" layoutX="86.0" layoutY="425.0" mnemonicParsing="false" onAction="#registrarte" prefHeight="30.0" prefWidth="170.0" styleClass="boton" stylesheets="@../recursos/jomaso.css" text="Regístrate">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Button>
-            <TextField fx:id="NombreUser" layoutX="170.0" layoutY="145.0" onAction="#loginUsr" promptText="Nombre*" />
-            <TextField fx:id="ApellidoUser" layoutX="170.0" layoutY="182.0" onAction="#loginUsr" promptText="Apellido" />
-            <TextField fx:id="CorreoUser" layoutX="170.0" layoutY="222.0" onAction="#loginUsr" promptText="Correo*" />
-            <TextField fx:id="EdadUser" layoutX="170.0" layoutY="261.0" onAction="#loginUsr" promptText="Edad*" />
-            <PasswordField fx:id="PasswUser" layoutX="170.0" layoutY="340.0" onAction="#loginPassw" promptText="Password*" />
-            <PasswordField fx:id="PasswUserConfirma" layoutX="170.0" layoutY="379.0" onAction="#loginPassw" promptText="Password*" />
+            <TextField fx:id="NombreUser" layoutX="96.0" layoutY="146.0" onAction="#loginUsr" promptText="Nombre*" />
+            <TextField fx:id="ApellidoUser" layoutX="96.0" layoutY="181.0" onAction="#loginUsr" promptText="Apellido" />
+            <TextField fx:id="CorreoUser" layoutX="96.0" layoutY="219.0" onAction="#loginUsr" promptText="Correo*" />
+            <TextField fx:id="EdadUser" layoutX="96.0" layoutY="258.0" onAction="#loginUsr" promptText="Edad*" />
+            <PasswordField fx:id="PasswUser" layoutX="96.0" layoutY="338.0" onAction="#loginPassw" promptText="Password*" />
+            <PasswordField fx:id="PasswUserConfirma" layoutX="96.0" layoutY="374.0" onAction="#loginPassw" promptText="Password*" />
          </children>
       </AnchorPane>
    </children>
