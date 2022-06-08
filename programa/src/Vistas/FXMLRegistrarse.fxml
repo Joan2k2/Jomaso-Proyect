@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -23,22 +25,25 @@
                   <Image url="@../recursos/jomasonuevo2.png" />
                </image>
             </ImageView>
-            <Text layoutX="111.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Regístrate">
+            <Text layoutX="111.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Regístrate">
                <font>
                   <Font name="Comic Sans MS" size="24.0" />
                </font>
             </Text>
-            <TextField fx:id="NicknameUser" layoutX="96.0" layoutY="299.0" onAction="#loginUsr" promptText="Username*" />
-            <Button fx:id="botonRegistrarte" layoutX="86.0" layoutY="425.0" mnemonicParsing="false" onAction="#registrarte" prefHeight="30.0" prefWidth="170.0" styleClass="boton" stylesheets="@../recursos/jomaso.css" text="Regístrate">
+            <TextField fx:id="NicknameUser" layoutX="96.0" layoutY="274.0" onAction="#loginUsr" promptText="Nickname*" />
+            <Button fx:id="botonRegistrarte" layoutX="85.0" layoutY="386.0" mnemonicParsing="false" onAction="#registrarte" prefHeight="30.0" prefWidth="170.0" styleClass="boton" stylesheets="@../recursos/jomaso.css" text="Regístrate">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Button>
-            <TextField fx:id="NombreUser" layoutX="96.0" layoutY="146.0" onAction="#loginUsr" promptText="Nombre*" />
-            <TextField fx:id="ApellidoUser" layoutX="96.0" layoutY="181.0" onAction="#loginUsr" promptText="Apellido" />
-            <TextField fx:id="CorreoUser" layoutX="96.0" layoutY="219.0" onAction="#loginUsr" promptText="Correo*" />
-            <TextField fx:id="EdadUser" layoutX="96.0" layoutY="258.0" onAction="#loginUsr" promptText="Edad*" />
-            <PasswordField fx:id="PasswUser" layoutX="96.0" layoutY="338.0" onAction="#loginPassw" promptText="Password*" />
-            <PasswordField fx:id="PasswUserConfirma" layoutX="96.0" layoutY="374.0" onAction="#loginPassw" promptText="Password*" />
+            <TextField fx:id="NombreUser" layoutX="96.0" layoutY="121.0" onAction="#loginUsr" promptText="Nombre*" />
+            <TextField fx:id="ApellidoUser" layoutX="96.0" layoutY="156.0" onAction="#loginUsr" promptText="Apellido" />
+            <TextField fx:id="CorreoUser" layoutX="96.0" layoutY="194.0" onAction="#loginUsr" promptText="Correo*" />
+            <TextField fx:id="EdadUser" layoutX="96.0" layoutY="233.0" onAction="#loginUsr" promptText="Edad*" />
+            <PasswordField fx:id="PasswUser" layoutX="96.0" layoutY="313.0" onAction="#loginPassw" promptText="Password*" />
+            <PasswordField fx:id="PasswUserConfirma" layoutX="96.0" layoutY="349.0" onAction="#loginPassw" promptText="Password*" />
+            <Text layoutX="85.0" layoutY="459.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logeate ya" />
+            <Hyperlink fx:id="hypervinculoIniciarSesion" layoutX="202.0" layoutY="443.0" onAction="#llevaaLogin" stylesheets="@../recursos/jomaso.css" text="Log-In" />
+            <Separator layoutY="433.0" prefHeight="3.0" prefWidth="339.0" />
          </children>
       </AnchorPane>
    </children>

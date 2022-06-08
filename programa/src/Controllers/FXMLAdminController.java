@@ -4,8 +4,9 @@
  */
 package Controllers;
 
+import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
 import java.net.URL;
-import java.util.Date;
+import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -147,11 +148,16 @@ public class FXMLAdminController implements Initializable {
         
         try {
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-            
-            Date inicio = dateFormat.parse(this.fechaInicioTorn.getValue().toString());
-            Date inscripcion = dateFormat.parse(this.fechaInscripcionTorn.getValue().toString());
+//            Date date = new Date();
+            String inicios = fechaInicioTorn.getValue().toString();
+            String inscripccions = fechaInscripcionTorn.getValue().toString();
+//            Date inicio = dateFormat.parse(inicios);
+//            Date inscripcion = dateFormat.parse(inscripccions);
 
-                  
+//            String formattedDateinicio = dateFormat.format(inicios);
+            java.sql.Date fechainitorneo = java.sql.Date.valueOf(inicios);
+            java.sql.Date fechainscritorneo = java.sql.Date.valueOf(inscripccions);
+//            System.out.println( fechainitorneo + " aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa "  );
 
             if (this.nombreTorneo.getText().isEmpty() || this.fechaInicioTorn.getValue().toString().isEmpty() || this.fechaInscripcionTorn.getValue().toString().isEmpty() || s == null) {
                 Alert ale = new Alert(Alert.AlertType.ERROR);
@@ -159,8 +165,19 @@ public class FXMLAdminController implements Initializable {
                 ale.setContentText("No puedes dejar ni el nombre, fecha inicio, fecha inscripcion o deporte del torneo vacio");
                 ale.showAndWait();
             }
-            else if(inscripcion.before(inicio)){
-                System.out.println("f1:"+inicio);
+            else if(fechainscritorneo.before(fechainitorneo)){
+                TorneoModel tm = new TorneoModel();
+                Torneo t = new Torneo();
+                t.setDeporte(s);
+                t.setDescripcion(descripcionTorneo.getText());
+                t.setNombre(nombreTorneo.getText());
+                t.setFehcaInicio(inicios); 
+                t.setFechaInscripcion(inscripccions);
+                tm.crearTorneo(t);
+                Alert ale = new Alert(Alert.AlertType.CONFIRMATION);
+                ale.setHeaderText("Creado correctamente");
+                ale.setContentText("Se ha creado correctamente el torneo");
+                ale.showAndWait();
 
             }
             else{

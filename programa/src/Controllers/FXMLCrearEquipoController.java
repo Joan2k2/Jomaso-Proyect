@@ -58,7 +58,7 @@ public class FXMLCrearEquipoController implements Initializable {
         boolean resultado = false;
 
         String s = laBox.getSelectionModel().getSelectedItem();
-        System.out.println(s);
+        
         if (textoNombreEquipo.getText().isEmpty() || s == null) {
 
             Alert ale = new Alert(Alert.AlertType.ERROR);

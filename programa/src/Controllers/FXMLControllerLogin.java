@@ -34,8 +34,6 @@ import model.UsuarioModel;
 public class FXMLControllerLogin implements Initializable {
 
     @FXML
-    private ImageView imagenfondo;
-    @FXML
     private AnchorPane anchorpanel2;
     @FXML
     private TextField Nicknameuser;

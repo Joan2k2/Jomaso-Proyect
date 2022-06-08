@@ -33,8 +33,6 @@ import model.UsuarioModel;
 public class FXMLRegistrarseController implements Initializable {
 
     @FXML
-    private ImageView imagenfondo;
-    @FXML
     private AnchorPane anchorpanel2;
     @FXML
     private TextField NicknameUser;

@@ -39,8 +39,8 @@ public class TorneoModel extends DBUtil {
             PreparedStatement stmt = this.getConexion().prepareStatement(insertSql);
             stmt.setString(1, t.getNombre());
             stmt.setString(2, t.getDescripcion());
-            stmt.setDate(3, t.getFechaInicioDate());
-            stmt.setDate(4, t.getFechaInscripcionDate());
+            stmt.setString(3, t.getFehcaInicio());
+            stmt.setString(4, t.getFechaInscripcion());
             stmt.setString(5, t.getDeporte());
 
             stmt.execute();
