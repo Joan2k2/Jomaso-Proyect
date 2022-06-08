@@ -145,7 +145,7 @@ public class FXMLAdminController implements Initializable {
     @FXML
     private void crearTorneo(ActionEvent event) {
         String s = listDeporte.getSelectionModel().getSelectedItem();
-        
+
         try {
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 //            Date date = new Date();
@@ -157,21 +157,19 @@ public class FXMLAdminController implements Initializable {
 //            String formattedDateinicio = dateFormat.format(inicios);
             java.sql.Date fechainitorneo = java.sql.Date.valueOf(inicios);
             java.sql.Date fechainscritorneo = java.sql.Date.valueOf(inscripccions);
-//            System.out.println( fechainitorneo + " aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa "  );
 
             if (this.nombreTorneo.getText().isEmpty() || this.fechaInicioTorn.getValue().toString().isEmpty() || this.fechaInscripcionTorn.getValue().toString().isEmpty() || s == null) {
                 Alert ale = new Alert(Alert.AlertType.ERROR);
                 ale.setHeaderText("Error");
                 ale.setContentText("No puedes dejar ni el nombre, fecha inicio, fecha inscripcion o deporte del torneo vacio");
                 ale.showAndWait();
-            }
-            else if(fechainscritorneo.before(fechainitorneo)){
+            } else if (fechainscritorneo.before(fechainitorneo)) {
                 TorneoModel tm = new TorneoModel();
                 Torneo t = new Torneo();
                 t.setDeporte(s);
                 t.setDescripcion(descripcionTorneo.getText());
                 t.setNombre(nombreTorneo.getText());
-                t.setFehcaInicio(inicios); 
+                t.setFehcaInicio(inicios);
                 t.setFechaInscripcion(inscripccions);
                 tm.crearTorneo(t);
                 Alert ale = new Alert(Alert.AlertType.CONFIRMATION);
@@ -179,8 +177,13 @@ public class FXMLAdminController implements Initializable {
                 ale.setContentText("Se ha creado correctamente el torneo");
                 ale.showAndWait();
 
-            }
-            else{
+                tm = new TorneoModel();
+
+                ObservableList<Torneo> torneoAdmin = tm.listarTorneos();
+                this.idTablaTorneo.setCellValueFactory(new PropertyValueFactory("id"));
+                this.nombreTablaTorneo.setCellValueFactory(new PropertyValueFactory("nombre"));
+                this.tablaTorneoAdmin.setItems(torneoAdmin);
+            } else {
                 Alert ale = new Alert(Alert.AlertType.ERROR);
                 ale.setHeaderText("Error");
                 ale.setContentText("La fecha de inscripcción no puede ser superior a la de inicio");
@@ -188,7 +191,7 @@ public class FXMLAdminController implements Initializable {
             }
         } catch (Exception ex) {
             ex.printStackTrace();
-       }
+        }
     }
 
     @FXML
@@ -219,7 +222,7 @@ public class FXMLAdminController implements Initializable {
 
     @FXML
     private void borrarUsuario(ActionEvent event) {
-        
+
         if (this.idBorrarUsuario.getText().isEmpty()) {
             Alert ale = new Alert(Alert.AlertType.ERROR);
             ale.setHeaderText("Error");
@@ -234,14 +237,13 @@ public class FXMLAdminController implements Initializable {
             ale.setContentText("Todo ok");
             ale.showAndWait();
 
-             um = new UsuarioModel();
+            um = new UsuarioModel();
 
-        ObservableList<Usuario> usuarioAdmin = um.listarUsuario();
-        this.idTablaUsuario.setCellValueFactory(new PropertyValueFactory("id"));
-        this.nombreTablaUsuario.setCellValueFactory(new PropertyValueFactory("nickName"));
-        this.tablaUsuarioAdmin.setItems(usuarioAdmin);
+            ObservableList<Usuario> usuarioAdmin = um.listarUsuario();
+            this.idTablaUsuario.setCellValueFactory(new PropertyValueFactory("id"));
+            this.nombreTablaUsuario.setCellValueFactory(new PropertyValueFactory("nickName"));
+            this.tablaUsuarioAdmin.setItems(usuarioAdmin);
         }
-        
 
     }
 
@@ -265,20 +267,20 @@ public class FXMLAdminController implements Initializable {
             ale.setContentText("Todo ok");
             ale.showAndWait();
 
-             em = new EquipoModel();
+            em = new EquipoModel();
 
             ObservableList<Equipo> equipoAdmin = em.listarEquipo();
             this.idTablaEquipo.setCellValueFactory(new PropertyValueFactory("id"));
             this.nombreTablaEquipo.setCellValueFactory(new PropertyValueFactory("nombre"));
             this.tablaEquipoAdmin.setItems(equipoAdmin);
 //            
+        }
     }
-}
 
-@FXML
-private void borrarDeporte(ActionEvent event) {
-    
-     if (this.idBorrarDeporte.getText().isEmpty()) {
+    @FXML
+    private void borrarDeporte(ActionEvent event) {
+
+        if (this.idBorrarDeporte.getText().isEmpty()) {
             Alert ale = new Alert(Alert.AlertType.ERROR);
             ale.setHeaderText("Error");
             ale.setContentText("No puedes dejar la id vacia");
@@ -292,44 +294,43 @@ private void borrarDeporte(ActionEvent event) {
             ale.setContentText("Todo ok");
             ale.showAndWait();
 
-              dm = new DeporteModel();
+            dm = new DeporteModel();
 
-        ObservableList<Deporte> deporteAdmin = dm.listarDeporte();
-        this.idTablaDeporte.setCellValueFactory(new PropertyValueFactory("id"));
-        this.nombreTablaDeporte.setCellValueFactory(new PropertyValueFactory("nombre"));
-        this.tablaDeporteAdmin.setItems(deporteAdmin);
+            ObservableList<Deporte> deporteAdmin = dm.listarDeporte();
+            this.idTablaDeporte.setCellValueFactory(new PropertyValueFactory("id"));
+            this.nombreTablaDeporte.setCellValueFactory(new PropertyValueFactory("nombre"));
+            this.tablaDeporteAdmin.setItems(deporteAdmin);
         }
     }
 
     @FXML
-private void crearDeporte(ActionEvent event) {
-    
-    if(this.nombreAdminDeporte.getText().isEmpty() || this.descripcionDeporte.getText().isEmpty()){
-     Alert ale = new Alert(Alert.AlertType.ERROR);
+    private void crearDeporte(ActionEvent event) {
+
+        if (this.nombreAdminDeporte.getText().isEmpty() || this.descripcionDeporte.getText().isEmpty()) {
+            Alert ale = new Alert(Alert.AlertType.ERROR);
             ale.setHeaderText("Error");
             ale.setContentText("No puedes dejar ni el nombre ni la descripcción vacia");
             ale.showAndWait();
-    
-    }else{
-        DeporteModel dm = new DeporteModel();
-        Deporte d = new Deporte();
-        d.setNombre(nombreAdminDeporte.getText());
-        d.setDescripcion(descripcionDeporte.getText());
-        dm.crearDeporte(d);
-        
-        dm = new DeporteModel();
 
-        ObservableList<Deporte> deporteAdmin = dm.listarDeporte();
-        this.idTablaDeporte.setCellValueFactory(new PropertyValueFactory("id"));
-        this.nombreTablaDeporte.setCellValueFactory(new PropertyValueFactory("nombre"));
-        this.tablaDeporteAdmin.setItems(deporteAdmin);
-        Alert ale = new Alert(Alert.AlertType.CONFIRMATION);
+        } else {
+            DeporteModel dm = new DeporteModel();
+            Deporte d = new Deporte();
+            d.setNombre(nombreAdminDeporte.getText());
+            d.setDescripcion(descripcionDeporte.getText());
+            dm.crearDeporte(d);
+
+            dm = new DeporteModel();
+
+            ObservableList<Deporte> deporteAdmin = dm.listarDeporte();
+            this.idTablaDeporte.setCellValueFactory(new PropertyValueFactory("id"));
+            this.nombreTablaDeporte.setCellValueFactory(new PropertyValueFactory("nombre"));
+            this.tablaDeporteAdmin.setItems(deporteAdmin);
+            Alert ale = new Alert(Alert.AlertType.CONFIRMATION);
             ale.setHeaderText("Correcto");
             ale.setContentText("Todo ok");
             ale.showAndWait();
-        
+
+        }
+
     }
-    
-    
-}
 }
