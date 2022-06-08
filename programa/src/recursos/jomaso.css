@@ -1,0 +1,23 @@
+.fondologin{
+    -fx-background-color: seashell;
+}
+
+.fondoRegister{
+    -fx-background-color: seashell;
+}
+
+.boton{
+    -fx-background-color: burlywood;
+}
+
+.boton:hover{
+    -fx-background-color: black;
+    -fx-opacity: 70%;
+}
+
+
+.fondoGeneral{
+    -fx-background-color: seashell;
+}
+
+

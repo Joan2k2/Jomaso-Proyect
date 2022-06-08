@@ -9,35 +9,53 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLPerfilController">
+<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="760.0" styleClass="fondoGeneral" stylesheets="@../recursos/jomaso.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLPerfilController">
    <children>
-      <Text layoutX="247.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Perfil">
+      <Text layoutX="344.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Perfil">
          <font>
-            <Font name="Consolas" size="32.0" />
+            <Font size="32.0" />
          </font></Text>
       <ImageView fx:id="fotoperfil" fitHeight="74.0" fitWidth="80.0" layoutX="31.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true" />
-      <TableView fx:id="tablaperfil" layoutX="469.0" layoutY="160.0" onMouseClicked="#equiposTablViewMouseClickeddesdeperfil" prefHeight="284.0" prefWidth="272.0">
+      <TableView fx:id="tablaperfil" layoutX="455.0" layoutY="156.0" onMouseClicked="#equiposTablViewMouseClickeddesdeperfil" prefHeight="284.0" prefWidth="272.0">
         <columns>
           <TableColumn id="nombredeporteperfil" fx:id="nombreperfil" prefWidth="136.0" text="Nombre" />
           <TableColumn id="deporteperfil" fx:id="deporteperfil" prefWidth="135.0" text="Deporte" />
         </columns>
       </TableView>
-      <Text layoutX="552.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mis equipos" wrappingWidth="105.5625">
+      <Text layoutX="532.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mis equipos" textAlignment="CENTER" wrappingWidth="118.5625">
          <font>
-            <Font name="Consolas" size="15.0" />
+            <Font size="20.0" />
          </font>
       </Text>
-      <TextField fx:id="nicknameperfil" editable="false" layoutX="31.0" layoutY="175.0" />
-      <TextField fx:id="edadperfil" editable="false" layoutX="225.0" layoutY="175.0" />
-      <TextField fx:id="nombreperfilText" editable="false" layoutX="31.0" layoutY="265.0" />
-      <TextField fx:id="apellidosperfil" editable="false" layoutX="225.0" layoutY="265.0" />
-      <TextField fx:id="descripcionperfil" editable="false" layoutX="31.0" layoutY="354.0" prefHeight="90.0" prefWidth="149.0" />
-      <TextField fx:id="correoperfil" editable="false" layoutX="225.0" layoutY="354.0" />
-      <Label layoutX="33.0" layoutY="160.0" text="Nickname" />
-      <Label layoutX="227.0" layoutY="160.0" text="Edad" />
-      <Label layoutX="33.0" layoutY="250.0" text="Nombre" />
-      <Label layoutX="225.0" layoutY="250.0" text="Apellidos" />
-      <Label layoutX="33.0" layoutY="337.0" text="Descripcion" />
-      <Label layoutX="226.0" layoutY="337.0" text="Correo" />
+      <TextField fx:id="nicknameperfil" editable="false" layoutX="31.0" layoutY="170.0" prefHeight="20.0" prefWidth="150.0" />
+      <TextField fx:id="edadperfil" editable="false" layoutX="225.0" layoutY="170.0" prefHeight="20.0" prefWidth="150.0" />
+      <TextField fx:id="nombreperfilText" editable="false" layoutX="31.0" layoutY="260.0" prefHeight="20.0" prefWidth="150.0" />
+      <TextField fx:id="apellidosperfil" editable="false" layoutX="225.0" layoutY="260.0" prefHeight="20.0" prefWidth="150.0" />
+      <TextField fx:id="descripcionperfil" editable="false" layoutX="31.0" layoutY="349.0" prefHeight="100.0" prefWidth="150.0" />
+      <TextField fx:id="correoperfil" editable="false" layoutX="225.0" layoutY="349.0" prefHeight="20.0" prefWidth="150.0" />
+      <Label layoutX="33.0" layoutY="143.0" text="Nickname">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label layoutX="227.0" layoutY="143.0" text="Edad">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label layoutX="33.0" layoutY="233.0" text="Nombre">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label layoutX="225.0" layoutY="233.0" text="Apellidos">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label layoutX="33.0" layoutY="320.0" text="Descripción">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label layoutX="226.0" layoutY="320.0" text="Correo">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
    </children>
 </AnchorPane>
