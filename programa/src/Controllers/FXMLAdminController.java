@@ -279,6 +279,14 @@ private void crearDeporte(ActionEvent event) {
         d.setNombre(nombreAdminDeporte.getText());
         d.setDescripcion(descripcionDeporte.getText());
         dm.crearDeporte(d);
+        
+        dm = new DeporteModel();
+
+        ObservableList<Deporte> deporteAdmin = dm.listarDeporte();
+        this.idTablaDeporte.setCellValueFactory(new PropertyValueFactory("id"));
+        this.nombreTablaDeporte.setCellValueFactory(new PropertyValueFactory("nombre"));
+        this.tablaDeporteAdmin.setItems(deporteAdmin);
+        
     }
     
     

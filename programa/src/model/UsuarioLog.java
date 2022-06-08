@@ -38,6 +38,14 @@ public class UsuarioLog {
     //Constructor default
     private UsuarioLog(){}
     
+    /**crea un objeto UsuarioLog y almacena todos los datos del usuario logeado
+     * en la clase estatica de mismo nombre
+     * 
+     * @author Jose Ramon Jimenez
+     * @version 0.1
+     * @param u
+     * @return "UsuarioLog"
+     */
     public static UsuarioLog getSingletonInstance(Usuario u){
         if(usuarioLog==null){
             usuarioLog=new UsuarioLog();

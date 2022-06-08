@@ -11,6 +11,7 @@ import java.util.Calendar;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -23,9 +24,11 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import model.Equipo;
 import model.Torneo;
 import model.TorneoModel;
 import model.UsuarioLog;
@@ -39,7 +42,6 @@ public class FXMLTorneosController implements Initializable {
 
    @FXML
     private TableView<Torneo> tablatorneos;
-   
     @FXML
     private TableColumn fechaInscripccion;
     @FXML
@@ -50,29 +52,32 @@ public class FXMLTorneosController implements Initializable {
     private TableColumn fechaInicio;
     @FXML
     private TableColumn idTorneo;
-    @FXML
     private Button botonLlevaTorneo;
+    @FXML
+    private TextField filtro;
+    
+    private ObservableList<Torneo> filtroTorneo;
+    private  ObservableList<Torneo> listaTorneos;
 
     /**
      * Initializes the controller class.
      */
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        
-
+    public void initialize(URL url, ResourceBundle rb) {    
         TorneoModel tm = new TorneoModel();
 
-        ObservableList<Torneo> listaTorneos = tm.listarTorneos();
+        listaTorneos = tm.listarTorneos();
         this.idTorneo.setCellValueFactory(new PropertyValueFactory("id"));
         this.fechaInscripccion.setCellValueFactory(new PropertyValueFactory("fechaInscripcion"));
         this.nombreTorneo.setCellValueFactory(new PropertyValueFactory("nombre"));
         this.nombreDeporte.setCellValueFactory(new PropertyValueFactory("deporte"));
         this.fechaInicio.setCellValueFactory(new PropertyValueFactory("fehcaInicio"));
         this.tablatorneos.setItems(listaTorneos);
+        
+        this.filtroTorneo = FXCollections.observableArrayList();
 
     }
 
-    @FXML
     private void llevaTorneoVista(ActionEvent event) {
         Torneo t = tablatorneos.getSelectionModel().getSelectedItem();
         UsuarioLog.setAlmacenId(t.getId());
@@ -130,6 +135,23 @@ public class FXMLTorneosController implements Initializable {
             
         }
     }
-    }    
-    
 
+    @FXML
+    private void filtroNombre(KeyEvent event) {
+        String Nfiltro=this.filtro.getText();
+        
+        if(Nfiltro.isEmpty()){
+            this.tablatorneos.setItems(this.listaTorneos); 
+        }else{
+            this.filtroTorneo.clear();  
+            
+            for(Torneo t:this.listaTorneos){
+                if(t.getNombre().toLowerCase().contains(Nfiltro.toLowerCase())){
+                    this.filtroTorneo.add(t);
+                }
+            } 
+            this.tablatorneos.setItems(this.filtroTorneo);
+        }
+    }
+
+}    
