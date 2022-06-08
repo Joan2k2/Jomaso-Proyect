@@ -147,6 +147,7 @@ public class FXMLAdminController implements Initializable {
     @FXML
     private void crearTorneo(ActionEvent event) {
         String s = listDeporte.getSelectionModel().getSelectedItem();
+        DeporteModel dm = new DeporteModel();
 
         try {
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -185,6 +186,9 @@ public class FXMLAdminController implements Initializable {
                 this.idTablaTorneo.setCellValueFactory(new PropertyValueFactory("id"));
                 this.nombreTablaTorneo.setCellValueFactory(new PropertyValueFactory("nombre"));
                 this.tablaTorneoAdmin.setItems(torneoAdmin);
+                
+                ObservableList<String> lista = dm.getDeportes();
+                listDeporte.setItems(lista);
             } else {
                 Alert ale = new Alert(Alert.AlertType.ERROR);
                 ale.setHeaderText("Error");
