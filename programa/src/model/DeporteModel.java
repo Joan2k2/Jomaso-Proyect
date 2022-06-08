@@ -15,7 +15,6 @@ import javafx.collections.ObservableList;
  *  
  * @author Jose Ramon
  * @version 0.1
- * @extends DBUtil
  */
 public class DeporteModel extends DBUtil {
     
@@ -23,7 +22,7 @@ public class DeporteModel extends DBUtil {
     * segun una clase Deporte 
     *  
     * @author Jose Ramon
-    * @param "Deporte"
+    * @param d
     * @version 0.1
     */
     public void crearDeporte(Deporte d) {
@@ -52,7 +51,7 @@ public class DeporteModel extends DBUtil {
     * segun un los datos de una clase deporte 
     *  
     * @author Jose Ramon
-    * @param "Deporte"
+    * @param id
     * @version 0.1
     */
     public void borraDeporte(int id){

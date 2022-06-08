@@ -18,7 +18,6 @@ import javafx.collections.ObservableList;
  *
  * @author jose Ramon
  * @version 0.1
- * @extends DBUtil
  */
 public class TorneoModel extends DBUtil {
 
@@ -28,7 +27,7 @@ public class TorneoModel extends DBUtil {
      *
      * @author Jose Ramon
      * @version 0.1
-     * @param "Torneo"
+     * @param t
      */
     public void crearTorneo(Torneo t) {
 
@@ -59,8 +58,7 @@ public class TorneoModel extends DBUtil {
      *
      * @author Jose Ramon
      * @version 0.1
-     * @param "Torneo"
-     * @param "Usuario"
+     * @param id
      */
     public void borrarTorneo(int id) {
 
@@ -88,7 +86,7 @@ public class TorneoModel extends DBUtil {
      *
      * @author Jose Ramon
      * @version 0.2
-     * @param "String"
+     * @param equipoName
      * @return boolean
      */
     public boolean inscribEquipo(String equipoName) {
@@ -126,7 +124,7 @@ public class TorneoModel extends DBUtil {
      *
      * @author Jose Ramon
      * @version 0.2
-     * @param "String"
+     * @param equipoName
      * @return boolean
      */
     public boolean desInscribEquipo(String equipoName) {
@@ -160,7 +158,7 @@ public class TorneoModel extends DBUtil {
      *
      * @author Jose Ramon
      * @version 0.1
-     * @return "ObservableList<Torneo>"
+     * @return ObservableList
      */
     public ObservableList<Torneo> listarTorneosHome() {
 
@@ -196,7 +194,7 @@ public class TorneoModel extends DBUtil {
      *
      * @author Jose Ramon
      * @version 0.1
-     * @return "ObservableList<Torneo>"
+     * @return ObservableList
      */
     public ObservableList<Torneo> listarTorneos() {
 
@@ -266,7 +264,7 @@ public class TorneoModel extends DBUtil {
      *
      * @author Jose Ramon
      * @version 0.1
-     * @return "ObservableList<Equipo>"
+     * @return ObservableList
      */
     public ObservableList<Equipo> getEquipos() {
 

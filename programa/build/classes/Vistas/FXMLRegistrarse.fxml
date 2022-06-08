@@ -5,43 +5,45 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.Bloom?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="759.0" prefWidth="517.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLRegistrarseController">
+<AnchorPane id="AnchorPane" prefHeight="560.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLRegistrarseController">
    <children>
-      <ImageView fx:id="imagenfondo" fitHeight="759.0" fitWidth="517.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" />
-      <AnchorPane fx:id="anchorpanel2" layoutX="98.0" layoutY="38.0" prefHeight="625.0" prefWidth="323.0" style="-fx-background-color: grey;">
+      <ImageView fitHeight="561.0" fitWidth="850.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../recursos/images/index/My%20project.png" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="anchorpanel2" layoutX="256.0" layoutY="39.0" prefHeight="483.0" prefWidth="339.0" style="-fx-background-radius: 35;" styleClass="fondologin" stylesheets="@../recursos/jomaso.css">
          <children>
-            <ImageView fitHeight="147.0" fitWidth="324.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="112.0" fitWidth="264.0" layoutX="39.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../recursos/jomasonuevo2.png" />
                </image>
             </ImageView>
-            <Text fill="WHITE" layoutX="101.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registrate">
+            <Text layoutX="111.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Regístrate">
                <font>
                   <Font name="Comic Sans MS" size="24.0" />
                </font>
             </Text>
-            <TextField fx:id="NicknameUser" layoutX="88.0" layoutY="288.0" onAction="#loginUsr" promptText="Username*" />
-            <Separator layoutX="2.0" layoutY="509.0" prefHeight="3.0" prefWidth="322.0" />
-            <Text fill="WHITE" layoutX="89.0" layoutY="542.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ya tienes cuenta?" />
-            <Hyperlink fx:id="hypervinculoIniciarSesion" layoutX="203.0" layoutY="526.0" onAction="#llevaaLogin" style="-fx-background-color: none;" text="Log-In" textFill="WHITE" underline="true">
-               <effect>
-                  <Bloom />
-               </effect>
-            </Hyperlink>
-            <Button fx:id="botonRegistrarte" layoutX="75.0" layoutY="428.0" mnemonicParsing="false" onAction="#registrarte" prefHeight="30.0" prefWidth="170.0" style="-fx-background-color: white; -fx-border-radius: 50;" text="Registrate" />
-            <TextField fx:id="NombreUser" layoutX="88.0" layoutY="131.0" onAction="#loginUsr" promptText="Nombre*" />
-            <TextField fx:id="ApellidoUser" layoutX="88.0" layoutY="166.0" onAction="#loginUsr" promptText="Apellido" />
-            <TextField fx:id="CorreoUser" layoutX="89.0" layoutY="201.0" onAction="#loginUsr" promptText="Correo*" />
-            <TextField fx:id="EdadUser" layoutX="89.0" layoutY="242.0" onAction="#loginUsr" promptText="Edad*" />
-            <PasswordField fx:id="PasswUser" layoutX="89.0" layoutY="327.0" onAction="#loginPassw" promptText="Password*" />
-            <PasswordField fx:id="PasswUserConfirma" layoutX="89.0" layoutY="377.0" onAction="#loginPassw" promptText="Password*" />
+            <TextField fx:id="NicknameUser" layoutX="96.0" layoutY="274.0" onAction="#loginUsr" promptText="Nickname*" />
+            <Button fx:id="botonRegistrarte" layoutX="85.0" layoutY="386.0" mnemonicParsing="false" onAction="#registrarte" prefHeight="30.0" prefWidth="170.0" styleClass="boton" stylesheets="@../recursos/jomaso.css" text="Regístrate">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <TextField fx:id="NombreUser" layoutX="96.0" layoutY="121.0" onAction="#loginUsr" promptText="Nombre*" />
+            <TextField fx:id="ApellidoUser" layoutX="96.0" layoutY="156.0" onAction="#loginUsr" promptText="Apellido" />
+            <TextField fx:id="CorreoUser" layoutX="96.0" layoutY="194.0" onAction="#loginUsr" promptText="Correo*" />
+            <TextField fx:id="EdadUser" layoutX="96.0" layoutY="233.0" onAction="#loginUsr" promptText="Edad*" />
+            <PasswordField fx:id="PasswUser" layoutX="96.0" layoutY="313.0" onAction="#loginPassw" promptText="Password*" />
+            <PasswordField fx:id="PasswUserConfirma" layoutX="96.0" layoutY="349.0" onAction="#loginPassw" promptText="Password*" />
+            <Text layoutX="85.0" layoutY="459.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Logeate ya" />
+            <Hyperlink fx:id="hypervinculoIniciarSesion" layoutX="202.0" layoutY="443.0" onAction="#llevaaLogin" stylesheets="@../recursos/jomaso.css" text="Log-In" />
+            <Separator layoutY="433.0" prefHeight="3.0" prefWidth="339.0" />
          </children>
       </AnchorPane>
    </children>

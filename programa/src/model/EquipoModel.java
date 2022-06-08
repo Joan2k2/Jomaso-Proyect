@@ -15,7 +15,6 @@ import javafx.collections.ObservableList;
  *  
  * @author Jose Ramon
  * @version 0.1
- * @extends DBUtil
  */
 public class EquipoModel extends DBUtil {
     
@@ -24,8 +23,11 @@ public class EquipoModel extends DBUtil {
     *  
     * @author Jose Ramon
     * @version 0.1
-    * @param "String"
-    */
+     * @param name
+     * @param desc
+     * @param deporte
+     * @return boolean
+     */
     public boolean crearEquipo(String name, String desc,String deporte) {
 		
 	try {
@@ -60,7 +62,7 @@ public class EquipoModel extends DBUtil {
     *  
     * @author Jose Ramon
     * @version 0.1
-    * @param "String"
+    * @param name
     */
     public void borraEquipo(String name){
         try{				
@@ -83,7 +85,7 @@ public class EquipoModel extends DBUtil {
     * segun el id de un equipo
     * (Unicamente para admin)
      * 
-     * @param "id" 
+     * @param id
      */
     public void borraEquipoAdmin(int id){
         try{				
@@ -107,7 +109,7 @@ public class EquipoModel extends DBUtil {
     *  
     * @author Jose Ramon
     * @version 0.1
-    * @param "String"
+    * @return boolean
     */
     public boolean addJugador(){
         try{				
@@ -141,8 +143,7 @@ public class EquipoModel extends DBUtil {
     *  
     * @author Jose Ramon
     * @version 0.1
-    * @param "Equipo"
-    * @param "Usuario"
+    * @return boolean
     */
     public boolean borrarJugador(){
         try{				
@@ -174,8 +175,7 @@ public class EquipoModel extends DBUtil {
      * 
      * @author Jose Ramon
      * @version 0.1
-     * @param "int id"
-     * @return "ObservableList<Usuario>"
+     * @return ObservableList
      */
     public ObservableList<Usuario> getJugadores(){
         try{				
@@ -211,8 +211,8 @@ public class EquipoModel extends DBUtil {
      * 
      * @author Jose Ramon
      * @version 0.1
-     * @param "int id"
-     * @return "ObservableList<Torneo>"
+     * @param id
+     * @return ObservableList
      */
     public ObservableList<Torneo> getTorneos(int id){
         try{				

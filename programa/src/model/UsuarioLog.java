@@ -17,7 +17,6 @@ import java.util.ArrayList;
  *
  * @author Jose Ramon
  * @version 0.1
- * @extends Object
  */
 public class UsuarioLog {
     private static String nickName;

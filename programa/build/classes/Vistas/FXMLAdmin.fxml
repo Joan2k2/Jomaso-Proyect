@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Point3D?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
@@ -12,77 +13,83 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="921.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLAdminController">
+<AnchorPane id="AnchorPane" prefHeight="560.0" prefWidth="850.0" styleClass="fondoGeneral" stylesheets="@../recursos/jomaso.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLAdminController">
    <children>
-      <Text layoutX="457.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenido:" wrappingWidth="200.9999999999999">
+      <Text layoutX="365.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenido:" wrappingWidth="200.9999999999999">
          <font>
-            <Font name="Consolas" size="32.0" />
+            <Font size="35.0" />
          </font>
       </Text>
-      <Button fx:id="crearTorneo" layoutX="126.0" layoutY="194.0" mnemonicParsing="false" onAction="#crearTorneo" prefHeight="39.0" prefWidth="94.0" text="Crear Torneo" />
-      <Button fx:id="borrarTorneo" layoutX="46.0" layoutY="442.0" mnemonicParsing="false" onAction="#borrarTorneo" prefHeight="39.0" prefWidth="94.0" text="Borrar Torneo" />
-      <Button fx:id="borrarUsuario" layoutX="46.0" layoutY="576.0" mnemonicParsing="false" onAction="#borrarUsuario" prefHeight="39.0" prefWidth="94.0" text="Borrar Usuario" />
-      <Button fx:id="borrarEquipo" layoutX="233.0" layoutY="442.0" mnemonicParsing="false" onAction="#borrarEquipo" prefHeight="39.0" prefWidth="94.0" text="Borrar Equipo" />
-      <TextField fx:id="nombreTorneo" layoutX="10.0" layoutY="33.0" promptText="Nombre" />
-      <TextField fx:id="idBorrarEquipo" layoutX="203.0" layoutY="405.0" promptText="Id Equipo" />
-      <TextField fx:id="idBorrarUsuario" layoutX="19.0" layoutY="537.0" promptText="Id Usuario" />
-      <Separator layoutX="-10.0" layoutY="384.0" prefHeight="9.0" prefWidth="409.0" />
-      <Separator layoutX="396.0" layoutY="389.0" orientation="VERTICAL" prefHeight="270.0" prefWidth="8.0" />
-      <Separator layoutX="396.0" layoutY="-2.0" orientation="VERTICAL" prefHeight="391.0" prefWidth="8.0" />
-      <TextField fx:id="idBorrarDeporte" layoutX="206.0" layoutY="537.0" promptText="Id Deporte" />
-      <Button fx:id="borrarDeporte" layoutX="226.0" layoutY="576.0" mnemonicParsing="false" onAction="#borrarDeporte" prefHeight="39.0" prefWidth="103.0" text="Borrar Deporte" />
-      <TextField fx:id="nombreAdminDeporte" layoutX="10.0" layoutY="258.0" promptText="Nombre" />
-      <Button fx:id="crearDeporte" layoutX="126.0" layoutY="332.0" mnemonicParsing="false" onAction="#crearDeporte" prefHeight="39.0" prefWidth="94.0" text="Crear Deporte" />
-      <TextArea fx:id="descripcionDeporte" layoutX="184.0" layoutY="258.0" prefHeight="63.0" prefWidth="187.0" promptText="Descipcion Deporte" />
-      <TextField fx:id="idBorrarTorneo" layoutX="19.0" layoutY="405.0" promptText=" Id Torneo" />
-      <TableView fx:id="tablaTorneoAdmin" layoutX="418.0" layoutY="125.0" prefHeight="177.0" prefWidth="218.0">
+      <Button fx:id="crearTorneo" layoutX="114.0" layoutY="194.0" mnemonicParsing="false" onAction="#crearTorneo" prefHeight="39.0" prefWidth="94.0" styleClass="boton" stylesheets="@../recursos/jomaso.css" text="Crear Torneo" />
+      <Button fx:id="borrarTorneo" layoutX="40.0" layoutY="442.0" mnemonicParsing="false" onAction="#borrarTorneo" prefHeight="39.0" prefWidth="94.0" styleClass="boton" stylesheets="@../recursos/jomaso.css" text="Borrar Torneo" />
+      <Button fx:id="borrarUsuario" layoutX="40.0" layoutY="576.0" mnemonicParsing="false" onAction="#borrarUsuario" prefHeight="39.0" prefWidth="94.0" styleClass="boton" stylesheets="@../recursos/jomaso.css" text="Borrar Usuario" />
+      <Button fx:id="borrarEquipo" layoutX="198.0" layoutY="442.0" mnemonicParsing="false" onAction="#borrarEquipo" prefHeight="39.0" prefWidth="94.0" styleClass="boton" stylesheets="@../recursos/jomaso.css" text="Borrar Equipo" />
+      <TextField fx:id="nombreTorneo" layoutX="26.0" layoutY="32.0" prefHeight="25.0" prefWidth="121.0" promptText="Nombre" />
+      <TextField fx:id="idBorrarEquipo" layoutX="184.0" layoutY="403.0" prefHeight="25.0" prefWidth="121.0" promptText="Id Equipo" />
+      <TextField fx:id="idBorrarUsuario" layoutX="26.0" layoutY="535.0" prefHeight="25.0" prefWidth="121.0" promptText="Id Usuario" />
+      <Separator layoutX="-10.0" layoutY="384.0" prefHeight="7.0" prefWidth="339.0" />
+      <Separator layoutX="327.0" layoutY="387.0" orientation="VERTICAL" prefHeight="270.0" prefWidth="8.0" />
+      <Separator layoutX="327.0" layoutY="-2.0" orientation="VERTICAL" prefHeight="391.0" prefWidth="8.0" />
+      <TextField fx:id="idBorrarDeporte" layoutX="184.0" layoutY="535.0" prefHeight="25.0" prefWidth="121.0" promptText="Id Deporte" />
+      <Button fx:id="borrarDeporte" layoutX="193.0" layoutY="576.0" mnemonicParsing="false" onAction="#borrarDeporte" prefHeight="39.0" prefWidth="103.0" styleClass="boton" stylesheets="@../recursos/jomaso.css" text="Borrar Deporte" />
+      <TextField fx:id="nombreAdminDeporte" layoutX="27.0" layoutY="258.0" prefHeight="25.0" prefWidth="121.0" promptText="Nombre" />
+      <Button fx:id="crearDeporte" layoutX="114.0" layoutY="330.0" mnemonicParsing="false" onAction="#crearDeporte" prefHeight="39.0" prefWidth="94.0" styleClass="boton" stylesheets="@../recursos/jomaso.css" text="Crear Deporte" />
+      <TextArea fx:id="descripcionDeporte" layoutX="161.0" layoutY="258.0" prefHeight="63.0" prefWidth="149.0" promptText="Descipcion Deporte" />
+      <TextField fx:id="idBorrarTorneo" layoutX="26.0" layoutY="403.0" prefHeight="25.0" prefWidth="121.0" promptText=" Id Torneo" />
+      <TableView fx:id="tablaTorneoAdmin" layoutX="348.0" layoutY="145.0" prefHeight="177.0" prefWidth="218.0">
         <columns>
           <TableColumn fx:id="idTablaTorneo" prefWidth="106.0" text="Id" />
           <TableColumn fx:id="nombreTablaTorneo" prefWidth="117.0" text="Nombre" />
         </columns>
       </TableView>
-      <TableView fx:id="tablaDeporteAdmin" layoutX="682.0" layoutY="125.0" prefHeight="177.0" prefWidth="218.0">
+      <TableView fx:id="tablaDeporteAdmin" layoutX="602.0" layoutY="145.0" prefHeight="177.0" prefWidth="218.0">
          <columns>
             <TableColumn fx:id="idTablaDeporte" prefWidth="106.0" text="Id" />
             <TableColumn fx:id="nombreTablaDeporte" prefWidth="117.0" text="Nombre" />
          </columns>
       </TableView>
-      <TableView fx:id="tablaEquipoAdmin" layoutX="418.0" layoutY="393.0" prefHeight="177.0" prefWidth="218.0">
+      <TableView fx:id="tablaEquipoAdmin" layoutX="348.0" layoutY="416.0" prefHeight="177.0" prefWidth="218.0">
          <columns>
             <TableColumn fx:id="idTablaEquipo" prefWidth="106.0" text="Id" />
             <TableColumn fx:id="nombreTablaEquipo" prefWidth="117.0" text="Nombre" />
          </columns>
       </TableView>
-      <TableView fx:id="tablaUsuarioAdmin" layoutX="682.0" layoutY="393.0" prefHeight="177.0" prefWidth="218.0">
+      <TableView fx:id="tablaUsuarioAdmin" layoutX="602.0" layoutY="419.0" prefHeight="177.0" prefWidth="218.0">
          <columns>
             <TableColumn fx:id="idTablaUsuario" prefWidth="106.0" text="Id" />
             <TableColumn fx:id="nombreTablaUsuario" prefWidth="117.0" text="Nickname" />
          </columns>
       </TableView>
-      <Text layoutX="495.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Equipo">
+      <Text layoutX="426.0" layoutY="399.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Equipo">
          <font>
-            <Font name="Consolas" size="19.0" />
+            <Font size="20.0" />
          </font>
       </Text>
-      <Text layoutX="495.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Torneo">
+      <Text layoutX="426.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Torneo">
          <font>
-            <Font name="Consolas" size="19.0" />
+            <Font size="20.0" />
          </font>
       </Text>
-      <Text layoutX="759.0" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuario">
+      <Text layoutX="677.0" layoutY="399.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuario">
          <font>
-            <Font name="Consolas" size="19.0" />
+            <Font size="20.0" />
          </font>
       </Text>
-      <Text layoutX="759.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deporte">
+      <Text layoutX="675.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deporte">
          <font>
-            <Font name="Consolas" size="19.0" />
+            <Font size="20.0" />
          </font>
       </Text>
-      <TextArea fx:id="descripcionTorneo" layoutX="89.0" layoutY="118.0" prefHeight="63.0" prefWidth="187.0" promptText="Descipcion Torneo" />
-      <TextField fx:id="nameAdmin" editable="false" layoutX="658.0" layoutY="36.0" />
-      <ChoiceBox fx:id="listDeporte" layoutX="205.0" layoutY="33.0" prefWidth="150.0" />
-      <DatePicker fx:id="fechaInicioTorn" layoutX="14.0" layoutY="75.0" prefHeight="25.0" prefWidth="149.0" promptText="Fecha Inicio" />
-      <DatePicker fx:id="fechaInscripcionTorn" layoutX="202.0" layoutY="75.0" prefHeight="25.0" prefWidth="149.0" promptText="Fecha Inscripcion" />
+      <TextArea fx:id="descripcionTorneo" layoutX="69.0" layoutY="119.0" prefHeight="63.0" prefWidth="187.0" promptText="Descipcion Torneo" />
+      <TextField fx:id="nameAdmin" editable="false" layoutX="592.0" layoutY="38.0" prefHeight="39.0" prefWidth="170.0">
+         <font>
+            <Font size="16.0" />
+         </font></TextField>
+      <ChoiceBox fx:id="listDeporte" layoutX="184.0" layoutY="32.0" prefHeight="25.0" prefWidth="121.0" />
+      <DatePicker fx:id="fechaInicioTorn" layoutX="26.0" layoutY="74.0" prefHeight="25.0" prefWidth="121.0" promptText="Fecha Inicio" />
+      <DatePicker fx:id="fechaInscripcionTorn" layoutX="184.0" layoutY="74.0" prefHeight="25.0" prefWidth="121.0" promptText="Fecha Inscripcion" />
    </children>
+   <rotationAxis>
+      <Point3D />
+   </rotationAxis>
 </AnchorPane>

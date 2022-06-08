@@ -9,16 +9,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="578.0" prefWidth="848.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLHomeController">
+<AnchorPane prefHeight="560.0" prefWidth="850.0" styleClass="fondoGeneral" stylesheets="@../recursos/jomaso.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLHomeController">
    <children>
-      <Text layoutX="112.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Noticias" wrappingWidth="149.13671875">
+      <Text layoutX="467.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Proximos Torneos" textAlignment="CENTER" wrappingWidth="285.13671875">
          <font>
-            <Font name="Consolas" size="32.0" />
-         </font>
-      </Text>
-      <Text layoutX="442.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Proximos Torneos" wrappingWidth="285.13671875">
-         <font>
-            <Font name="Consolas" size="32.0" />
+            <Font name="Goudy Old Style Bold" size="32.0" />
          </font>
       </Text>
       <ImageView fitHeight="256.0" fitWidth="323.0" layoutX="25.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true">
@@ -26,22 +21,27 @@
             <Image url="@../recursos/images/padel.jpg" />
          </image>
       </ImageView>
-      <TableView fx:id="tablaHome" layoutX="398.0" layoutY="145.0" onMouseClicked="#torneoTablViewMouseClicked" prefHeight="388.0" prefWidth="414.0">
+      <TableView fx:id="tablaHome" layoutX="403.0" layoutY="145.0" onMouseClicked="#torneoTablViewMouseClicked" prefHeight="283.0" prefWidth="414.0" styleClass="fontPrincipal" stylesheets="@../recursos/jomaso.css">
         <columns>
-            <TableColumn fx:id="fechaInscripccion" prefWidth="124.79998779296875" text="Fecha inscripción" />
+            <TableColumn fx:id="fechaInscripccion" editable="false" prefWidth="124.79998779296875" text="Fecha inscripción" />
           <TableColumn fx:id="nombreTorneo" prefWidth="84.0" text="Nombre" />
             <TableColumn fx:id="nombreDeporte" prefWidth="98.4000244140625" text="Deporte" />
           <TableColumn fx:id="fechaInicio" prefWidth="108.0" text="Fecha Inicio" />
         </columns>
       </TableView>
-      <Hyperlink fx:id="noticia1" layoutX="129.0" layoutY="471.0" onAction="#vermas1" prefHeight="50.0" prefWidth="115.0" text="Ver más">
+      <Hyperlink fx:id="noticia1" layoutX="129.0" layoutY="455.0" onAction="#vermas1" prefHeight="50.0" prefWidth="115.0" text="Ver más">
          <font>
             <Font name="Consolas" size="24.0" />
          </font>
       </Hyperlink>
-      <Text layoutX="25.0" layoutY="391.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Los favoritos se citan en unos cuartos de final apasionantes" textAlignment="CENTER" wrappingWidth="323.0">
+      <Text layoutX="25.0" layoutY="401.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Los favoritos se citan en unos cuartos de final apasionantes" textAlignment="CENTER" wrappingWidth="323.0">
          <font>
-            <Font name="Consolas" size="21.0" />
+            <Font size="21.0" />
+         </font>
+      </Text>
+      <Text layoutX="44.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Noticias" textAlignment="CENTER" wrappingWidth="285.13671875">
+         <font>
+            <Font name="Goudy Old Style Bold" size="32.0" />
          </font>
       </Text>
    </children>

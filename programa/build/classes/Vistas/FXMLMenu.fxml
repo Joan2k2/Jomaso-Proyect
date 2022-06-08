@@ -9,13 +9,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="594.0" prefWidth="848.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLMenuController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLMenuController">
    <children>
-      <MenuBar prefHeight="25.0" prefWidth="662.0">
+      <MenuBar prefHeight="25.0" prefWidth="662.0" styleClass="fondoMenu" stylesheets="@../recursos/jomaso.css">
         <menus>
             <Menu mnemonicParsing="false">
                <graphic>
-                  <ImageView fitHeight="28.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="32.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../recursos/jomasonuevo2.png" />
                      </image>
@@ -45,6 +45,6 @@
             <Insets />
          </VBox.margin>
       </MenuBar>
-      <AnchorPane fx:id="rootPane" depthTest="DISABLE" prefHeight="565.0" prefWidth="848.0" />
+      <AnchorPane fx:id="rootPane" depthTest="DISABLE" prefHeight="560.0" prefWidth="850.0" />
    </children>
 </VBox>

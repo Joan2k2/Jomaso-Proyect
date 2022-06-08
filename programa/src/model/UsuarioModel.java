@@ -18,7 +18,6 @@ import javafx.collections.ObservableList;
  *  
  * @author Jose Ramon
  * @version 0.1
- * @extends DBUtil
  */
 public class UsuarioModel extends DBUtil {
     
@@ -28,7 +27,8 @@ public class UsuarioModel extends DBUtil {
     *  (nickename, nombre, correo, contrasenya y edad)
     * 
     * @author Jose Ramon
-    * @param "Usuario"
+    * @param u
+    * @return boolean
     * @version 0.1
     */
     public boolean crearUsuario(Usuario u) {
@@ -70,7 +70,7 @@ public class UsuarioModel extends DBUtil {
     * 
     * @author Jose Ramon
     * @version 0.1
-    * @param "Usuario"
+    * @param id
     */
     public void borraUsuario(int id){
         try{				
@@ -94,7 +94,7 @@ public class UsuarioModel extends DBUtil {
     * segun el id de un Usuario
     * (Unicamente para admin)
      * 
-     * @param "id" 
+     * @param id
      */ 
     public void borraUsuarioAdmin(int id){
         try{				
@@ -122,7 +122,7 @@ public class UsuarioModel extends DBUtil {
      * 
      * @author Jose Ramon
      * @version 0.2
-     * @param "Usuario"
+     * @param u
      * @return boolean
      */
     public boolean usrLog(Usuario u){
@@ -167,7 +167,7 @@ public class UsuarioModel extends DBUtil {
      * 
      * @author Jose Ramon
      * @version 0.2
-     * @param "Usuario"
+     * @param nick
      * @return "UsuarioLog"
      */
     private UsuarioLog obtUsuario(String nick){

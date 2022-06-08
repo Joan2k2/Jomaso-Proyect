@@ -12,7 +12,6 @@ import java.sql.SQLException;
  *  
  * @author Jose Ramon
  * @version 0.1
- * @extends Object
  */
 public class DBUtil {
 	private Connection conn;
@@ -25,6 +24,7 @@ public class DBUtil {
          * 
          * @author Jose Ramon
          * @version 0.1
+         * @return Connection
         */
 	public Connection getConexion() {
 		

@@ -5,15 +5,26 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="506.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLCrearEquipoController">
+<AnchorPane id="AnchorPane" prefHeight="560.0" prefWidth="850.0" styleClass="fondoGeneral" stylesheets="@../recursos/jomaso.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLCrearEquipoController">
    <children>
-      <Text layoutX="27.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre Equipo" />
-      <Text layoutX="27.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descripcion" />
-      <TextField fx:id="textoNombreEquipo" layoutX="140.0" layoutY="70.0" />
-      <TextArea fx:id="descripccionEquipo" layoutX="27.0" layoutY="173.0" prefHeight="200.0" prefWidth="557.0" />
-      <ChoiceBox fx:id="laBox" layoutX="374.0" layoutY="70.0" prefWidth="150.0" />
-      <Button fx:id="botonCrearEquipo" layoutX="274.0" layoutY="417.0" mnemonicParsing="false" onAction="#crearEquipo" text="Crear" />
+      <Text layoutX="102.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre Equipo">
+         <font>
+            <Font size="18.0" />
+         </font></Text>
+      <TextField fx:id="textoNombreEquipo" layoutX="249.0" layoutY="120.0" />
+      <TextArea fx:id="descripccionEquipo" layoutX="135.0" layoutY="201.0" prefHeight="220.0" prefWidth="581.0" promptText="Descripción" />
+      <ChoiceBox fx:id="laBox" layoutX="549.0" layoutY="120.0" prefWidth="150.0" />
+      <Button fx:id="botonCrearEquipo" layoutX="388.0" layoutY="452.0" mnemonicParsing="false" onAction="#crearEquipo" prefHeight="35.0" prefWidth="75.0" styleClass="boton" stylesheets="@../recursos/jomaso.css" text="Crear">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Text layoutX="450.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deporte">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

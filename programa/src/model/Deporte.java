@@ -8,7 +8,6 @@ package model;
  * Clase usada para almacenar la informacion a usar de los deportes
  * @author Jose Ramon
  * @version 0.1
- * @extends Object
  */
 public class Deporte {
     private int id;
