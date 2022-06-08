@@ -5,6 +5,8 @@
 package Controllers;
 
 import java.net.URL;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -142,16 +144,34 @@ public class FXMLAdminController implements Initializable {
     @FXML
     private void crearTorneo(ActionEvent event) {
         String s = listDeporte.getSelectionModel().getSelectedItem();
+        
+        try {
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            
+            Date inicio = dateFormat.parse(this.fechaInicioTorn.getValue().toString());
+            Date inscripcion = dateFormat.parse(this.fechaInscripcionTorn.getValue().toString());
 
-        if (this.nombreTorneo.getText().isEmpty() || this.fechaInicioTorn.getValue().toString().isEmpty() || this.fechaInscripcionTorn.getValue().toString().isEmpty() || s == null) {
-            Alert ale = new Alert(Alert.AlertType.ERROR);
-            ale.setHeaderText("Error");
-            ale.setContentText("No puedes dejar ni el nombre, fecha inicio, fecha inscripcion o deporte del torneo vacio");
-            ale.showAndWait();
-        }
-        //else if(this.fechaInicioTorn.){
+                  
 
-        //}
+            if (this.nombreTorneo.getText().isEmpty() || this.fechaInicioTorn.getValue().toString().isEmpty() || this.fechaInscripcionTorn.getValue().toString().isEmpty() || s == null) {
+                Alert ale = new Alert(Alert.AlertType.ERROR);
+                ale.setHeaderText("Error");
+                ale.setContentText("No puedes dejar ni el nombre, fecha inicio, fecha inscripcion o deporte del torneo vacio");
+                ale.showAndWait();
+            }
+            else if(inscripcion.before(inicio)){
+                System.out.println("f1:"+inicio);
+
+            }
+            else{
+                Alert ale = new Alert(Alert.AlertType.ERROR);
+                ale.setHeaderText("Error");
+                ale.setContentText("La fecha de inscripcción no puede ser superior a la de inicio");
+                ale.showAndWait();
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+       }
     }
 
     @FXML
@@ -286,6 +306,10 @@ private void crearDeporte(ActionEvent event) {
         this.idTablaDeporte.setCellValueFactory(new PropertyValueFactory("id"));
         this.nombreTablaDeporte.setCellValueFactory(new PropertyValueFactory("nombre"));
         this.tablaDeporteAdmin.setItems(deporteAdmin);
+        Alert ale = new Alert(Alert.AlertType.CONFIRMATION);
+            ale.setHeaderText("Correcto");
+            ale.setContentText("Todo ok");
+            ale.showAndWait();
         
     }
     
