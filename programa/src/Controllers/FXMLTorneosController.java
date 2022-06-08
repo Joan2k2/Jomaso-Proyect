@@ -50,7 +50,6 @@ public class FXMLTorneosController implements Initializable {
     private TableColumn fechaInicio;
     @FXML
     private TableColumn idTorneo;
-    @FXML
     private Button botonLlevaTorneo;
 
     /**
@@ -72,7 +71,6 @@ public class FXMLTorneosController implements Initializable {
 
     }
 
-    @FXML
     private void llevaTorneoVista(ActionEvent event) {
         Torneo t = tablatorneos.getSelectionModel().getSelectedItem();
         UsuarioLog.setAlmacenId(t.getId());

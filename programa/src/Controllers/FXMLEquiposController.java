@@ -44,7 +44,6 @@ public class FXMLEquiposController implements Initializable {
     private TableColumn nombreDeporte;
     @FXML
     private TableColumn nicnameUser;
-    @FXML
     private Button botonunirseEquipo;
     @FXML
     private TableColumn idEquipos;
@@ -64,7 +63,6 @@ public class FXMLEquiposController implements Initializable {
         this.tablaEquipos.setItems(listaequipos);
     }    
 
-    @FXML
     private void llevaEquipoVista(ActionEvent event) {
         Equipo e = tablaEquipos.getSelectionModel().getSelectedItem();
         UsuarioLog.setAlmacenId(e.getId());
