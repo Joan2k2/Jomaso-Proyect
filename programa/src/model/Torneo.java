@@ -4,6 +4,7 @@
  */
 package model;
 
+import java.sql.Date;
 import java.util.ArrayList;
 
 /**
@@ -20,10 +21,28 @@ public class Torneo {
     private String nombre;
     private String fechaInscripcion;
     private String fehcaInicio;
+    private Date fechaInicioDate;
+    private Date fechaInscripcionDate;
     private String deporte;
     
     //Constructor default
     public Torneo() {}
+
+    public Date getFechaInicioDate() {
+        return fechaInicioDate;
+    }
+
+    public void setFechaInicioDate(Date fechaInicioDate) {
+        this.fechaInicioDate = fechaInicioDate;
+    }
+
+    public Date getFechaInscripcionDate() {
+        return fechaInscripcionDate;
+    }
+
+    public void setFechaInscripcionDate(Date fechaInscripcionDate) {
+        this.fechaInscripcionDate = fechaInscripcionDate;
+    }
 
     public String getDeporte() {
         return deporte;
