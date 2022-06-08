@@ -40,7 +40,8 @@ public class TorneoModel extends DBUtil {
             stmt.setString(1, t.getNombre());
             stmt.setString(2, t.getDescripcion());
             stmt.setString(3, t.getFehcaInicio());
-            stmt.setString(1, t.getFechaInscripcion());
+            stmt.setString(4, t.getFechaInscripcion());
+            stmt.setString(5, t.getDeporte());
 
             stmt.execute();
 
